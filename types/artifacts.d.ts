@@ -1012,7 +1012,7 @@ export interface TraceEvent {
   tid: number;
   /** Timestamp of the event in microseconds. */
   ts: number;
-  dur?: number;
+  dur: number;
   ph: 'B'|'b'|'D'|'E'|'e'|'F'|'I'|'M'|'N'|'n'|'O'|'R'|'S'|'T'|'X';
   s?: 't';
   id?: string;
@@ -1049,6 +1049,9 @@ declare module Trace {
     ts: number;
     id: string;
     scope?: string;
+    // TODO(bckenny): No dur on these. Sort out optional `dur` on trace events.
+    /** @deprecated there is no `dur` on async events. */
+    dur: number;
   }
 }
 

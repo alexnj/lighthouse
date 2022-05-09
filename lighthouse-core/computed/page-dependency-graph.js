@@ -24,15 +24,6 @@ const SIGNIFICANT_DUR_THRESHOLD_MS = 10;
 //    into estimation logic when we use the dependency graph for other purposes.
 const IGNORED_MIME_TYPES_REGEX = /^video/;
 
-/**
- * @param {LH.TraceEvent} evt
- * @return {evt is LH.TraceEvent & {dur: number}}
- */
-function isEventWithDuration(evt) {
-  // TODO(bckenny): sort out optional dur on trace events.
-  return evt.dur !== undefined;
-}
-
 class PageDependencyGraph {
   /**
    * @param {LH.Artifacts.NetworkRequest} record
@@ -127,7 +118,7 @@ class PageDependencyGraph {
       i++;
 
       // Skip all trace events that aren't schedulable tasks with sizable duration
-      if (!TracingProcessor.isScheduleableTask(evt) || !isEventWithDuration(evt)) {
+      if (!TracingProcessor.isScheduleableTask(evt) || !evt.dur) {
         continue;
       }
 

@@ -85,14 +85,12 @@ class Responsiveness {
       return evt.name === 'EventTiming' && evt.ph !== 'e';
     });
 
-    if (candidates.length) {
-      if (!candidates[0].args.data.frame) {
-        // Full EventTiming data added in https://crrev.com/c/3632661
-        throw new LHError(
-          LHError.errors.UNSUPPORTED_OLD_CHROME,
-          {featureName: 'detailed EventTiming trace events'}
-        );
-      }
+    if (candidates.length && !candidates[0].args.data.frame) {
+      // Full EventTiming data added in https://crrev.com/c/3632661
+      throw new LHError(
+        LHError.errors.UNSUPPORTED_OLD_CHROME,
+        {featureName: 'detailed EventTiming trace events'}
+      );
     }
 
     const {maxDuration, interactionType} = responsivenessEvent.args.data;
@@ -122,7 +120,7 @@ class Responsiveness {
     if (!bestMatchEvent) {
       throw new Error(`no interaction event found for responsiveness type '${interactionType}'`);
     }
-    // TODO: seems to regularly happen up to 3ms and as high as 4.
+    // TODO: seems to regularly happen up to 3ms and as high as 4. Allow for up to 5ms to be sure.
     if (minDurationDiff > 5) {
       throw new Error(`no interaction event found within 5ms of responsiveness maxDuration (max: ${maxDuration}, closest ${bestMatchEvent.args.data.duration})`); // eslint-disable-line max-len
     }
