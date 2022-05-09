@@ -1002,6 +1002,7 @@ export interface TraceEvent {
       /** Responsiveness data. */
       interactionType?: 'drag'|'keyboard'|'tapOrClick';
       maxDuration?: number;
+      type?: string;
     };
     frame?: string;
     name?: string;
@@ -1011,7 +1012,7 @@ export interface TraceEvent {
   tid: number;
   /** Timestamp of the event in microseconds. */
   ts: number;
-  dur: number;
+  dur?: number;
   ph: 'B'|'b'|'D'|'E'|'e'|'F'|'I'|'M'|'N'|'n'|'O'|'R'|'S'|'T'|'X';
   s?: 't';
   id?: string;
@@ -1034,6 +1035,20 @@ declare module Trace {
     ts: number;
     tdur: number;
     tts: number;
+  }
+
+  /**
+   * Base event of a `ph: 'b'|'e'|'n'` async event. Extend with `name`, `args`, and
+   * more specific `ph` (if needed).
+   */
+  interface AsyncEvent {
+    ph: 'b'|'e'|'n';
+    cat: string;
+    pid: number;
+    tid: number;
+    ts: number;
+    id: string;
+    scope?: string;
   }
 }
 
