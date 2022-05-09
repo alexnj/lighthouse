@@ -9,7 +9,7 @@ const BaseNode = require('./base-node.js');
 
 class CPUNode extends BaseNode {
   /**
-   * @param {LH.TraceEvent} parentEvent
+   * @param {LH.TraceEvent & {dur: number}} parentEvent
    * @param {LH.TraceEvent[]=} childEvents
    */
   constructor(parentEvent, childEvents = []) {
@@ -39,7 +39,7 @@ class CPUNode extends BaseNode {
   }
 
   /**
-   * @return {LH.TraceEvent}
+   * @return {LH.TraceEvent & {dur: number}}
    */
   get event() {
     return this._event;

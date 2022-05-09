@@ -153,7 +153,10 @@ class TraceProcessor {
     for (const index of bxEventIndices) {
       const event = traceEvents[index];
       if (event.ph === 'X') {
-        effectiveDuration.set(index, event.dur);
+        /** @type {number} */
+        // @ts-expect-error - TODO(bckenny): sort out optional dur on trace events.
+        const duration = event.dur;
+        effectiveDuration.set(index, duration);
       } else {
         // Find the next available 'E' event *after* the current group of events that matches our name, pid, and tid.
         let duration = Number.MAX_SAFE_INTEGER;

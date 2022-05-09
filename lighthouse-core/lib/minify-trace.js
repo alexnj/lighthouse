@@ -17,6 +17,8 @@
 
 const TracingProcessor = require('./tracehouse/trace-processor.js');
 
+/** @typedef {LH.TraceEvent & {dur: number}} TraceEventWithDuration */
+
 const toplevelTaskNames = new Set([
   'RunTask', // m71+
   'ThreadControllerImpl::RunTask', // m69-70
@@ -92,12 +94,13 @@ const traceEventsToKeepInProcess = new Set([
 
 /**
  * @param {LH.TraceEvent[]} events
+ * @return {TraceEventWithDuration[]}
  */
 function filterOutUnnecessaryTasksByNameAndDuration(events) {
   const {pid} = TracingProcessor.findMainFrameIds(events);
 
-  return events.filter(evt => {
-    if (toplevelTaskNames.has(evt.name) && evt.dur < 1000) return false;
+  return events.filter(/** @return {evt is TraceEventWithDuration} */ evt => {
+    if (toplevelTaskNames.has(evt.name) && evt.dur !== undefined && evt.dur < 1000) return false;
     if (evt.pid === pid && traceEventsToKeepInProcess.has(evt.name)) return true;
     if (traceCategoriesToAlwaysKeep.has(evt.cat)) return true;
     return traceEventsToAlwaysKeep.has(evt.name);
@@ -106,7 +109,7 @@ function filterOutUnnecessaryTasksByNameAndDuration(events) {
 
 /**
  * Filters out tasks that are not within a toplevel task.
- * @param {LH.TraceEvent[]} events
+ * @param {TraceEventWithDuration[]} events
  */
 function filterOutOrphanedTasks(events) {
   const toplevelRanges = events
