@@ -162,7 +162,7 @@ describe('Metric: Responsiveness', () => {
       trace: makeTrace([]),
       settings: {throttlingMethod: 'simulate'},
     };
-    expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
+    await expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
       .rejects.toThrow();
   });
 
@@ -178,7 +178,7 @@ describe('Metric: Responsiveness', () => {
       trace,
       settings: {throttlingMethod: 'provided'},
     };
-    expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
+    await expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
       .rejects.toThrow(`no interaction event found for responsiveness type 'keyboard'`);
   });
 
@@ -197,7 +197,7 @@ describe('Metric: Responsiveness', () => {
       trace,
       settings: {throttlingMethod: 'provided'},
     };
-    expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
+    await expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
       .rejects.toThrow(`no interaction event found for responsiveness type 'keyboard'`);
   });
 
@@ -216,7 +216,7 @@ describe('Metric: Responsiveness', () => {
       trace,
       settings: {throttlingMethod: 'provided'},
     };
-    expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
+    await expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
       .rejects.toThrow('no interaction event found within 5ms of responsiveness maxDuration (max: 200, closest 500)'); // eslint-disable-line max-len
   });
 
@@ -231,7 +231,7 @@ describe('Metric: Responsiveness', () => {
       trace: makeTrace(interactionEvents),
       settings: {throttlingMethod: 'provided'},
     };
-    expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
+    await expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
       .rejects.toThrow(`unexpected responsiveness interactionType 'brainWave'`);
   });
 
@@ -250,7 +250,7 @@ describe('Metric: Responsiveness', () => {
       trace,
       settings: {throttlingMethod: 'provided'},
     };
-    expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
+    await expect(Responsiveness.request(metricInputData, {computedCache: new Map()}))
       .rejects.toThrow('UNSUPPORTED_OLD_CHROME');
   });
 
