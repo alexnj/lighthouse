@@ -168,7 +168,7 @@ describe('Page Functions', () => {
       parentEl.className = 'dont-use-this';
       const childEl = document.createElement('div');
       childEl.className = 'child';
-      parentEl.appendChild(childEl);
+      parentEl.append(childEl);
       assert.equal(pageFunctions.getNodeSelector(childEl), 'div#wrapper > div.child');
     });
   });
@@ -184,7 +184,7 @@ describe('Page Functions', () => {
       const el = document.createElement('div');
       const childEl = document.createElement('div');
       childEl.setAttribute('aria-label', 'Something');
-      el.appendChild(childEl);
+      el.append(childEl);
       assert.equal(pageFunctions.getNodeLabel(el), 'Something');
     });
 
@@ -205,7 +205,7 @@ describe('Page Functions', () => {
     it('Returns null if there is no better label', () => {
       const el = document.createElement('div');
       const childEl = document.createElement('span');
-      el.appendChild(childEl);
+      el.append(childEl);
       assert.equal(pageFunctions.getNodeLabel(el), null);
     });
   });
@@ -246,7 +246,7 @@ describe('Page Functions', () => {
       const childEl = document.createElement('p');
       childEl.id = 'child';
       childEl.className = 'child-el';
-      el.appendChild(childEl);
+      el.append(childEl);
       const {nodeLabel} = pageFunctions.getNodeDetails(el);
       assert.equal(nodeLabel, 'div#parent');
     });

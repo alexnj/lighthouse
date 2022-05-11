@@ -106,33 +106,33 @@ class CriticalRequestChainRenderer {
     // Construct lines and add spacers for sub requests.
     segment.treeMarkers.forEach(separator => {
       if (separator) {
-        treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-vert'));
-        treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker'));
+        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-vert'));
+        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker'));
       } else {
-        treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker'));
-        treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker'));
+        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker'));
+        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker'));
       }
     });
 
     if (segment.isLastChild) {
-      treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-up-right'));
-      treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-right'));
+      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-up-right'));
+      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-right'));
     } else {
-      treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-vert-right'));
-      treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-right'));
+      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-vert-right'));
+      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-right'));
     }
 
     if (segment.hasChildren) {
-      treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-horiz-down'));
+      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-horiz-down'));
     } else {
-      treeMarkeEl.appendChild(dom.createElement('span', 'lh-tree-marker lh-right'));
+      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-right'));
     }
 
     // Fill in url, host, and request size information.
     const url = segment.node.request.url;
     const linkEl = detailsRenderer.renderTextURL(url);
     const treevalEl = dom.find('.lh-crc-node__tree-value', chainEl);
-    treevalEl.appendChild(linkEl);
+    treevalEl.append(linkEl);
 
     if (!segment.hasChildren) {
       const {startTime, endTime, transferSize} = segment.node.request;
@@ -141,8 +141,8 @@ class CriticalRequestChainRenderer {
       const span2 = dom.createElement('span', 'lh-crc-node__chain-duration');
       span2.textContent = Util.i18n.formatBytesToKiB(transferSize, 0.01);
 
-      treevalEl.appendChild(span);
-      treevalEl.appendChild(span2);
+      treevalEl.append(span);
+      treevalEl.append(span2);
     }
 
     return chainEl;
@@ -158,7 +158,7 @@ class CriticalRequestChainRenderer {
    * @param {DetailsRenderer} detailsRenderer
    */
   static buildTree(dom, tmpl, segment, elem, details, detailsRenderer) {
-    elem.appendChild(CRCRenderer.createChainNode(dom, segment, detailsRenderer));
+    elem.append(CRCRenderer.createChainNode(dom, segment, detailsRenderer));
     if (segment.node.children) {
       for (const key of Object.keys(segment.node.children)) {
         const childSegment = CRCRenderer.createSegment(segment.node.children, key,
