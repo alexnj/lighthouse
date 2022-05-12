@@ -53,8 +53,9 @@ function createOptionItem(text, id, isChecked) {
   }
 
   const label = document.createElement('label');
-  label.append(input);
-  label.appendChild(document.createElement('span')).textContent = text;
+  const span = document.createElement('span');
+  span.textContent = text;
+  label.append(input, span);
   const listItem = document.createElement('li');
   listItem.append(label);
 

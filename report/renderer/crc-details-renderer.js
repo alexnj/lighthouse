@@ -105,28 +105,27 @@ class CriticalRequestChainRenderer {
 
     // Construct lines and add spacers for sub requests.
     segment.treeMarkers.forEach(separator => {
-      if (separator) {
-        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-vert'));
-        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker'));
-      } else {
-        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker'));
-        treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker'));
-      }
+      const classSeparator = separator ?
+        'lh-tree-marker lh-vert' :
+        'lh-tree-marker';
+      treeMarkeEl.append(
+        dom.createElement('span', classSeparator),
+        dom.createElement('span', 'lh-tree-marker')
+      );
     });
 
-    if (segment.isLastChild) {
-      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-up-right'));
-      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-right'));
-    } else {
-      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-vert-right'));
-      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-right'));
-    }
+    const classLastChild = segment.isLastChild ?
+      'lh-tree-marker lh-up-right' :
+      'lh-tree-marker lh-vert-right';
+    const classHasChildren = segment.hasChildren ?
+      'lh-tree-marker lh-horiz-down' :
+      'lh-tree-marker lh-right';
 
-    if (segment.hasChildren) {
-      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-horiz-down'));
-    } else {
-      treeMarkeEl.append(dom.createElement('span', 'lh-tree-marker lh-right'));
-    }
+    treeMarkeEl.append(
+      dom.createElement('span', classLastChild),
+      dom.createElement('span', 'lh-tree-marker lh-right'),
+      dom.createElement('span', classHasChildren)
+    );
 
     // Fill in url, host, and request size information.
     const url = segment.node.request.url;
@@ -141,8 +140,7 @@ class CriticalRequestChainRenderer {
       const span2 = dom.createElement('span', 'lh-crc-node__chain-duration');
       span2.textContent = Util.i18n.formatBytesToKiB(transferSize, 0.01);
 
-      treevalEl.append(span);
-      treevalEl.append(span2);
+      treevalEl.append(span, span2);
     }
 
     return chainEl;

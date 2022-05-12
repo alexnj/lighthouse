@@ -84,16 +84,13 @@ export class CategoryRenderer {
 
     if (audit.stackPacks) {
       audit.stackPacks.forEach(pack => {
-        const packElm = this.dom.createElement('div');
-        packElm.classList.add('lh-audit__stackpack');
-
-        const packElmImg = this.dom.createElement('img');
-        packElmImg.classList.add('lh-audit__stackpack__img');
+        const packElmImg = this.dom.createElement('img', 'lh-audit__stackpack__img');
         packElmImg.src = pack.iconDataURL;
         packElmImg.alt = pack.title;
-        packElm.append(packElmImg);
 
-        packElm.append(this.dom.convertMarkdownLinkSnippets(pack.description));
+        const snippets = this.dom.convertMarkdownLinkSnippets(pack.description);
+        const packElm = this.dom.createElement('div', 'lh-audit__stackpack');
+        packElm.append(packElmImg, snippets);
 
         this.dom.find('.lh-audit__stackpacks', auditEl)
           .append(packElm);
