@@ -19,7 +19,9 @@ const FontSize = require('./seo/font-size.js');
 /** @param {Element} element */
 /* c8 ignore start */
 function getClientRect(element) {
-  const clientRect = element.getBoundingClientRect();
+  const realBoundingClientRect = window.__HTMLElementBoundingClientRect ||
+    window.HTMLElement.prototype.getBoundingClientRect;
+  const clientRect = realBoundingClientRect.call(element);
   return {
     // Just grab the DOMRect properties we want, excluding x/y/width/height
     top: clientRect.top,
