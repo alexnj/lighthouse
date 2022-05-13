@@ -226,9 +226,9 @@ describe('Page Functions', () => {
 
     it('returns node path through shadow root', () => {
       const el = document.createElement('div');
-      const main = document.createElement('main');
-      el.append(main);
-      const shadowRoot = main.attachShadow({mode: 'open'});
+      const mainEl = document.createElement('main');
+      el.append(mainEl);
+      const shadowRoot = mainEl.attachShadow({mode: 'open'});
       const sectionEl = document.createElement('section');
       const img = document.createElement('img');
       img.src = '#';

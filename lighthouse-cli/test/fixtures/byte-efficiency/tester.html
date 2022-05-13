@@ -27,8 +27,7 @@ function generateInlineStyleWithSize(sizeInBytes, firstContent = '', used = fals
   }
 
   const style = document.createElement('style');
-  const textContent = firstContent + data.join('\n');
-  style.append(document.createTextNode(textContent));
+  style.append(firstContent + data.join('\n'));
   document.head.append(style);
 }
 
