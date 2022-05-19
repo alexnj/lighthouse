@@ -260,6 +260,7 @@ class ImageElements extends FRGatherer {
         driver.defaultSession.setNextProtocolTimeout(250);
         size = await driver.executionContext.evaluate(determineNaturalSize, {
           args: [url],
+          useIsolation: true,
         });
         this._naturalSizeCache.set(url, size);
       } catch (_) {
@@ -342,6 +343,7 @@ class ImageElements extends FRGatherer {
 
     const elements = await executionContext.evaluate(collectImageElementInfo, {
       args: [],
+      useIsolation: true,
       deps: [
         pageFunctions.getElementsInDocumentString,
         pageFunctions.getBoundingClientRectString,
