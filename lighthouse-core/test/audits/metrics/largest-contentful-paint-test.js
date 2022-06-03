@@ -76,7 +76,7 @@ describe('Performance: largest-contentful-paint audit', () => {
     const contextOldChrome = getFakeContext({formFactor: 'mobile', throttlingMethod: 'provided'});
 
     await expect(LCPAudit.audit(artifactsOldChrome, contextOldChrome))
-      .rejects.toThrow(/UNSUPPORTED_OLD_CHROME/);
+      .rejects.toThrow(/NO_LCP/);
 
     const artifactsNewChrome = generateArtifacts({
       trace: preLcpTrace,
