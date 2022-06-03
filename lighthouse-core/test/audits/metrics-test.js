@@ -95,29 +95,6 @@ describe('Performance: metrics', () => {
     expect(result.details.items[0]).toMatchSnapshot();
   });
 
-  it('leaves CLS undefined in an old trace without weighted scores', async () => {
-    const artifacts = {
-      GatherContext: {gatherMode: 'navigation'},
-      traces: {
-        [MetricsAudit.DEFAULT_PASS]: lcpAllFramesTrace,
-      },
-      devtoolsLogs: {
-        [MetricsAudit.DEFAULT_PASS]: lcpAllFramesDevtoolsLog,
-      },
-    };
-
-    const context = {settings: {throttlingMethod: 'simulate'}, computedCache: new Map()};
-    const {details} = await MetricsAudit.audit(artifacts, context);
-    expect(details.items[0]).toMatchObject({
-      cumulativeLayoutShift: undefined,
-      cumulativeLayoutShiftMainFrame: undefined,
-      totalCumulativeLayoutShift: undefined,
-      observedCumulativeLayoutShift: undefined,
-      observedCumulativeLayoutShiftMainFrame: undefined,
-      observedTotalCumulativeLayoutShift: undefined,
-    });
-  });
-
   it('evaluates new CLS correctly across all frames', async () => {
     const URL = getURLArtifactFromDevtoolsLog(clsAllFramesDevtoolsLog);
     const artifacts = {

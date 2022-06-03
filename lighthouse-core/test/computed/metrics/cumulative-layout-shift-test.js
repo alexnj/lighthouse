@@ -9,7 +9,6 @@ import CumulativeLayoutShift from '../../../computed/metrics/cumulative-layout-s
 import createTestTrace from '../../create-test-trace.js';
 
 const jumpyClsTrace = readJson('../../fixtures/traces/jumpy-cls-m90.json', import.meta);
-const oldMetricsTrace = readJson('../../fixtures/traces/frame-metrics-m89.json', import.meta);
 const allFramesMetricsTrace = readJson('../../fixtures/traces/frame-metrics-m90.json', import.meta);
 const preClsTrace = readJson('../../fixtures/traces/progressive-app-m60.json', import.meta);
 
@@ -28,11 +27,6 @@ describe('Metrics: CLS', () => {
         cumulativeLayoutShiftMainFrame: expect.toBeApproximately(2.268816, 6),
         totalCumulativeLayoutShift: expect.toBeApproximately(4.809794, 6),
       });
-    });
-
-    it('throws if layout shift events are found without weighted_score_delta', async () => {
-      expect(_ => CumulativeLayoutShift.request(oldMetricsTrace, context)).rejects
-          .toThrow('UNSUPPORTED_OLD_CHROME');
     });
 
     it('calculates CLS values for a trace with CLS events over more than one frame', async () => {

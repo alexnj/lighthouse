@@ -7,7 +7,6 @@
 
 const makeComputedArtifact = require('../computed-artifact.js');
 const ProcessedTrace = require('../processed-trace.js');
-const LHError = require('../../lib/lh-error.js');
 
 /** @typedef {{ts: number, isMainFrame: boolean, weightedScore: number}} LayoutShiftEvent */
 
@@ -37,15 +36,6 @@ class CumulativeLayoutShift {
         continue;
       }
 
-      // For all-frames CLS calculation, we rely on `weighted_score_delta`, which
-      // was added in Chrome 90: https://crbug.com/1173139
-      if (event.args.data.weighted_score_delta === undefined) {
-        throw new LHError(
-          LHError.errors.UNSUPPORTED_OLD_CHROME,
-          {featureName: 'Cumulative Layout Shift'}
-        );
-      }
-
       if (event.args.data.had_recent_input) {
         // `had_recent_input` events aren't used unless currently ignoring.
         if (!ignoreHadRecentInput) continue;
@@ -57,7 +47,7 @@ class CumulativeLayoutShift {
       layoutShiftEvents.push({
         ts: event.ts,
         isMainFrame: event.args.data.is_main_frame,
-        weightedScore: event.args.data.weighted_score_delta,
+        weightedScore: event.args.data.weighted_score_delta || 0,
       });
     }
 
