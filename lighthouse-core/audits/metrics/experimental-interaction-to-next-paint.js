@@ -12,7 +12,8 @@ const i18n = require('../../lib/i18n/i18n.js');
 const UIStrings = {
   /** Description of the Interaction to Next Paint metric. This description is displayed within a tooltip when the user hovers on the metric name to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description: 'Interaction to Next Paint measures page responsiveness, how long it ' +
-               'takes the page to visibly respond to user input. [Learn more](https://web.dev/inp/).',
+               'takes the page to visibly respond to user input. ' +
+               '[Learn more about Interaction to Next Paint metric](https://web.dev/inp/).',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
