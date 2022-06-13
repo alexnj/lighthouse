@@ -151,7 +151,9 @@ export class DOM {
       const a = this.createElement('a');
       a.rel = 'noopener';
       a.target = '_blank';
-      a.textContent = segment.text;
+      a.append(segment.text.indexOf('`') >= 0
+        ? this.convertMarkdownCodeSnippets(segment.text)
+        : segment.text);
       this.safelySetHref(a, url.href);
       element.append(a);
     }

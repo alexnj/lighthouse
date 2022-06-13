@@ -94,6 +94,13 @@ describe('DOM', () => {
       assert.equal(result.innerHTML,
           '<a rel="noopener" target="_blank" href="https://example.com/foo"> Link </a> ' +
           'and some text afterwards.', 'link with spaces in brackets');
+
+      result = dom.convertMarkdownLinkSnippets(
+          '[link with `code`](https://example.com/foo) and some text afterwards.');
+      assert.equal(result.innerHTML,
+          '<a rel="noopener" target="_blank" href="https://example.com/foo">' +
+          '<span>link with <code>code</code></span>' +
+          '</a> and some text afterwards.', 'link with code snippet inside');
     });
 
     it('handles invalid urls', () => {
