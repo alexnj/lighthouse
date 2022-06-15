@@ -96,6 +96,28 @@ describe('DOM', () => {
           'and some text afterwards.', 'link with spaces in brackets');
     });
 
+    it('correctly converts code snippets', () => {
+      let result = dom.convertMarkdownLinkSnippets(
+        'Some `code`. [Learn more](http://example.com).');
+      assert.equal(result.innerHTML,
+        '<span>Some <code>code</code>. </span>' +
+        '<a rel="noopener" target="_blank" href="http://example.com/">Learn more</a>.');
+
+      result = dom.convertMarkdownLinkSnippets(
+        '[link with `code`](https://example.com/foo) and some text afterwards.');
+      assert.equal(result.innerHTML,
+        '<a rel="noopener" target="_blank" href="https://example.com/foo">' +
+        '<span>link with <code>code</code></span>' +
+        '</a> and some text afterwards.', 'link with code snippet inside');
+
+      result = dom.convertMarkdownLinkSnippets(
+          '[link with `[nested-squares]`](https://example.com/foo) and some text afterwards.');
+      assert.equal(result.innerHTML,
+          '<a rel="noopener" target="_blank" href="https://example.com/foo">' +
+          '<span>link with <code>[nested-squares]</code></span>' +
+          '</a> and some text afterwards.', 'link with code and nested brackets inside');
+    });
+
     it('handles invalid urls', () => {
       const text = 'Text has [bad](https:///) link.';
       assert.throws(() => {

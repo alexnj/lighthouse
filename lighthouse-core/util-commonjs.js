@@ -259,7 +259,8 @@ class Util {
     /** @type {Array<{isLink: true, text: string, linkHref: string}|{isLink: false, text: string}>} */
     const segments = [];
 
-    const parts = text.split(/\[([^\]]+?)\]\((https?:\/\/.*?)\)/g);
+    // eslint-disable-next-line no-useless-escape
+    const parts = text.split(/\[((?:[^\[\]]+|\[[^\[\]]+\])+)\]\((https?:\/\/.*?)\)/g);
     while (parts.length) {
       // Shift off the same number of elements as the pre-split and capture groups.
       const [preambleText, linkText, linkHref] = parts.splice(0, 3);
