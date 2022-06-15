@@ -109,6 +109,13 @@ describe('DOM', () => {
         '<a rel="noopener" target="_blank" href="https://example.com/foo">' +
         '<span>link with <code>code</code></span>' +
         '</a> and some text afterwards.', 'link with code snippet inside');
+
+      result = dom.convertMarkdownLinkSnippets(
+          '[link with `[nested-squares]`](https://example.com/foo) and some text afterwards.');
+      assert.equal(result.innerHTML,
+          '<a rel="noopener" target="_blank" href="https://example.com/foo">' +
+          '<span>link with <code>[nested-squares]</code></span>' +
+          '</a> and some text afterwards.', 'link with code and nested brackets inside');
     });
 
     it('handles invalid urls', () => {
