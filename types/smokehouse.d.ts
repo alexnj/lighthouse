@@ -40,6 +40,8 @@ declare global {
       config?: Config.Json;
       /** If test is performance sensitive, set to true so that it won't be run parallel to other tests. */
       runSerially?: boolean;
+      /** Optional parameter to exclude this test from an array of runners. '*' excludes from all. */
+      exclude?: string[];
     }
 
     /**

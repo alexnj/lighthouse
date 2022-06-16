@@ -168,6 +168,11 @@ async function begin() {
         // eslint-disable-next-line max-len
         describe: 'A argument of the form "n/d", which divides the selected tests into d groups and runs the nth group. n and d must be positive integers with 1 ≤ n ≤ d.',
       },
+      'ignore-exclusions': {
+        type: 'boolean',
+        default: false,
+        describe: 'Ignore exclude parameter set on any tests.',
+      },
     })
     .wrap(y.terminalWidth())
     .argv;
@@ -194,7 +199,12 @@ async function begin() {
   const {default: rawTestDefns} = await import(url.pathToFileURL(testDefnPath).href);
   const allTestDefns = updateTestDefnFormat(rawTestDefns);
   const invertMatch = argv.invertMatch;
-  const requestedTestDefns = getDefinitionsToRun(allTestDefns, requestedTestIds, {invertMatch});
+  const filteredTestDefns = argv.ignoreExclusions ?
+    allTestDefns :
+    allTestDefns.filter(test => !test.exclude ||
+      !['*', argv.runner].some(runner => (test.exclude || []).includes(runner)));
+  const requestedTestDefns = getDefinitionsToRun(filteredTestDefns, requestedTestIds,
+    {invertMatch});
   const testDefns = getShardedDefinitions(requestedTestDefns, argv.shard);
 
   let smokehouseResult;
