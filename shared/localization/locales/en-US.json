@@ -168,7 +168,7 @@
     "message": "`[aria-hidden=\"true\"]` is not present on the document `<body>`"
   },
   "lighthouse-core/audits/accessibility/aria-hidden-focus.js | description": {
-    "message": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how aria-hidden affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus)."
+    "message": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how `aria-hidden` affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus)."
   },
   "lighthouse-core/audits/accessibility/aria-hidden-focus.js | failureTitle": {
     "message": "`[aria-hidden=\"true\"]` elements contain focusable descendents"
@@ -186,7 +186,7 @@
     "message": "ARIA input fields have accessible names"
   },
   "lighthouse-core/audits/accessibility/aria-meter-name.js | description": {
-    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name meter elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name)."
+    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `meter` elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name)."
   },
   "lighthouse-core/audits/accessibility/aria-meter-name.js | failureTitle": {
     "message": "ARIA `meter` elements do not have accessible names."
@@ -195,7 +195,7 @@
     "message": "ARIA `meter` elements have accessible names"
   },
   "lighthouse-core/audits/accessibility/aria-progressbar-name.js | description": {
-    "message": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label progressbar elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name)."
+    "message": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label `progressbar` elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name)."
   },
   "lighthouse-core/audits/accessibility/aria-progressbar-name.js | failureTitle": {
     "message": "ARIA `progressbar` elements do not have accessible names."
@@ -249,7 +249,7 @@
     "message": "ARIA toggle fields have accessible names"
   },
   "lighthouse-core/audits/accessibility/aria-tooltip-name.js | description": {
-    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name tooltip elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name)."
+    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `tooltip` elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name)."
   },
   "lighthouse-core/audits/accessibility/aria-tooltip-name.js | failureTitle": {
     "message": "ARIA `tooltip` elements do not have accessible names."
@@ -258,7 +258,7 @@
     "message": "ARIA `tooltip` elements have accessible names"
   },
   "lighthouse-core/audits/accessibility/aria-treeitem-name.js | description": {
-    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming treeitem elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name)."
+    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name)."
   },
   "lighthouse-core/audits/accessibility/aria-treeitem-name.js | failureTitle": {
     "message": "ARIA `treeitem` elements do not have accessible names."
@@ -342,7 +342,7 @@
     "message": "Document has a `<title>` element"
   },
   "lighthouse-core/audits/accessibility/duplicate-id-active.js | description": {
-    "message": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about id attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active)."
+    "message": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active)."
   },
   "lighthouse-core/audits/accessibility/duplicate-id-active.js | failureTitle": {
     "message": "`[id]` attributes on active, focusable elements are not unique"
@@ -387,7 +387,7 @@
     "message": "Heading elements appear in a sequentially-descending order"
   },
   "lighthouse-core/audits/accessibility/html-has-lang.js | description": {
-    "message": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang)."
+    "message": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang)."
   },
   "lighthouse-core/audits/accessibility/html-has-lang.js | failureTitle": {
     "message": "`<html>` element does not have a `[lang]` attribute"
@@ -396,7 +396,7 @@
     "message": "`<html>` element has a `[lang]` attribute"
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | description": {
-    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
+    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | failureTitle": {
     "message": "`<html>` element does not have a valid value for its `[lang]` attribute."
@@ -405,7 +405,7 @@
     "message": "`<html>` element has a valid value for its `[lang]` attribute"
   },
   "lighthouse-core/audits/accessibility/image-alt.js | description": {
-    "message": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about alt attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt)."
+    "message": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt)."
   },
   "lighthouse-core/audits/accessibility/image-alt.js | failureTitle": {
     "message": "Image elements do not have `[alt]` attributes"
@@ -477,7 +477,7 @@
     "message": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5."
   },
   "lighthouse-core/audits/accessibility/object-alt.js | description": {
-    "message": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for object elements](https://dequeuniversity.com/rules/axe/4.4/object-alt)."
+    "message": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.4/object-alt)."
   },
   "lighthouse-core/audits/accessibility/object-alt.js | failureTitle": {
     "message": "`<object>` elements do not have alternate text"
@@ -486,7 +486,7 @@
     "message": "`<object>` elements have alternate text"
   },
   "lighthouse-core/audits/accessibility/tabindex.js | description": {
-    "message": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about tabindex attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex)."
+    "message": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex)."
   },
   "lighthouse-core/audits/accessibility/tabindex.js | failureTitle": {
     "message": "Some elements have a `[tabindex]` value greater than 0"
@@ -513,7 +513,7 @@
     "message": "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` have data cells they describe."
   },
   "lighthouse-core/audits/accessibility/valid-lang.js | description": {
-    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang)."
+    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang)."
   },
   "lighthouse-core/audits/accessibility/valid-lang.js | failureTitle": {
     "message": "`[lang]` attributes do not have a valid value"
@@ -531,7 +531,7 @@
     "message": "`<video>` elements contain a `<track>` element with `[kind=\"captions\"]`"
   },
   "lighthouse-core/audits/apple-touch-icon.js | description": {
-    "message": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn more about apple-touch-icon](https://web.dev/apple-touch-icon/)."
+    "message": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn more about `apple-touch-icon`](https://web.dev/apple-touch-icon/)."
   },
   "lighthouse-core/audits/apple-touch-icon.js | failureTitle": {
     "message": "Does not provide a valid `apple-touch-icon`"
@@ -549,7 +549,7 @@
     "message": "Suggested Token"
   },
   "lighthouse-core/audits/autocomplete.js | description": {
-    "message": "`autocomplete` helps users submit forms quicker. To reduce user effort, consider enabling by setting the `autocomplete` attribute to a valid value. [Learn more about autocomplete in forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
+    "message": "`autocomplete` helps users submit forms quicker. To reduce user effort, consider enabling by setting the `autocomplete` attribute to a valid value. [Learn more about `autocomplete` in forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
   },
   "lighthouse-core/audits/autocomplete.js | failureTitle": {
     "message": "`<input>` elements do not have correct `autocomplete` attributes"
@@ -939,7 +939,7 @@
     "message": "No browser errors logged to the console"
   },
   "lighthouse-core/audits/font-display.js | description": {
-    "message": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more about font-display](https://web.dev/font-display/)."
+    "message": "Leverage the `font-display` CSS feature to ensure text is user-visible while webfonts are loading. [Learn more about `font-display`](https://web.dev/font-display/)."
   },
   "lighthouse-core/audits/font-display.js | failureTitle": {
     "message": "Ensure text remains visible during webfont load"
@@ -1368,7 +1368,7 @@
     "message": "Document uses legible font sizes"
   },
   "lighthouse-core/audits/seo/hreflang.js | description": {
-    "message": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more about hreflang](https://web.dev/hreflang/)."
+    "message": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more about `hreflang`](https://web.dev/hreflang/)."
   },
   "lighthouse-core/audits/seo/hreflang.js | failureTitle": {
     "message": "Document doesn't have a valid `hreflang`"

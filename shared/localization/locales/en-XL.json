@@ -168,7 +168,7 @@
     "message": "`[aria-hidden=\"true\"]` îś n̂ót̂ ṕr̂éŝén̂t́ ôń t̂h́ê d́ôćûḿêńt̂ `<body>`"
   },
   "lighthouse-core/audits/accessibility/aria-hidden-focus.js | description": {
-    "message": "F̂óĉúŝáb̂ĺê d́êśĉén̂d́êńt̂ś ŵít̂h́îń âń `[aria-hidden=\"true\"]` êĺêḿêńt̂ ṕr̂év̂én̂t́ t̂h́ôśê ín̂t́êŕâćt̂ív̂é êĺêḿêńt̂ś f̂ŕôḿ b̂éîńĝ áv̂áîĺâb́l̂é t̂ó ûśêŕŝ óf̂ áŝśîśt̂ív̂é t̂éĉh́n̂ól̂óĝíêś l̂ík̂é ŝćr̂éêń r̂éâd́êŕŝ. [Ĺêár̂ń ĥóŵ ár̂íâ-h́îd́d̂én̂ áf̂f́êćt̂ś f̂óĉúŝáb̂ĺê él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus)."
+    "message": "F̂óĉúŝáb̂ĺê d́êśĉén̂d́êńt̂ś ŵít̂h́îń âń `[aria-hidden=\"true\"]` êĺêḿêńt̂ ṕr̂év̂én̂t́ t̂h́ôśê ín̂t́êŕâćt̂ív̂é êĺêḿêńt̂ś f̂ŕôḿ b̂éîńĝ áv̂áîĺâb́l̂é t̂ó ûśêŕŝ óf̂ áŝśîśt̂ív̂é t̂éĉh́n̂ól̂óĝíêś l̂ík̂é ŝćr̂éêń r̂éâd́êŕŝ. [Ĺêár̂ń ĥóŵ `aria-hidden` áf̂f́êćt̂ś f̂óĉúŝáb̂ĺê él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus)."
   },
   "lighthouse-core/audits/accessibility/aria-hidden-focus.js | failureTitle": {
     "message": "`[aria-hidden=\"true\"]` êĺêḿêńt̂ś ĉón̂t́âín̂ f́ôćûśâb́l̂é d̂éŝćêńd̂én̂t́ŝ"
@@ -186,7 +186,7 @@
     "message": "ÂŔÎÁ îńp̂út̂ f́îél̂d́ŝ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś"
   },
   "lighthouse-core/audits/accessibility/aria-meter-name.js | description": {
-    "message": "Ŵh́êń âń êĺêḿêńt̂ d́ôéŝń't̂ h́âv́ê án̂ áĉćêśŝíb̂ĺê ńâḿê, śĉŕêén̂ ŕêád̂ér̂ś âńn̂óûńĉé ît́ ŵít̂h́ â ǵêńêŕîć n̂ám̂é, m̂ák̂ín̂ǵ ît́ ûńûśâb́l̂é f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ h́ôẃ t̂ó n̂ám̂é m̂ét̂ér̂ él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name)."
+    "message": "Ŵh́êń âń êĺêḿêńt̂ d́ôéŝń't̂ h́âv́ê án̂ áĉćêśŝíb̂ĺê ńâḿê, śĉŕêén̂ ŕêád̂ér̂ś âńn̂óûńĉé ît́ ŵít̂h́ â ǵêńêŕîć n̂ám̂é, m̂ák̂ín̂ǵ ît́ ûńûśâb́l̂é f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ h́ôẃ t̂ó n̂ám̂é `meter` êĺêḿêńt̂ś](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name)."
   },
   "lighthouse-core/audits/accessibility/aria-meter-name.js | failureTitle": {
     "message": "ÂŔÎÁ `meter` êĺêḿêńt̂ś d̂ó n̂ót̂ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś."
@@ -195,7 +195,7 @@
     "message": "ÂŔÎÁ `meter` êĺêḿêńt̂ś ĥáv̂é âćĉéŝśîb́l̂é n̂ám̂éŝ"
   },
   "lighthouse-core/audits/accessibility/aria-progressbar-name.js | description": {
-    "message": "Ŵh́êń â `progressbar` él̂ém̂én̂t́ d̂óêśn̂'t́ ĥáv̂é âń âćĉéŝśîb́l̂é n̂ám̂é, ŝćr̂éêń r̂éâd́êŕŝ án̂ńôún̂ćê ít̂ ẃît́ĥ á ĝén̂ér̂íĉ ńâḿê, ḿâḱîńĝ ít̂ ún̂úŝáb̂ĺê f́ôŕ ûśêŕŝ ẃĥó r̂él̂ý ôń ŝćr̂éêń r̂éâd́êŕŝ. [Ĺêár̂ń ĥóŵ t́ô ĺâb́êĺ p̂ŕôǵr̂éŝśb̂ár̂ él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name)."
+    "message": "Ŵh́êń â `progressbar` él̂ém̂én̂t́ d̂óêśn̂'t́ ĥáv̂é âń âćĉéŝśîb́l̂é n̂ám̂é, ŝćr̂éêń r̂éâd́êŕŝ án̂ńôún̂ćê ít̂ ẃît́ĥ á ĝén̂ér̂íĉ ńâḿê, ḿâḱîńĝ ít̂ ún̂úŝáb̂ĺê f́ôŕ ûśêŕŝ ẃĥó r̂él̂ý ôń ŝćr̂éêń r̂éâd́êŕŝ. [Ĺêár̂ń ĥóŵ t́ô ĺâb́êĺ `progressbar` êĺêḿêńt̂ś](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name)."
   },
   "lighthouse-core/audits/accessibility/aria-progressbar-name.js | failureTitle": {
     "message": "ÂŔÎÁ `progressbar` êĺêḿêńt̂ś d̂ó n̂ót̂ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś."
@@ -249,7 +249,7 @@
     "message": "ÂŔÎÁ t̂óĝǵl̂é f̂íêĺd̂ś ĥáv̂é âćĉéŝśîb́l̂é n̂ám̂éŝ"
   },
   "lighthouse-core/audits/accessibility/aria-tooltip-name.js | description": {
-    "message": "Ŵh́êń âń êĺêḿêńt̂ d́ôéŝń't̂ h́âv́ê án̂ áĉćêśŝíb̂ĺê ńâḿê, śĉŕêén̂ ŕêád̂ér̂ś âńn̂óûńĉé ît́ ŵít̂h́ â ǵêńêŕîć n̂ám̂é, m̂ák̂ín̂ǵ ît́ ûńûśâb́l̂é f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ h́ôẃ t̂ó n̂ám̂é t̂óôĺt̂íp̂ él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name)."
+    "message": "Ŵh́êń âń êĺêḿêńt̂ d́ôéŝń't̂ h́âv́ê án̂ áĉćêśŝíb̂ĺê ńâḿê, śĉŕêén̂ ŕêád̂ér̂ś âńn̂óûńĉé ît́ ŵít̂h́ â ǵêńêŕîć n̂ám̂é, m̂ák̂ín̂ǵ ît́ ûńûśâb́l̂é f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ h́ôẃ t̂ó n̂ám̂é `tooltip` êĺêḿêńt̂ś](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name)."
   },
   "lighthouse-core/audits/accessibility/aria-tooltip-name.js | failureTitle": {
     "message": "ÂŔÎÁ `tooltip` êĺêḿêńt̂ś d̂ó n̂ót̂ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś."
@@ -258,7 +258,7 @@
     "message": "ÂŔÎÁ `tooltip` êĺêḿêńt̂ś ĥáv̂é âćĉéŝśîb́l̂é n̂ám̂éŝ"
   },
   "lighthouse-core/audits/accessibility/aria-treeitem-name.js | description": {
-    "message": "Ŵh́êń âń êĺêḿêńt̂ d́ôéŝń't̂ h́âv́ê án̂ áĉćêśŝíb̂ĺê ńâḿê, śĉŕêén̂ ŕêád̂ér̂ś âńn̂óûńĉé ît́ ŵít̂h́ â ǵêńêŕîć n̂ám̂é, m̂ák̂ín̂ǵ ît́ ûńûśâb́l̂é f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ ḿôŕê áb̂óût́ n̂ám̂ín̂ǵ t̂ŕêéît́êḿ êĺêḿêńt̂ś](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name)."
+    "message": "Ŵh́êń âń êĺêḿêńt̂ d́ôéŝń't̂ h́âv́ê án̂ áĉćêśŝíb̂ĺê ńâḿê, śĉŕêén̂ ŕêád̂ér̂ś âńn̂óûńĉé ît́ ŵít̂h́ â ǵêńêŕîć n̂ám̂é, m̂ák̂ín̂ǵ ît́ ûńûśâb́l̂é f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ śĉŕêén̂ ŕêád̂ér̂ś. [L̂éâŕn̂ ḿôŕê áb̂óût́ n̂ám̂ín̂ǵ `treeitem` êĺêḿêńt̂ś](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name)."
   },
   "lighthouse-core/audits/accessibility/aria-treeitem-name.js | failureTitle": {
     "message": "ÂŔÎÁ `treeitem` êĺêḿêńt̂ś d̂ó n̂ót̂ h́âv́ê áĉćêśŝíb̂ĺê ńâḿêś."
@@ -342,7 +342,7 @@
     "message": "D̂óĉúm̂én̂t́ ĥáŝ á `<title>` êĺêḿêńt̂"
   },
   "lighthouse-core/audits/accessibility/duplicate-id-active.js | description": {
-    "message": "Âĺl̂ f́ôćûśâb́l̂é êĺêḿêńt̂ś m̂úŝt́ ĥáv̂é â ún̂íq̂úê `id` t́ô én̂śûŕê t́ĥát̂ t́ĥéŷ'ŕê v́îśîb́l̂é t̂ó âśŝíŝt́îv́ê t́êćĥńôĺôǵîéŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ íd̂ át̂t́r̂íb̂út̂é](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active)."
+    "message": "Âĺl̂ f́ôćûśâb́l̂é êĺêḿêńt̂ś m̂úŝt́ ĥáv̂é â ún̂íq̂úê `id` t́ô én̂śûŕê t́ĥát̂ t́ĥéŷ'ŕê v́îśîb́l̂é t̂ó âśŝíŝt́îv́ê t́êćĥńôĺôǵîéŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ `id` át̂t́r̂íb̂út̂é](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active)."
   },
   "lighthouse-core/audits/accessibility/duplicate-id-active.js | failureTitle": {
     "message": "`[id]` ât́t̂ŕîb́ût́êś ôń âćt̂ív̂é, f̂óĉúŝáb̂ĺê él̂ém̂én̂t́ŝ ár̂é n̂ót̂ ún̂íq̂úê"
@@ -387,7 +387,7 @@
     "message": "Ĥéâd́îńĝ él̂ém̂én̂t́ŝ áp̂ṕêár̂ ín̂ á ŝéq̂úêńt̂íâĺl̂ý-d̂éŝćêńd̂ín̂ǵ ôŕd̂ér̂"
   },
   "lighthouse-core/audits/accessibility/html-has-lang.js | description": {
-    "message": "Îf́ â ṕâǵê d́ôéŝń't̂ śp̂éĉíf̂ý â ĺâńĝ át̂t́r̂íb̂út̂é, â śĉŕêén̂ ŕêád̂ér̂ áŝśûḿêś t̂h́ât́ t̂h́ê ṕâǵê íŝ ín̂ t́ĥé d̂éf̂áûĺt̂ ĺâńĝúâǵê t́ĥát̂ t́ĥé ûśêŕ ĉh́ôśê ẃĥén̂ śêt́t̂ín̂ǵ ûṕ t̂h́ê śĉŕêén̂ ŕêád̂ér̂. Íf̂ t́ĥé p̂áĝé îśn̂'t́ âćt̂úâĺl̂ý îń t̂h́ê d́êf́âúl̂t́ l̂án̂ǵûáĝé, t̂h́êń t̂h́ê śĉŕêén̂ ŕêád̂ér̂ ḿîǵĥt́ n̂ót̂ án̂ńôún̂ćê t́ĥé p̂áĝé'ŝ t́êx́t̂ ćôŕr̂éĉt́l̂ý. [L̂éâŕn̂ ḿôŕê áb̂óût́ l̂án̂ǵ ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/html-has-lang)."
+    "message": "Îf́ â ṕâǵê d́ôéŝń't̂ śp̂éĉíf̂ý â ĺâńĝ át̂t́r̂íb̂út̂é, â śĉŕêén̂ ŕêád̂ér̂ áŝśûḿêś t̂h́ât́ t̂h́ê ṕâǵê íŝ ín̂ t́ĥé d̂éf̂áûĺt̂ ĺâńĝúâǵê t́ĥát̂ t́ĥé ûśêŕ ĉh́ôśê ẃĥén̂ śêt́t̂ín̂ǵ ûṕ t̂h́ê śĉŕêén̂ ŕêád̂ér̂. Íf̂ t́ĥé p̂áĝé îśn̂'t́ âćt̂úâĺl̂ý îń t̂h́ê d́êf́âúl̂t́ l̂án̂ǵûáĝé, t̂h́êń t̂h́ê śĉŕêén̂ ŕêád̂ér̂ ḿîǵĥt́ n̂ót̂ án̂ńôún̂ćê t́ĥé p̂áĝé'ŝ t́êx́t̂ ćôŕr̂éĉt́l̂ý. [L̂éâŕn̂ ḿôŕê áb̂óût́ `lang` ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/html-has-lang)."
   },
   "lighthouse-core/audits/accessibility/html-has-lang.js | failureTitle": {
     "message": "`<html>` êĺêḿêńt̂ d́ôéŝ ńôt́ ĥáv̂é â `[lang]` át̂t́r̂íb̂út̂é"
@@ -396,7 +396,7 @@
     "message": "`<html>` êĺêḿêńt̂ h́âś â `[lang]` át̂t́r̂íb̂út̂é"
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | description": {
-    "message": "Ŝṕêćîf́ŷín̂ǵ â v́âĺîd́ [B̂ĆP̂ 47 ĺâńĝúâǵê](https://www.w3.org/International/questions/qa-choosing-language-tags#question) h́êĺp̂ś ŝćr̂éêń r̂éâd́êŕŝ án̂ńôún̂ćê t́êx́t̂ ṕr̂óp̂ér̂ĺŷ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ĺâńĝ át̂t́r̂íb̂út̂é](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
+    "message": "Ŝṕêćîf́ŷín̂ǵ â v́âĺîd́ [B̂ĆP̂ 47 ĺâńĝúâǵê](https://www.w3.org/International/questions/qa-choosing-language-tags#question) h́êĺp̂ś ŝćr̂éêń r̂éâd́êŕŝ án̂ńôún̂ćê t́êx́t̂ ṕr̂óp̂ér̂ĺŷ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ `lang` át̂t́r̂íb̂út̂é](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | failureTitle": {
     "message": "`<html>` êĺêḿêńt̂ d́ôéŝ ńôt́ ĥáv̂é â v́âĺîd́ v̂ál̂úê f́ôŕ ît́ŝ `[lang]` át̂t́r̂íb̂út̂é."
@@ -405,7 +405,7 @@
     "message": "`<html>` êĺêḿêńt̂ h́âś â v́âĺîd́ v̂ál̂úê f́ôŕ ît́ŝ `[lang]` át̂t́r̂íb̂út̂é"
   },
   "lighthouse-core/audits/accessibility/image-alt.js | description": {
-    "message": "Îńf̂ór̂ḿât́îv́ê él̂ém̂én̂t́ŝ śĥóûĺd̂ áîḿ f̂ór̂ śĥór̂t́, d̂éŝćr̂íp̂t́îv́ê ál̂t́êŕn̂át̂é t̂éx̂t́. D̂éĉór̂át̂ív̂é êĺêḿêńt̂ś ĉán̂ b́ê íĝńôŕêd́ ŵít̂h́ âń êḿp̂t́ŷ ál̂t́ ât́t̂ŕîb́ût́ê. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ál̂t́ ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/image-alt)."
+    "message": "Îńf̂ór̂ḿât́îv́ê él̂ém̂én̂t́ŝ śĥóûĺd̂ áîḿ f̂ór̂ śĥór̂t́, d̂éŝćr̂íp̂t́îv́ê ál̂t́êŕn̂át̂é t̂éx̂t́. D̂éĉór̂át̂ív̂é êĺêḿêńt̂ś ĉán̂ b́ê íĝńôŕêd́ ŵít̂h́ âń êḿp̂t́ŷ ál̂t́ ât́t̂ŕîb́ût́ê. [Ĺêár̂ń m̂ór̂é âb́ôút̂ `alt` át̂t́r̂íb̂út̂é](https://dequeuniversity.com/rules/axe/4.4/image-alt)."
   },
   "lighthouse-core/audits/accessibility/image-alt.js | failureTitle": {
     "message": "Îḿâǵê él̂ém̂én̂t́ŝ d́ô ńôt́ ĥáv̂é `[alt]` ât́t̂ŕîb́ût́êś"
@@ -477,7 +477,7 @@
     "message": "`[user-scalable=\"no\"]` îś n̂ót̂ úŝéd̂ ín̂ t́ĥé `<meta name=\"viewport\">` êĺêḿêńt̂ án̂d́ t̂h́ê `[maximum-scale]` át̂t́r̂íb̂út̂é îś n̂ót̂ ĺêśŝ t́ĥán̂ 5."
   },
   "lighthouse-core/audits/accessibility/object-alt.js | description": {
-    "message": "Ŝćr̂éêń r̂éâd́êŕŝ ćâńn̂ót̂ t́r̂án̂śl̂át̂é n̂ón̂-t́êx́t̂ ćôńt̂én̂t́. Âd́d̂ín̂ǵ âĺt̂ér̂ńât́ê t́êx́t̂ t́ô `<object>` él̂ém̂én̂t́ŝ h́êĺp̂ś ŝćr̂éêń r̂éâd́êŕŝ ćôńv̂éŷ ḿêán̂ín̂ǵ t̂ó ûśêŕŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ál̂t́ t̂éx̂t́ f̂ór̂ ób̂j́êćt̂ él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/object-alt)."
+    "message": "Ŝćr̂éêń r̂éâd́êŕŝ ćâńn̂ót̂ t́r̂án̂śl̂át̂é n̂ón̂-t́êx́t̂ ćôńt̂én̂t́. Âd́d̂ín̂ǵ âĺt̂ér̂ńât́ê t́êx́t̂ t́ô `<object>` él̂ém̂én̂t́ŝ h́êĺp̂ś ŝćr̂éêń r̂éâd́êŕŝ ćôńv̂éŷ ḿêán̂ín̂ǵ t̂ó ûśêŕŝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ ál̂t́ t̂éx̂t́ f̂ór̂ `object` él̂ém̂én̂t́ŝ](https://dequeuniversity.com/rules/axe/4.4/object-alt)."
   },
   "lighthouse-core/audits/accessibility/object-alt.js | failureTitle": {
     "message": "`<object>` êĺêḿêńt̂ś d̂ó n̂ót̂ h́âv́ê ál̂t́êŕn̂át̂é t̂éx̂t́"
@@ -486,7 +486,7 @@
     "message": "`<object>` êĺêḿêńt̂ś ĥáv̂é âĺt̂ér̂ńât́ê t́êx́t̂"
   },
   "lighthouse-core/audits/accessibility/tabindex.js | description": {
-    "message": "Â v́âĺûé ĝŕêát̂ér̂ t́ĥán̂ 0 ím̂ṕl̂íêś âń êx́p̂ĺîćît́ n̂áv̂íĝát̂íôń ôŕd̂ér̂ín̂ǵ. Âĺt̂h́ôúĝh́ t̂éĉh́n̂íĉál̂ĺŷ v́âĺîd́, t̂h́îś ôf́t̂én̂ ćr̂éât́êś f̂ŕûśt̂ŕât́îńĝ éx̂ṕêŕîén̂ćêś f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ áŝśîśt̂ív̂é t̂éĉh́n̂ól̂óĝíêś. [L̂éâŕn̂ ḿôŕê áb̂óût́ t̂áb̂ín̂d́êx́ ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/tabindex)."
+    "message": "Â v́âĺûé ĝŕêát̂ér̂ t́ĥán̂ 0 ím̂ṕl̂íêś âń êx́p̂ĺîćît́ n̂áv̂íĝát̂íôń ôŕd̂ér̂ín̂ǵ. Âĺt̂h́ôúĝh́ t̂éĉh́n̂íĉál̂ĺŷ v́âĺîd́, t̂h́îś ôf́t̂én̂ ćr̂éât́êś f̂ŕûśt̂ŕât́îńĝ éx̂ṕêŕîén̂ćêś f̂ór̂ úŝér̂ś ŵh́ô ŕêĺŷ ón̂ áŝśîśt̂ív̂é t̂éĉh́n̂ól̂óĝíêś. [L̂éâŕn̂ ḿôŕê áb̂óût́ `tabindex` ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/tabindex)."
   },
   "lighthouse-core/audits/accessibility/tabindex.js | failureTitle": {
     "message": "Ŝóm̂é êĺêḿêńt̂ś ĥáv̂é â `[tabindex]` v́âĺûé ĝŕêát̂ér̂ t́ĥán̂ 0"
@@ -513,7 +513,7 @@
     "message": "`<th>` êĺêḿêńt̂ś âńd̂ él̂ém̂én̂t́ŝ ẃît́ĥ `[role=\"columnheader\"/\"rowheader\"]` h́âv́ê d́ât́â ćêĺl̂ś t̂h́êý d̂éŝćr̂íb̂é."
   },
   "lighthouse-core/audits/accessibility/valid-lang.js | description": {
-    "message": "Ŝṕêćîf́ŷín̂ǵ â v́âĺîd́ [B̂ĆP̂ 47 ĺâńĝúâǵê](https://www.w3.org/International/questions/qa-choosing-language-tags#question) ón̂ él̂ém̂én̂t́ŝ h́êĺp̂ś êńŝúr̂é t̂h́ât́ t̂éx̂t́ îś p̂ŕôńôún̂ćêd́ ĉór̂ŕêćt̂ĺŷ b́ŷ á ŝćr̂éêń r̂éâd́êŕ. [L̂éâŕn̂ ḿôŕê áb̂óût́ l̂án̂ǵ ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/valid-lang)."
+    "message": "Ŝṕêćîf́ŷín̂ǵ â v́âĺîd́ [B̂ĆP̂ 47 ĺâńĝúâǵê](https://www.w3.org/International/questions/qa-choosing-language-tags#question) ón̂ él̂ém̂én̂t́ŝ h́êĺp̂ś êńŝúr̂é t̂h́ât́ t̂éx̂t́ îś p̂ŕôńôún̂ćêd́ ĉór̂ŕêćt̂ĺŷ b́ŷ á ŝćr̂éêń r̂éâd́êŕ. [L̂éâŕn̂ ḿôŕê áb̂óût́ `lang` ât́t̂ŕîb́ût́ê](https://dequeuniversity.com/rules/axe/4.4/valid-lang)."
   },
   "lighthouse-core/audits/accessibility/valid-lang.js | failureTitle": {
     "message": "`[lang]` ât́t̂ŕîb́ût́êś d̂ó n̂ót̂ h́âv́ê á v̂ál̂íd̂ v́âĺûé"
@@ -531,7 +531,7 @@
     "message": "`<video>` êĺêḿêńt̂ś ĉón̂t́âín̂ á `<track>` êĺêḿêńt̂ ẃît́ĥ `[kind=\"captions\"]`"
   },
   "lighthouse-core/audits/apple-touch-icon.js | description": {
-    "message": "F̂ór̂ íd̂éâĺ âṕp̂éâŕâńĉé ôń îÓŜ ẃĥén̂ úŝér̂ś âd́d̂ á p̂ŕôǵr̂éŝśîv́ê ẃêb́ âṕp̂ t́ô t́ĥé ĥóm̂é ŝćr̂éêń, d̂éf̂ín̂é âń `apple-touch-icon`. Ît́ m̂úŝt́ p̂óîńt̂ t́ô á n̂ón̂-t́r̂án̂śp̂ár̂én̂t́ 192p̂x́ (ôŕ 180p̂x́) ŝq́ûár̂é P̂ŃĜ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ áp̂ṕl̂é-t̂óûćĥ-íĉón̂](https://web.dev/apple-touch-icon/)."
+    "message": "F̂ór̂ íd̂éâĺ âṕp̂éâŕâńĉé ôń îÓŜ ẃĥén̂ úŝér̂ś âd́d̂ á p̂ŕôǵr̂éŝśîv́ê ẃêb́ âṕp̂ t́ô t́ĥé ĥóm̂é ŝćr̂éêń, d̂éf̂ín̂é âń `apple-touch-icon`. Ît́ m̂úŝt́ p̂óîńt̂ t́ô á n̂ón̂-t́r̂án̂śp̂ár̂én̂t́ 192p̂x́ (ôŕ 180p̂x́) ŝq́ûár̂é P̂ŃĜ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ `apple-touch-icon`](https://web.dev/apple-touch-icon/)."
   },
   "lighthouse-core/audits/apple-touch-icon.js | failureTitle": {
     "message": "D̂óêś n̂ót̂ ṕr̂óv̂íd̂é â v́âĺîd́ `apple-touch-icon`"
@@ -549,7 +549,7 @@
     "message": "Ŝúĝǵêśt̂éd̂ T́ôḱêń"
   },
   "lighthouse-core/audits/autocomplete.js | description": {
-    "message": "`autocomplete` ĥél̂ṕŝ úŝér̂ś ŝúb̂ḿît́ f̂ór̂ḿŝ q́ûíĉḱêŕ. T̂ó r̂éd̂úĉé ûśêŕ êf́f̂ór̂t́, ĉón̂śîd́êŕ êńâb́l̂ín̂ǵ b̂ý ŝét̂t́îńĝ t́ĥé `autocomplete` ât́t̂ŕîb́ût́ê t́ô á v̂ál̂íd̂ v́âĺûé. [L̂éâŕn̂ ḿôŕê áb̂óût́ âút̂óĉóm̂ṕl̂ét̂é îń f̂ór̂ḿŝ](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
+    "message": "`autocomplete` ĥél̂ṕŝ úŝér̂ś ŝúb̂ḿît́ f̂ór̂ḿŝ q́ûíĉḱêŕ. T̂ó r̂éd̂úĉé ûśêŕ êf́f̂ór̂t́, ĉón̂śîd́êŕ êńâb́l̂ín̂ǵ b̂ý ŝét̂t́îńĝ t́ĥé `autocomplete` ât́t̂ŕîb́ût́ê t́ô á v̂ál̂íd̂ v́âĺûé. [L̂éâŕn̂ ḿôŕê áb̂óût́ `autocomplete` îń f̂ór̂ḿŝ](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
   },
   "lighthouse-core/audits/autocomplete.js | failureTitle": {
     "message": "`<input>` êĺêḿêńt̂ś d̂ó n̂ót̂ h́âv́ê ćôŕr̂éĉt́ `autocomplete` ât́t̂ŕîb́ût́êś"
@@ -939,7 +939,7 @@
     "message": "N̂ó b̂ŕôẃŝér̂ ér̂ŕôŕŝ ĺôǵĝéd̂ t́ô t́ĥé ĉón̂śôĺê"
   },
   "lighthouse-core/audits/font-display.js | description": {
-    "message": "L̂év̂ér̂áĝé t̂h́ê f́ôńt̂-d́îśp̂ĺâý ĈŚŜ f́êát̂úr̂é t̂ó êńŝúr̂é t̂éx̂t́ îś ûśêŕ-v̂íŝíb̂ĺê ẃĥíl̂é ŵéb̂f́ôńt̂ś âŕê ĺôád̂ín̂ǵ. [L̂éâŕn̂ ḿôŕê áb̂óût́ f̂ón̂t́-d̂íŝṕl̂áŷ](https://web.dev/font-display/)."
+    "message": "L̂év̂ér̂áĝé t̂h́ê `font-display` ĆŜŚ f̂éât́ûŕê t́ô én̂śûŕê t́êx́t̂ íŝ úŝér̂-v́îśîb́l̂é ŵh́îĺê ẃêb́f̂ón̂t́ŝ ár̂é l̂óâd́îńĝ. [Ĺêár̂ń m̂ór̂é âb́ôút̂ `font-display`](https://web.dev/font-display/)."
   },
   "lighthouse-core/audits/font-display.js | failureTitle": {
     "message": "Êńŝúr̂é t̂éx̂t́ r̂ém̂áîńŝ v́îśîb́l̂é d̂úr̂ín̂ǵ ŵéb̂f́ôńt̂ ĺôád̂"
@@ -1368,7 +1368,7 @@
     "message": "D̂óĉúm̂én̂t́ ûśêś l̂éĝíb̂ĺê f́ôńt̂ śîźêś"
   },
   "lighthouse-core/audits/seo/hreflang.js | description": {
-    "message": "ĥŕêf́l̂án̂ǵ l̂ín̂ḱŝ t́êĺl̂ śêár̂ćĥ én̂ǵîńêś ŵh́ât́ v̂ér̂śîón̂ óf̂ á p̂áĝé t̂h́êý ŝh́ôúl̂d́ l̂íŝt́ îń ŝéâŕĉh́ r̂éŝúl̂t́ŝ f́ôŕ â ǵîv́êń l̂án̂ǵûáĝé ôŕ r̂éĝíôń. [L̂éâŕn̂ ḿôŕê áb̂óût́ ĥŕêf́l̂án̂ǵ](https://web.dev/hreflang/)."
+    "message": "ĥŕêf́l̂án̂ǵ l̂ín̂ḱŝ t́êĺl̂ śêár̂ćĥ én̂ǵîńêś ŵh́ât́ v̂ér̂śîón̂ óf̂ á p̂áĝé t̂h́êý ŝh́ôúl̂d́ l̂íŝt́ îń ŝéâŕĉh́ r̂éŝúl̂t́ŝ f́ôŕ â ǵîv́êń l̂án̂ǵûáĝé ôŕ r̂éĝíôń. [L̂éâŕn̂ ḿôŕê áb̂óût́ `hreflang`](https://web.dev/hreflang/)."
   },
   "lighthouse-core/audits/seo/hreflang.js | failureTitle": {
     "message": "D̂óĉúm̂én̂t́ d̂óêśn̂'t́ ĥáv̂é â v́âĺîd́ `hreflang`"
