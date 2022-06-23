@@ -389,7 +389,7 @@
           "apple-touch-icon": {
             "id": "apple-touch-icon",
             "title": "Does not provide a valid `apple-touch-icon`",
-            "description": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn more about apple-touch-icon](https://web.dev/apple-touch-icon/).",
+            "description": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn more about `apple-touch-icon`](https://web.dev/apple-touch-icon/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "warnings": []
@@ -652,7 +652,7 @@
           "font-display": {
             "id": "font-display",
             "title": "All text remains visible during webfont loads",
-            "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more about font-display](https://web.dev/font-display/).",
+            "description": "Leverage the `font-display` CSS feature to ensure text is user-visible while webfonts are loading. [Learn more about `font-display`](https://web.dev/font-display/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "warnings": [],
@@ -2446,7 +2446,7 @@
           "aria-hidden-focus": {
             "id": "aria-hidden-focus",
             "title": "`[aria-hidden=\"true\"]` elements do not contain focusable descendents",
-            "description": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how aria-hidden affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).",
+            "description": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how `aria-hidden` affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2465,14 +2465,14 @@
           "aria-meter-name": {
             "id": "aria-meter-name",
             "title": "ARIA `meter` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name meter elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `meter` elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "aria-progressbar-name": {
             "id": "aria-progressbar-name",
             "title": "ARIA `progressbar` elements have accessible names",
-            "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label progressbar elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name).",
+            "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label `progressbar` elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2524,14 +2524,14 @@
           "aria-tooltip-name": {
             "id": "aria-tooltip-name",
             "title": "ARIA `tooltip` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name tooltip elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `tooltip` elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "aria-treeitem-name": {
             "id": "aria-treeitem-name",
             "title": "ARIA `treeitem` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming treeitem elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2624,7 +2624,7 @@
           "duplicate-id-active": {
             "id": "duplicate-id-active",
             "title": "`[id]` attributes on active, focusable elements are unique",
-            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about id attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
+            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2664,7 +2664,7 @@
           "html-has-lang": {
             "id": "html-has-lang",
             "title": "`<html>` element has a `[lang]` attribute",
-            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
+            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2676,7 +2676,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2688,7 +2688,7 @@
           "image-alt": {
             "id": "image-alt",
             "title": "Image elements have `[alt]` attributes",
-            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about alt attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
+            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2774,14 +2774,14 @@
           "object-alt": {
             "id": "object-alt",
             "title": "`<object>` elements have alternate text",
-            "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for object elements](https://dequeuniversity.com/rules/axe/4.4/object-alt).",
+            "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.4/object-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "tabindex": {
             "id": "tabindex",
             "title": "No element has a `[tabindex]` value greater than 0",
-            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about tabindex attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
+            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2802,7 +2802,7 @@
           "valid-lang": {
             "id": "valid-lang",
             "title": "`[lang]` attributes have a valid value",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -3619,7 +3619,7 @@
           "hreflang": {
             "id": "hreflang",
             "title": "Document has a valid `hreflang`",
-            "description": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more about hreflang](https://web.dev/hreflang/).",
+            "description": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more about `hreflang`](https://web.dev/hreflang/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11154,7 +11154,7 @@
           "aria-hidden-focus": {
             "id": "aria-hidden-focus",
             "title": "`[aria-hidden=\"true\"]` elements do not contain focusable descendents",
-            "description": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how aria-hidden affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).",
+            "description": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how `aria-hidden` affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11173,14 +11173,14 @@
           "aria-meter-name": {
             "id": "aria-meter-name",
             "title": "ARIA `meter` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name meter elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `meter` elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "aria-progressbar-name": {
             "id": "aria-progressbar-name",
             "title": "ARIA `progressbar` elements have accessible names",
-            "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label progressbar elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name).",
+            "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label `progressbar` elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11232,14 +11232,14 @@
           "aria-tooltip-name": {
             "id": "aria-tooltip-name",
             "title": "ARIA `tooltip` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name tooltip elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `tooltip` elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "aria-treeitem-name": {
             "id": "aria-treeitem-name",
             "title": "ARIA `treeitem` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming treeitem elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11604,7 +11604,7 @@
           "duplicate-id-active": {
             "id": "duplicate-id-active",
             "title": "`[id]` attributes on active, focusable elements are unique",
-            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about id attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
+            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11644,7 +11644,7 @@
           "html-has-lang": {
             "id": "html-has-lang",
             "title": "`<html>` element has a `[lang]` attribute",
-            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
+            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11656,7 +11656,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11668,7 +11668,7 @@
           "image-alt": {
             "id": "image-alt",
             "title": "Image elements do not have `[alt]` attributes",
-            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about alt attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
+            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11834,14 +11834,14 @@
           "object-alt": {
             "id": "object-alt",
             "title": "`<object>` elements have alternate text",
-            "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for object elements](https://dequeuniversity.com/rules/axe/4.4/object-alt).",
+            "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.4/object-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "tabindex": {
             "id": "tabindex",
             "title": "No element has a `[tabindex]` value greater than 0",
-            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about tabindex attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
+            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11862,7 +11862,7 @@
           "valid-lang": {
             "id": "valid-lang",
             "title": "`[lang]` attributes have a valid value",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -14607,7 +14607,7 @@
           "apple-touch-icon": {
             "id": "apple-touch-icon",
             "title": "Does not provide a valid `apple-touch-icon`",
-            "description": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn more about apple-touch-icon](https://web.dev/apple-touch-icon/).",
+            "description": "For ideal appearance on iOS when users add a progressive web app to the home screen, define an `apple-touch-icon`. It must point to a non-transparent 192px (or 180px) square PNG. [Learn more about `apple-touch-icon`](https://web.dev/apple-touch-icon/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "warnings": []
@@ -14875,7 +14875,7 @@
           "font-display": {
             "id": "font-display",
             "title": "All text remains visible during webfont loads",
-            "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more about font-display](https://web.dev/font-display/).",
+            "description": "Leverage the `font-display` CSS feature to ensure text is user-visible while webfonts are loading. [Learn more about `font-display`](https://web.dev/font-display/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "warnings": [],
@@ -16495,7 +16495,7 @@
           "aria-hidden-focus": {
             "id": "aria-hidden-focus",
             "title": "`[aria-hidden=\"true\"]` elements do not contain focusable descendents",
-            "description": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how aria-hidden affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).",
+            "description": "Focusable descendents within an `[aria-hidden=\"true\"]` element prevent those interactive elements from being available to users of assistive technologies like screen readers. [Learn how `aria-hidden` affects focusable elements](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16514,14 +16514,14 @@
           "aria-meter-name": {
             "id": "aria-meter-name",
             "title": "ARIA `meter` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name meter elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `meter` elements](https://dequeuniversity.com/rules/axe/4.4/aria-meter-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "aria-progressbar-name": {
             "id": "aria-progressbar-name",
             "title": "ARIA `progressbar` elements have accessible names",
-            "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label progressbar elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name).",
+            "description": "When a `progressbar` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to label `progressbar` elements](https://dequeuniversity.com/rules/axe/4.4/aria-progressbar-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16573,14 +16573,14 @@
           "aria-tooltip-name": {
             "id": "aria-tooltip-name",
             "title": "ARIA `tooltip` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name tooltip elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn how to name `tooltip` elements](https://dequeuniversity.com/rules/axe/4.4/aria-tooltip-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "aria-treeitem-name": {
             "id": "aria-treeitem-name",
             "title": "ARIA `treeitem` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming treeitem elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
+            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16673,7 +16673,7 @@
           "duplicate-id-active": {
             "id": "duplicate-id-active",
             "title": "`[id]` attributes on active, focusable elements are unique",
-            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about id attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
+            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16713,7 +16713,7 @@
           "html-has-lang": {
             "id": "html-has-lang",
             "title": "`<html>` element has a `[lang]` attribute",
-            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
+            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16725,7 +16725,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16737,7 +16737,7 @@
           "image-alt": {
             "id": "image-alt",
             "title": "Image elements do not have `[alt]` attributes",
-            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about alt attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
+            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16865,14 +16865,14 @@
           "object-alt": {
             "id": "object-alt",
             "title": "`<object>` elements have alternate text",
-            "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for object elements](https://dequeuniversity.com/rules/axe/4.4/object-alt).",
+            "description": "Screen readers cannot translate non-text content. Adding alternate text to `<object>` elements helps screen readers convey meaning to users. [Learn more about alt text for `object` elements](https://dequeuniversity.com/rules/axe/4.4/object-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "tabindex": {
             "id": "tabindex",
             "title": "No element has a `[tabindex]` value greater than 0",
-            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about tabindex attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
+            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16893,7 +16893,7 @@
           "valid-lang": {
             "id": "valid-lang",
             "title": "`[lang]` attributes have a valid value",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about lang attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -17837,7 +17837,7 @@
           "hreflang": {
             "id": "hreflang",
             "title": "Document has a valid `hreflang`",
-            "description": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more about hreflang](https://web.dev/hreflang/).",
+            "description": "hreflang links tell search engines what version of a page they should list in search results for a given language or region. [Learn more about `hreflang`](https://web.dev/hreflang/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
