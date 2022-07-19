@@ -159,7 +159,7 @@
     "message": "`button`, `link`, and `menuitem` elements have accessible names"
   },
   "lighthouse-core/audits/accessibility/aria-hidden-body.js | description": {
-    "message": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how to make document body accessible](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body)."
+    "message": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how `aria-hidden` affects the document body](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body)."
   },
   "lighthouse-core/audits/accessibility/aria-hidden-body.js | failureTitle": {
     "message": "`[aria-hidden=\"true\"]` is present on the document `<body>`"
@@ -396,7 +396,7 @@
     "message": "`<html>` element has a `[lang]` attribute"
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | description": {
-    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
+    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | failureTitle": {
     "message": "`<html>` element does not have a valid value for its `[lang]` attribute."
@@ -414,7 +414,7 @@
     "message": "Image elements have `[alt]` attributes"
   },
   "lighthouse-core/audits/accessibility/input-image-alt.js | description": {
-    "message": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn how to make image input elements accessible](https://dequeuniversity.com/rules/axe/4.4/input-image-alt)."
+    "message": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn about input image alt text](https://dequeuniversity.com/rules/axe/4.4/input-image-alt)."
   },
   "lighthouse-core/audits/accessibility/input-image-alt.js | failureTitle": {
     "message": "`<input type=\"image\">` elements do not have `[alt]` text"
@@ -459,7 +459,7 @@
     "message": "List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements"
   },
   "lighthouse-core/audits/accessibility/meta-refresh.js | description": {
-    "message": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh)."
+    "message": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about the refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh)."
   },
   "lighthouse-core/audits/accessibility/meta-refresh.js | failureTitle": {
     "message": "The document uses `<meta http-equiv=\"refresh\">`"
@@ -468,7 +468,7 @@
     "message": "The document does not use `<meta http-equiv=\"refresh\">`"
   },
   "lighthouse-core/audits/accessibility/meta-viewport.js | description": {
-    "message": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport)."
+    "message": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about the viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport)."
   },
   "lighthouse-core/audits/accessibility/meta-viewport.js | failureTitle": {
     "message": "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than 5."
@@ -486,7 +486,7 @@
     "message": "`<object>` elements have alternate text"
   },
   "lighthouse-core/audits/accessibility/tabindex.js | description": {
-    "message": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex)."
+    "message": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex)."
   },
   "lighthouse-core/audits/accessibility/tabindex.js | failureTitle": {
     "message": "Some elements have a `[tabindex]` value greater than 0"
@@ -495,7 +495,7 @@
     "message": "No element has a `[tabindex]` value greater than 0"
   },
   "lighthouse-core/audits/accessibility/td-headers-attr.js | description": {
-    "message": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr)."
+    "message": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr)."
   },
   "lighthouse-core/audits/accessibility/td-headers-attr.js | failureTitle": {
     "message": "Cells in a `<table>` element that use the `[headers]` attribute refer to an element `id` not found within the same table."
@@ -597,7 +597,7 @@
     "message": "Remove duplicate modules in JavaScript bundles"
   },
   "lighthouse-core/audits/byte-efficiency/efficient-animated-content.js | description": {
-    "message": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient animation formats](https://web.dev/efficient-animated-content/)"
+    "message": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient video formats](https://web.dev/efficient-animated-content/)"
   },
   "lighthouse-core/audits/byte-efficiency/efficient-animated-content.js | title": {
     "message": "Use video formats for animated content"
@@ -732,7 +732,7 @@
     "message": "Severity"
   },
   "lighthouse-core/audits/csp-xss.js | description": {
-    "message": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use CSP to prevent XSS](https://web.dev/csp-xss/)"
+    "message": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use a CSP to prevent XSS](https://web.dev/csp-xss/)"
   },
   "lighthouse-core/audits/csp-xss.js | itemSeveritySyntax": {
     "message": "Syntax"
@@ -765,7 +765,7 @@
     "message": "Avoids deprecated APIs"
   },
   "lighthouse-core/audits/dobetterweb/charset.js | description": {
-    "message": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about character encoding declaration](https://web.dev/charset/)."
+    "message": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about declaring the character encoding](https://web.dev/charset/)."
   },
   "lighthouse-core/audits/dobetterweb/charset.js | failureTitle": {
     "message": "Charset declaration is missing or occurs too late in the HTML"
@@ -774,7 +774,7 @@
     "message": "Properly defines charset"
   },
   "lighthouse-core/audits/dobetterweb/doctype.js | description": {
-    "message": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about doctype declaration](https://web.dev/doctype/)."
+    "message": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about the doctype declaration](https://web.dev/doctype/)."
   },
   "lighthouse-core/audits/dobetterweb/doctype.js | explanationBadDoctype": {
     "message": "Doctype name must be the string `html`"
@@ -855,7 +855,7 @@
     "message": "Version"
   },
   "lighthouse-core/audits/dobetterweb/js-libraries.js | description": {
-    "message": "All front-end JavaScript libraries detected on the page. [Learn more about JavaScript library detection diagnostic audit](https://web.dev/js-libraries/)."
+    "message": "All front-end JavaScript libraries detected on the page. [Learn more about this JavaScript library detection diagnostic audit](https://web.dev/js-libraries/)."
   },
   "lighthouse-core/audits/dobetterweb/js-libraries.js | title": {
     "message": "Detected JavaScript libraries"
@@ -891,7 +891,7 @@
     "message": "Avoids front-end JavaScript libraries with known security vulnerabilities"
   },
   "lighthouse-core/audits/dobetterweb/notification-on-start.js | description": {
-    "message": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about notification permission](https://web.dev/notification-on-start/)."
+    "message": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about responsibly getting permission for notifications](https://web.dev/notification-on-start/)."
   },
   "lighthouse-core/audits/dobetterweb/notification-on-start.js | failureTitle": {
     "message": "Requests the notification permission on page load"
@@ -900,7 +900,7 @@
     "message": "Avoids requesting the notification permission on page load"
   },
   "lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | description": {
-    "message": "Preventing password pasting undermines good security policy. [Learn more about pasting into password fields](https://web.dev/password-inputs-can-be-pasted-into/)."
+    "message": "Preventing password pasting undermines good security policy. [Learn more about user-friendly password fields](https://web.dev/password-inputs-can-be-pasted-into/)."
   },
   "lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | failureTitle": {
     "message": "Prevents users to paste into password fields"
@@ -921,7 +921,7 @@
     "message": "Use HTTP/2"
   },
   "lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js | description": {
-    "message": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about passive listeners](https://web.dev/uses-passive-event-listeners/)."
+    "message": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about adopting passive event listeners](https://web.dev/uses-passive-event-listeners/)."
   },
   "lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js | failureTitle": {
     "message": "Does not use passive listeners to improve scrolling performance"
@@ -930,7 +930,7 @@
     "message": "Uses passive listeners to improve scrolling performance"
   },
   "lighthouse-core/audits/errors-in-console.js | description": {
-    "message": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about errors in console](https://web.dev/errors-in-console/)"
+    "message": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://web.dev/errors-in-console/)"
   },
   "lighthouse-core/audits/errors-in-console.js | failureTitle": {
     "message": "Browser errors were logged to the console"
@@ -975,7 +975,7 @@
     "message": "Expected size"
   },
   "lighthouse-core/audits/image-size-responsive.js | description": {
-    "message": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn more about responsive images](https://web.dev/serve-responsive-images/)."
+    "message": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn how to provide responsive images](https://web.dev/serve-responsive-images/)."
   },
   "lighthouse-core/audits/image-size-responsive.js | failureTitle": {
     "message": "Serves images with low resolution"
@@ -1116,7 +1116,7 @@
     "message": "Allowed with warning"
   },
   "lighthouse-core/audits/largest-contentful-paint-element.js | description": {
-    "message": "This is the largest contentful element painted within the viewport. [Learn more about Largest Contentful Paint element](https://web.dev/lighthouse-largest-contentful-paint/)"
+    "message": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://web.dev/lighthouse-largest-contentful-paint/)"
   },
   "lighthouse-core/audits/largest-contentful-paint-element.js | title": {
     "message": "Largest Contentful Paint element"
@@ -1161,13 +1161,13 @@
     "message": "Minimizes main-thread work"
   },
   "lighthouse-core/audits/manual/pwa-cross-browser.js | description": {
-    "message": "To reach the most number of users, sites should work across every major browser. [Learn how to make sites work across browsers](https://web.dev/pwa-cross-browser/)."
+    "message": "To reach the most number of users, sites should work across every major browser. [Learn about cross-browser compatibility](https://web.dev/pwa-cross-browser/)."
   },
   "lighthouse-core/audits/manual/pwa-cross-browser.js | title": {
     "message": "Site works cross-browser"
   },
   "lighthouse-core/audits/manual/pwa-each-page-has-url.js | description": {
-    "message": "Ensure individual pages are deep linkable via URL and that URLs are unique for the purpose of shareability on social media. [Learn more about deep links](https://web.dev/pwa-each-page-has-url/)."
+    "message": "Ensure individual pages are deep linkable via URL and that URLs are unique for the purpose of shareability on social media. [Learn more about providing deep links](https://web.dev/pwa-each-page-has-url/)."
   },
   "lighthouse-core/audits/manual/pwa-each-page-has-url.js | title": {
     "message": "Each page has a URL"
@@ -1179,7 +1179,7 @@
     "message": "Page transitions don't feel like they block on the network"
   },
   "lighthouse-core/audits/maskable-icon.js | description": {
-    "message": "A maskable icon ensures that the image fills the entire shape without being letterboxed when installing the app on a device. [Learn more about maskable icons](https://web.dev/maskable-icon-audit/)."
+    "message": "A maskable icon ensures that the image fills the entire shape without being letterboxed when installing the app on a device. [Learn about maskable manifest icons](https://web.dev/maskable-icon-audit/)."
   },
   "lighthouse-core/audits/maskable-icon.js | failureTitle": {
     "message": "Manifest doesn't have a maskable icon"
@@ -1188,40 +1188,40 @@
     "message": "Manifest has a maskable icon"
   },
   "lighthouse-core/audits/metrics/cumulative-layout-shift.js | description": {
-    "message": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about Cumulative Layout Shift metric](https://web.dev/cls/)."
+    "message": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/cls/)."
   },
   "lighthouse-core/audits/metrics/experimental-interaction-to-next-paint.js | description": {
-    "message": "Interaction to Next Paint measures page responsiveness, how long it takes the page to visibly respond to user input. [Learn more about Interaction to Next Paint metric](https://web.dev/inp/)."
+    "message": "Interaction to Next Paint measures page responsiveness, how long it takes the page to visibly respond to user input. [Learn more about the Interaction to Next Paint metric](https://web.dev/inp/)."
   },
   "lighthouse-core/audits/metrics/first-contentful-paint.js | description": {
-    "message": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about First Contentful Paint metric](https://web.dev/first-contentful-paint/)."
+    "message": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://web.dev/first-contentful-paint/)."
   },
   "lighthouse-core/audits/metrics/first-meaningful-paint.js | description": {
-    "message": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about First Meaningful Paint metric](https://web.dev/first-meaningful-paint/)."
+    "message": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about the First Meaningful Paint metric](https://web.dev/first-meaningful-paint/)."
   },
   "lighthouse-core/audits/metrics/interactive.js | description": {
-    "message": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about Time to Interactive metric](https://web.dev/interactive/)."
+    "message": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://web.dev/interactive/)."
   },
   "lighthouse-core/audits/metrics/largest-contentful-paint.js | description": {
-    "message": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about Largest Contentful Paint metric](https://web.dev/lighthouse-largest-contentful-paint/)"
+    "message": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://web.dev/lighthouse-largest-contentful-paint/)"
   },
   "lighthouse-core/audits/metrics/max-potential-fid.js | description": {
-    "message": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about Maximum Potential First Input Delay metric](https://web.dev/lighthouse-max-potential-fid/)."
+    "message": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://web.dev/lighthouse-max-potential-fid/)."
   },
   "lighthouse-core/audits/metrics/speed-index.js | description": {
-    "message": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about Speed Index metric](https://web.dev/speed-index/)."
+    "message": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://web.dev/speed-index/)."
   },
   "lighthouse-core/audits/metrics/total-blocking-time.js | description": {
-    "message": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/)."
+    "message": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/)."
   },
   "lighthouse-core/audits/network-rtt.js | description": {
-    "message": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about Network Round Trip Times](https://hpbn.co/primer-on-latency-and-bandwidth/)."
+    "message": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about the Round Trip Time](https://hpbn.co/primer-on-latency-and-bandwidth/)."
   },
   "lighthouse-core/audits/network-rtt.js | title": {
     "message": "Network Round Trip Times"
   },
   "lighthouse-core/audits/network-server-latency.js | description": {
-    "message": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server latencies](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)."
+    "message": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server response time](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)."
   },
   "lighthouse-core/audits/network-server-latency.js | title": {
     "message": "Server Backend Latencies"
@@ -1236,7 +1236,7 @@
     "message": "Avoids `unload` event listeners"
   },
   "lighthouse-core/audits/non-composited-animations.js | description": {
-    "message": "Animations which are not composited can be janky and increase CLS. [Learn more about non-composited animations](https://web.dev/non-composited-animations)"
+    "message": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://web.dev/non-composited-animations)"
   },
   "lighthouse-core/audits/non-composited-animations.js | displayValue": {
     "message": "{itemCount, plural,\n  =1 {# animated element found}\n  other {# animated elements found}\n  }"
@@ -1302,7 +1302,7 @@
     "message": "Keep request counts low and transfer sizes small"
   },
   "lighthouse-core/audits/seo/canonical.js | description": {
-    "message": "Canonical links suggest which URL to show in search results. [Learn more about Canonical links](https://web.dev/canonical/)."
+    "message": "Canonical links suggest which URL to show in search results. [Learn more about canonical links](https://web.dev/canonical/)."
   },
   "lighthouse-core/audits/seo/canonical.js | explanationConflict": {
     "message": "Multiple conflicting URLs ({urlList})"
@@ -1419,7 +1419,7 @@
     "message": "Structured data is valid"
   },
   "lighthouse-core/audits/seo/meta-description.js | description": {
-    "message": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about meta description](https://web.dev/meta-description/)."
+    "message": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://web.dev/meta-description/)."
   },
   "lighthouse-core/audits/seo/meta-description.js | explanation": {
     "message": "Description text is empty."
@@ -1431,7 +1431,7 @@
     "message": "Document has a meta description"
   },
   "lighthouse-core/audits/seo/plugins.js | description": {
-    "message": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about plugins](https://web.dev/plugins/)."
+    "message": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://web.dev/plugins/)."
   },
   "lighthouse-core/audits/seo/plugins.js | failureTitle": {
     "message": "Document uses plugins"
@@ -1479,7 +1479,7 @@
     "message": "Tap targets are sized appropriately"
   },
   "lighthouse-core/audits/server-response-time.js | description": {
-    "message": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about Time to First Byte metric](https://web.dev/time-to-first-byte/)."
+    "message": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://web.dev/time-to-first-byte/)."
   },
   "lighthouse-core/audits/server-response-time.js | displayValue": {
     "message": "Root document took {timeInMs, number, milliseconds} ms"
@@ -1584,7 +1584,7 @@
     "message": "Timing budget"
   },
   "lighthouse-core/audits/unsized-images.js | description": {
-    "message": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)"
+    "message": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)"
   },
   "lighthouse-core/audits/unsized-images.js | failureTitle": {
     "message": "Image elements do not have explicit `width` and `height`"
@@ -1647,7 +1647,7 @@
     "message": "Page has valid source maps"
   },
   "lighthouse-core/audits/viewport.js | description": {
-    "message": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about viewport meta tag](https://web.dev/viewport/)."
+    "message": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about using the viewport meta tag](https://web.dev/viewport/)."
   },
   "lighthouse-core/audits/viewport.js | explanationNoTag": {
     "message": "No `<meta name=\"viewport\">` tag found"
@@ -1659,7 +1659,7 @@
     "message": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`"
   },
   "lighthouse-core/audits/work-during-interaction.js | description": {
-    "message": "This is the thread-blocking work occurring during the Interaction to Next Paint measurement. [Learn more about Interaction to Next Paint metric](https://web.dev/inp/)."
+    "message": "This is the thread-blocking work occurring during the Interaction to Next Paint measurement. [Learn more about the Interaction to Next Paint metric](https://web.dev/inp/)."
   },
   "lighthouse-core/audits/work-during-interaction.js | displayValue": {
     "message": "{timeInMs, number, milliseconds} ms spent on event '{interactionType}'"
