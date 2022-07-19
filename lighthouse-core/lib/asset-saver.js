@@ -5,17 +5,20 @@
  */
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const log = require('lighthouse-logger');
-const stream = require('stream');
-const {promisify} = require('util');
-const Simulator = require('./dependency-graph/simulator/simulator.js');
-const lanternTraceSaver = require('./lantern-trace-saver.js');
-const Metrics = require('./traces/pwmetrics-events.js');
-const NetworkAnalysisComputed = require('../computed/network-analysis.js');
-const LoadSimulatorComputed = require('../computed/load-simulator.js');
-const LHError = require('../lib/lh-error.js');
+import fs from 'fs';
+import path from 'path';
+import log from 'lighthouse-logger';
+import stream from 'stream';
+import util from 'util';
+import {Simulator} from './dependency-graph/simulator/simulator.js';
+import lanternTraceSaver from './lantern-trace-saver.js';
+import {Metrics} from './traces/pwmetrics-events.js';
+import NetworkAnalysisComputed from '../computed/network-analysis.js';
+import LoadSimulatorComputed from '../computed/load-simulator.js';
+import {LighthouseError} from '../lib/lh-error.js';
+
+const {promisify} = util;
+
 // TODO(esmodules): Rollup does not support `promisfy` or `stream.pipeline`. Bundled files
 // don't need anything in this file except for `stringifyReplacer`, so a check for
 // truthiness before using is enough.
@@ -48,10 +51,10 @@ function loadArtifacts(basePath) {
     throw new Error('No saved artifacts found at ' + basePath);
   }
 
-  // load artifacts.json using a reviver to deserialize any LHErrors in artifacts.
+  // load artifacts.json using a reviver to deserialize any LighthouseErrors in artifacts.
   const artifactsStr = fs.readFileSync(path.join(basePath, artifactsFilename), 'utf8');
   /** @type {LH.Artifacts} */
-  const artifacts = JSON.parse(artifactsStr, LHError.parseReviver);
+  const artifacts = JSON.parse(artifactsStr, LighthouseError.parseReviver);
 
   const filenames = fs.readdirSync(basePath);
 
@@ -87,9 +90,9 @@ function loadArtifacts(basePath) {
  * @param {any} value
  */
 function stringifyReplacer(key, value) {
-  // Currently only handle LHError and other Error types.
+  // Currently only handle LighthouseError and other Error types.
   if (value instanceof Error) {
-    return LHError.stringifyReplacer(value);
+    return LighthouseError.stringifyReplacer(value);
   }
 
   return value;
@@ -128,7 +131,7 @@ async function saveArtifacts(artifacts, basePath) {
     await saveDevtoolsLog(devtoolsLog, `${basePath}/${passName}${devtoolsLogSuffix}`);
   }
 
-  // save everything else, using a replacer to serialize LHErrors in the artifacts.
+  // save everything else, using a replacer to serialize LighthouseErrors in the artifacts.
   const restArtifactsString = JSON.stringify(restArtifacts, stringifyReplacer, 2) + '\n';
   fs.writeFileSync(`${basePath}/${artifactsFilename}`, restArtifactsString, 'utf8');
   log.log('Artifacts saved to disk in folder:', basePath);
@@ -326,7 +329,7 @@ function normalizeTimingEntries(timings) {
   }
 }
 
-module.exports = {
+export {
   saveArtifacts,
   saveLhr,
   loadArtifacts,

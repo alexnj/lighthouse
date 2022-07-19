@@ -4,12 +4,12 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {jest} from '@jest/globals';
+import * as td from 'testdouble';
 
 import {createMockSession, createMockDriver} from '../../fraggle-rock/gather/mock-driver.js';
-import {flushAllTimersAndMicrotasks, fnAny} from '../../test-utils.js';
+import {flushAllTimersAndMicrotasks, fnAny, timers} from '../../test-utils.js';
 // import prepare from '../../../gather/driver/prepare.js';
-import constants from '../../../config/constants.js';
+import * as constants from '../../../config/constants.js';
 
 // Some imports needs to be done dynamically, so that their dependencies will be mocked.
 // See: https://jestjs.io/docs/ecmascript-modules#differences-between-esm-and-commonjs
@@ -17,7 +17,7 @@ import constants from '../../../config/constants.js';
 /** @type {import('../../../gather/driver/prepare.js')} */
 let prepare;
 
-beforeAll(async () => {
+before(async () => {
   prepare = (await import('../../../gather/driver/prepare.js'));
 });
 
@@ -26,7 +26,7 @@ const storageMock = {
   clearBrowserCaches: fnAny(),
   getImportantStorageWarning: fnAny(),
 };
-jest.mock('../../../gather/driver/storage.js', () => storageMock);
+await td.replaceEsm('../../../gather/driver/storage.js', storageMock);
 
 const url = 'https://example.com';
 let sessionMock = createMockSession();
@@ -38,13 +38,13 @@ beforeEach(() => {
     .mockResponse('Emulation.setCPUThrottlingRate')
     .mockResponse('Network.setBlockedURLs')
     .mockResponse('Network.setExtraHTTPHeaders');
-  storageMock.clearBrowserCaches = fnAny();
-  storageMock.clearDataForOrigin = fnAny();
-  storageMock.getImportantStorageWarning = fnAny();
+  storageMock.clearDataForOrigin.mockReset();
+  storageMock.clearBrowserCaches.mockReset();
+  storageMock.getImportantStorageWarning.mockReset();
 });
 
 afterEach(() => {
-  jest.useRealTimers();
+  timers.useRealTimers();
 });
 
 describe('.prepareThrottlingAndNetwork()', () => {
@@ -269,7 +269,7 @@ describe('.prepareTargetForNavigationMode()', () => {
   });
 
   it('enables async stacks on every main frame navigation', async () => {
-    jest.useFakeTimers();
+    timers.useFakeTimers();
 
     sessionMock.sendCommand
       .mockResponse('Debugger.enable')
@@ -335,7 +335,7 @@ describe('.prepareTargetForNavigationMode()', () => {
   });
 
   it('handle javascript dialogs automatically', async () => {
-    jest.useFakeTimers();
+    timers.useFakeTimers();
 
     sessionMock.sendCommand.mockResponse('Page.handleJavaScriptDialog');
     sessionMock.on.mockEvent('Page.javascriptDialogOpening', {type: 'confirm'});

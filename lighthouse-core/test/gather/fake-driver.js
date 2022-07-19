@@ -4,8 +4,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {readJson} from '../../../root.js';
-import {fnAny} from '../test-utils.js';
+import {fnAny, readJson} from '../test-utils.js';
 
 /**
  * @param {{protocolGetVersionResponse: LH.CrdpCommands['Browser.getVersion']['returnType']}} param0
@@ -95,7 +94,6 @@ const protocolGetVersionResponse = {
   userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3577.0 Safari/537.36',
   jsVersion: '7.1.314',
 };
-const fakeDriver = makeFakeDriver({protocolGetVersionResponse});
 
 const fakeDriverUsingRealMobileDevice = makeFakeDriver({
   protocolGetVersionResponse: {
@@ -106,8 +104,8 @@ const fakeDriverUsingRealMobileDevice = makeFakeDriver({
 });
 
 // TODO(esmodules): fix awkward export.
-export default {
-  ...fakeDriver,
+export const fakeDriver = {
+  ...makeFakeDriver({protocolGetVersionResponse}),
   fakeDriverUsingRealMobileDevice,
   protocolGetVersionResponse,
 };

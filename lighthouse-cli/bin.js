@@ -20,7 +20,6 @@
 import fs from 'fs';
 import path from 'path';
 import url from 'url';
-import module from 'module';
 
 import log from 'lighthouse-logger';
 
@@ -28,15 +27,13 @@ import * as commands from './commands/commands.js';
 import * as Printer from './printer.js';
 import {getFlags} from './cli-flags.js';
 import {runLighthouse} from './run.js';
-import lighthouse from '../lighthouse-core/index.js';
+import {generateConfig, generateLegacyConfig} from '../lighthouse-core/index.js';
 import {askPermission} from './sentry-prompt.js';
 import {LH_ROOT} from '../root.js';
+import {Sentry} from '../lighthouse-core/lib/sentry.js';
+import {getConfigDisplayString} from '../lighthouse-core/fraggle-rock/config/config.js';
 
 const pkg = JSON.parse(fs.readFileSync(LH_ROOT + '/package.json', 'utf-8'));
-
-// TODO(esmodules): use regular import when this file is esm.
-const require = module.createRequire(import.meta.url);
-const Sentry = require('../lighthouse-core/lib/sentry.js');
 
 /**
  * @return {boolean}
@@ -120,8 +117,13 @@ async function begin() {
   }
 
   if (cliFlags.printConfig) {
-    const config = await lighthouse.generateConfig(configJson, cliFlags);
-    process.stdout.write(config.getPrintString());
+    if (cliFlags.legacyNavigation) {
+      const config = await generateLegacyConfig(configJson, cliFlags);
+      process.stdout.write(config.getPrintString());
+    } else {
+      const config = await generateConfig(configJson, cliFlags);
+      process.stdout.write(getConfigDisplayString(config));
+    }
     return;
   }
 
@@ -132,7 +134,7 @@ async function begin() {
     cliFlags.enableErrorReporting = await askPermission();
   }
   if (cliFlags.enableErrorReporting) {
-    Sentry.init({
+    await Sentry.init({
       url: urlUnderTest,
       flags: cliFlags,
       environmentData: {

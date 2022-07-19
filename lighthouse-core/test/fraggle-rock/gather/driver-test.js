@@ -4,8 +4,9 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import Driver from '../../../fraggle-rock/gather/driver.js';
+import {Driver} from '../../../fraggle-rock/gather/driver.js';
 import {fnAny} from '../../test-utils.js';
+import {createMockCdpSession} from './mock-driver.js';
 
 /** @type {Array<keyof LH.Gatherer.FRProtocolSession>} */
 const DELEGATED_FUNCTIONS = [
@@ -19,20 +20,22 @@ const DELEGATED_FUNCTIONS = [
 
 /** @type {LH.Puppeteer.Page} */
 let page;
-/** @type {LH.Puppeteer.Target} */
-let pageTarget;
-/** @type {LH.Puppeteer.CDPSession} */
-let puppeteerSession;
 /** @type {Driver} */
 let driver;
 
 beforeEach(() => {
+  const puppeteerSession = createMockCdpSession();
+  puppeteerSession.send
+      .mockResponse('Page.enable')
+      .mockResponse('Target.getTargetInfo', {targetInfo: {type: 'page', targetId: 'page'}})
+      .mockResponse('Network.enable')
+      .mockResponse('Target.setAutoAttach')
+      .mockResponse('Runtime.runIfWaitingForDebugger');
+
+  const pageTarget = {createCDPSession: () => puppeteerSession};
+
   // @ts-expect-error - Individual mock functions are applied as necessary.
   page = {target: () => pageTarget, url: fnAny()};
-  // @ts-expect-error - Individual mock functions are applied as necessary.
-  pageTarget = {createCDPSession: () => puppeteerSession};
-  // @ts-expect-error - Individual mock functions are applied as necessary.
-  puppeteerSession = {on: fnAny(), off: fnAny(), send: fnAny(), emit: fnAny()};
   driver = new Driver(page);
 });
 

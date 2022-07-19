@@ -4,12 +4,11 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {jest} from '@jest/globals';
+import jestMock from 'jest-mock';
 
-import {readJson} from '../../../root.js';
 import MetricsAudit from '../../audits/metrics.js';
 import TTIComputed from '../../computed/metrics/interactive.js';
-import {getURLArtifactFromDevtoolsLog} from '../test-utils.js';
+import {getURLArtifactFromDevtoolsLog, readJson} from '../test-utils.js';
 
 const pwaTrace = readJson('../fixtures/traces/progressive-app-m60.json', import.meta);
 const pwaDevtoolsLog = readJson('../fixtures/traces/progressive-app-m60.devtools.log.json', import.meta);
@@ -159,7 +158,7 @@ describe('Performance: metrics', () => {
       },
     };
 
-    const mockTTIFn = jest.spyOn(TTIComputed, 'request');
+    const mockTTIFn = jestMock.spyOn(TTIComputed, 'request');
     mockTTIFn.mockRejectedValueOnce(new Error('TTI failed'));
     const context = {settings: {throttlingMethod: 'simulate'}, computedCache: new Map()};
     const result = await MetricsAudit.audit(artifacts, context);

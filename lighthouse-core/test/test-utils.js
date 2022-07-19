@@ -5,13 +5,18 @@
  */
 
 import fs from 'fs';
+import path from 'path';
+import url from 'url';
 import {createRequire} from 'module';
 
-import {jest} from '@jest/globals';
+import * as td from 'testdouble';
+import jestMock from 'jest-mock';
 
 import {LH_ROOT} from '../../root.js';
 import * as mockCommands from './gather/mock-commands.js';
-import NetworkRecorder from '../lib/network-recorder.js';
+import {NetworkRecorder} from '../lib/network-recorder.js';
+import {timers} from './test-env/fake-timers.js';
+import {getModuleDirectory} from '../../esm-utils.js';
 
 const require = createRequire(import.meta.url);
 
@@ -167,7 +172,7 @@ function createDecomposedPromise() {
  */
 async function flushAllTimersAndMicrotasks(ms = 1000) {
   for (let i = 0; i < ms; i++) {
-    jest.advanceTimersByTime(1);
+    timers.advanceTimersByTime(1);
     await Promise.resolve();
   }
 }
@@ -176,47 +181,48 @@ async function flushAllTimersAndMicrotasks(ms = 1000) {
  * Mocks gatherers for BaseArtifacts that tests for components using GatherRunner
  * shouldn't concern themselves about.
  */
-function makeMocksForGatherRunner() {
-  jest.mock(require.resolve('../gather/driver/environment.js'), () => ({
+async function makeMocksForGatherRunner() {
+  await td.replaceEsm(require.resolve('../gather/driver/environment.js'), {
     getBenchmarkIndex: () => Promise.resolve(150),
     getBrowserVersion: async () => ({userAgent: 'Chrome', milestone: 80}),
     getEnvironmentWarnings: () => [],
-  }));
-  jest.mock(require.resolve('../gather/gatherers/stacks.js'),
-    () => ({collectStacks: () => Promise.resolve([])}));
-  jest.mock(require.resolve('../gather/gatherers/installability-errors.js'), () => ({
+  });
+  await td.replaceEsm(require.resolve('../gather/gatherers/stacks.js'), undefined, {
+    collectStacks: () => Promise.resolve([]),
+  });
+  await td.replaceEsm(require.resolve('../gather/gatherers/installability-errors.js'), undefined, {
     getInstallabilityErrors: async () => ({errors: []}),
-  }));
-  jest.mock(require.resolve('../gather/gatherers/web-app-manifest.js'), () => ({
+  });
+  await td.replaceEsm(require.resolve('../gather/gatherers/web-app-manifest.js'), undefined, {
     getWebAppManifest: async () => null,
-  }));
-  jest.mock(require.resolve('../lib/emulation.js'), () => ({
-    emulate: jest.fn(),
-    throttle: jest.fn(),
-    clearThrottling: jest.fn(),
-  }));
-  jest.mock(require.resolve('../gather/driver/prepare.js'), () => ({
-    prepareTargetForNavigationMode: jest.fn(),
-    prepareTargetForIndividualNavigation: jest.fn().mockResolvedValue({warnings: []}),
-  }));
-  jest.mock(require.resolve('../gather/driver/storage.js'), () => ({
-    clearDataForOrigin: jest.fn(),
-    cleanBrowserCaches: jest.fn(),
-    getImportantStorageWarning: jest.fn(),
-  }));
-  jest.mock(require.resolve('../gather/driver/navigation.js'), () => ({
-    gotoURL: jest.fn().mockResolvedValue({
+  });
+  await td.replaceEsm(require.resolve('../lib/emulation.js'), {
+    emulate: jestMock.fn(),
+    throttle: jestMock.fn(),
+    clearThrottling: jestMock.fn(),
+  });
+  await td.replaceEsm(require.resolve('../gather/driver/prepare.js'), {
+    prepareTargetForNavigationMode: jestMock.fn(),
+    prepareTargetForIndividualNavigation: jestMock.fn().mockResolvedValue({warnings: []}),
+  });
+  await td.replaceEsm(require.resolve('../gather/driver/storage.js'), {
+    clearDataForOrigin: jestMock.fn(),
+    cleanBrowserCaches: jestMock.fn(),
+    getImportantStorageWarning: jestMock.fn(),
+  });
+  await td.replaceEsm(require.resolve('../gather/driver/navigation.js'), {
+    gotoURL: jestMock.fn().mockResolvedValue({
       mainDocumentUrl: 'http://example.com',
       warnings: [],
     }),
-  }));
+  });
 }
 
 /**
- * Same as jest.fn(), but uses `any` instead of `unknown`.
+ * Same as jestMock.fn(), but uses `any` instead of `unknown`.
  */
 const fnAny = () => {
-  return /** @type {jest.Mock<any, any>} */ (jest.fn());
+  return /** @type {Mock<any, any>} */ (jestMock.fn());
 };
 
 /**
@@ -266,7 +272,61 @@ function getURLArtifactFromDevtoolsLog(devtoolsLog) {
   return {initialUrl: 'about:blank', requestedUrl, mainDocumentUrl, finalUrl: mainDocumentUrl};
 }
 
+/**
+ * Use to import a module in tests with Mock types.
+ * Asserts that the module is actually a mock.
+ * Resolves module path relative to importMeta.url.
+ *
+ * @param {string} modulePath
+ * @param {ImportMeta} importMeta
+ * @return {Promise<Record<string, Mock<any, any>>>}
+ */
+async function importMock(modulePath, importMeta) {
+  const dir = path.dirname(url.fileURLToPath(importMeta.url));
+  modulePath = path.resolve(dir, modulePath);
+  const mock = await import(modulePath);
+  if (!Object.keys(mock).some(key => mock[key]?.mock)) {
+    throw new Error(`${modulePath} was not mocked!`);
+  }
+  return mock;
+}
+
+/**
+ * Same as importMock, but uses require instead to avoid
+ * an unnecessary `.default` or Promise return value.
+ *
+ * @param {string} modulePath
+ * @param {ImportMeta} importMeta
+ * @return {Record<string, Mock<any, any>>}
+ */
+function requireMock(modulePath, importMeta) {
+  const dir = path.dirname(url.fileURLToPath(importMeta.url));
+  modulePath = path.resolve(dir, modulePath);
+  const mock = require(modulePath);
+  if (!Object.keys(mock).some(key => mock[key]?.mock)) {
+    throw new Error(`${modulePath} was not mocked!`);
+  }
+  return mock;
+}
+
+/**
+ * Return parsed json object.
+ * Resolves path relative to importMeta.url (if provided) or LH_ROOT (if not provided).
+ *
+ * Note: Do not use this in lighthouse-core/ outside tests or scripts, as it
+ * will not be inlined when bundled. Instead, use `fs.readFileSync`.
+ *
+ * @param {string} filePath Can be an absolute or relative path.
+ * @param {ImportMeta=} importMeta
+ */
+function readJson(filePath, importMeta) {
+  const dir = importMeta ? getModuleDirectory(importMeta) : LH_ROOT;
+  filePath = path.resolve(dir, filePath);
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
 export {
+  timers,
   getProtoRoundTrip,
   loadSourceMapFixture,
   loadSourceMapAndUsageFixture,
@@ -279,4 +339,7 @@ export {
   mockCommands,
   createScript,
   getURLArtifactFromDevtoolsLog,
+  importMock,
+  requireMock,
+  readJson,
 };

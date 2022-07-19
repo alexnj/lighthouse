@@ -135,10 +135,10 @@ async function begin() {
         default: false,
         describe: 'Save test artifacts and output verbose logs',
       },
-      'fraggle-rock': {
+      'legacy-navigation': {
         type: 'boolean',
         default: false,
-        describe: 'Use the new Fraggle Rock runner',
+        describe: 'Use the legacy navigation runner',
       },
       'jobs': {
         type: 'number',
@@ -184,7 +184,7 @@ async function begin() {
   if (argv.runner === 'bundle') {
     console.log('\n✨ Be sure to have recently run this: yarn build-all');
   }
-  const {runLighthouse} = await import(runnerPath);
+  const {runLighthouse, setup} = await import(runnerPath);
   runLighthouse.runnerName = argv.runner;
 
   // Find test definition file and filter by requestedTestIds.
@@ -206,8 +206,8 @@ async function begin() {
     // If running the core tests, spin up the test server.
     if (testDefnPath === coreTestDefnsPath) {
       ({server, serverForOffline} = await import('../../fixtures/static-server.js'));
-      server.listen(10200, 'localhost');
-      serverForOffline.listen(10503, 'localhost');
+      await server.listen(10200, 'localhost');
+      await serverForOffline.listen(10503, 'localhost');
       takeNetworkRequestUrls = server.takeRequestUrls.bind(server);
     }
 
@@ -216,9 +216,10 @@ async function begin() {
       jobs,
       retries,
       isDebug: argv.debug,
-      useFraggleRock: argv.fraggleRock,
+      useLegacyNavigation: argv.legacyNavigation,
       lighthouseRunner: runLighthouse,
       takeNetworkRequestUrls,
+      setup,
     };
 
     smokehouseResult = (await runSmokehouse(prunedTestDefns, options));

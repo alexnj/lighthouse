@@ -9,9 +9,10 @@ import fs from 'fs';
 import path from 'path';
 
 import PredictivePerf from '../../audits/predictive-perf.js';
-import Simulator from '../../lib/dependency-graph/simulator/simulator.js';
+import {Simulator} from '../../lib/dependency-graph/simulator/simulator.js';
 import traceSaver from '../../lib/lantern-trace-saver.js';
-import {LH_ROOT, readJson} from '../../../root.js';
+import {LH_ROOT} from '../../../root.js';
+import {readJson} from '../../test/test-utils.js';
 
 if (process.argv.length !== 4) throw new Error('Usage $0 <trace file> <devtools file>');
 

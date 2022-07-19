@@ -13,12 +13,15 @@
   ],
   "include": [
     "root.js",
+    "esm-utils.js",
     "lighthouse-cli/**/*.js",
     "lighthouse-core/**/*.js",
+    "lighthouse-core/index.cjs",
+    "lighthouse-core/util.cjs",
     "clients/**/*.js",
     "build/**/*.js",
     "./types/**/*.d.ts",
-    "eslint-local-rules.js",
+    "eslint-local-rules.cjs",
     "third-party/axe/valid-langs.js",
 
     // TODO(esmodules): JSON files included via resolveJsonModule. Removable on the switch to ES Modules.
@@ -30,7 +33,6 @@
     "third-party/snyk/snapshot.json",
     "lighthouse-core/audits/byte-efficiency/polyfill-graph-data.json",
     "shared/localization/locales/en-US.json",
-    "esm-utils.mjs",
   ],
   "exclude": [
     "lighthouse-core/test/audits/**/*.js",
@@ -39,7 +41,6 @@
     "clients/test/**/*.js",
     "lighthouse-cli/test/fixtures/**/*.js",
     "lighthouse-core/scripts/legacy-javascript/variants",
-    "lighthouse-core/test/chromium-web-tests/webtests",
     // These test files require further changes before they can be type checked.
     "lighthouse-core/test/config/budget-test.js",
     "lighthouse-core/test/config/config-helpers-test.js",
