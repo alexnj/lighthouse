@@ -40,7 +40,7 @@
           "viewport": {
             "id": "viewport",
             "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
-            "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about viewport meta tag](https://web.dev/viewport/).",
+            "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about using the viewport meta tag](https://web.dev/viewport/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "warnings": []
@@ -48,7 +48,7 @@
           "first-contentful-paint": {
             "id": "first-contentful-paint",
             "title": "First Contentful Paint",
-            "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about First Contentful Paint metric](https://web.dev/first-contentful-paint/).",
+            "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://web.dev/first-contentful-paint/).",
             "score": 0.98,
             "scoreDisplayMode": "numeric",
             "numericValue": 1333.703,
@@ -58,7 +58,7 @@
           "largest-contentful-paint": {
             "id": "largest-contentful-paint",
             "title": "Largest Contentful Paint",
-            "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about Largest Contentful Paint metric](https://web.dev/lighthouse-largest-contentful-paint/)",
+            "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://web.dev/lighthouse-largest-contentful-paint/)",
             "score": 0.81,
             "scoreDisplayMode": "numeric",
             "numericValue": 2883.733,
@@ -68,7 +68,7 @@
           "first-meaningful-paint": {
             "id": "first-meaningful-paint",
             "title": "First Meaningful Paint",
-            "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about First Meaningful Paint metric](https://web.dev/first-meaningful-paint/).",
+            "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about the First Meaningful Paint metric](https://web.dev/first-meaningful-paint/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 1333.703,
@@ -78,7 +78,7 @@
           "speed-index": {
             "id": "speed-index",
             "title": "Speed Index",
-            "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about Speed Index metric](https://web.dev/speed-index/).",
+            "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://web.dev/speed-index/).",
             "score": 0.99,
             "scoreDisplayMode": "numeric",
             "numericValue": 2004.0877099943132,
@@ -164,7 +164,7 @@
           "total-blocking-time": {
             "id": "total-blocking-time",
             "title": "Total Blocking Time",
-            "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/).",
+            "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 31.5,
@@ -174,7 +174,7 @@
           "max-potential-fid": {
             "id": "max-potential-fid",
             "title": "Max Potential First Input Delay",
-            "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about Maximum Potential First Input Delay metric](https://web.dev/lighthouse-max-potential-fid/).",
+            "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://web.dev/lighthouse-max-potential-fid/).",
             "score": 0.94,
             "scoreDisplayMode": "numeric",
             "numericValue": 113,
@@ -184,7 +184,7 @@
           "cumulative-layout-shift": {
             "id": "cumulative-layout-shift",
             "title": "Cumulative Layout Shift",
-            "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about Cumulative Layout Shift metric](https://web.dev/cls/).",
+            "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/cls/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 0.009249603271484375,
@@ -203,7 +203,7 @@
           "errors-in-console": {
             "id": "errors-in-console",
             "title": "No browser errors logged to the console",
-            "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about errors in console](https://web.dev/errors-in-console/)",
+            "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://web.dev/errors-in-console/)",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -215,7 +215,7 @@
           "server-response-time": {
             "id": "server-response-time",
             "title": "Initial server response time was short",
-            "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about Time to First Byte metric](https://web.dev/time-to-first-byte/).",
+            "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://web.dev/time-to-first-byte/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "numericValue": 236.03100000000006,
@@ -247,7 +247,7 @@
           "interactive": {
             "id": "interactive",
             "title": "Time to Interactive",
-            "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about Time to Interactive metric](https://web.dev/interactive/).",
+            "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://web.dev/interactive/).",
             "score": 0.95,
             "scoreDisplayMode": "numeric",
             "numericValue": 3074.2345000000005,
@@ -439,7 +439,7 @@
           "maskable-icon": {
             "id": "maskable-icon",
             "title": "Manifest doesn't have a maskable icon",
-            "description": "A maskable icon ensures that the image fills the entire shape without being letterboxed when installing the app on a device. [Learn more about maskable icons](https://web.dev/maskable-icon-audit/).",
+            "description": "A maskable icon ensures that the image fills the entire shape without being letterboxed when installing the app on a device. [Learn about maskable manifest icons](https://web.dev/maskable-icon-audit/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "explanation": "No manifest was fetched"
@@ -466,7 +466,7 @@
           "image-size-responsive": {
             "id": "image-size-responsive",
             "title": "Serves images with appropriate resolution",
-            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn more about responsive images](https://web.dev/serve-responsive-images/).",
+            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn how to provide responsive images](https://web.dev/serve-responsive-images/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -1069,7 +1069,7 @@
           "network-rtt": {
             "id": "network-rtt",
             "title": "Network Round Trip Times",
-            "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about Network Round Trip Times](https://hpbn.co/primer-on-latency-and-bandwidth/).",
+            "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about the Round Trip Time](https://hpbn.co/primer-on-latency-and-bandwidth/).",
             "score": null,
             "scoreDisplayMode": "informative",
             "numericValue": 150.74099999999999,
@@ -1113,7 +1113,7 @@
           "network-server-latency": {
             "id": "network-server-latency",
             "title": "Server Backend Latencies",
-            "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server latencies](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
+            "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server response time](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
             "score": null,
             "scoreDisplayMode": "informative",
             "numericValue": 103.685,
@@ -1453,7 +1453,7 @@
           "largest-contentful-paint-element": {
             "id": "largest-contentful-paint-element",
             "title": "Largest Contentful Paint element",
-            "description": "This is the largest contentful element painted within the viewport. [Learn more about Largest Contentful Paint element](https://web.dev/lighthouse-largest-contentful-paint/)",
+            "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://web.dev/lighthouse-largest-contentful-paint/)",
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "1 element found",
@@ -1703,7 +1703,7 @@
           "non-composited-animations": {
             "id": "non-composited-animations",
             "title": "Avoid non-composited animations",
-            "description": "Animations which are not composited can be janky and increase CLS. [Learn more about non-composited animations](https://web.dev/non-composited-animations)",
+            "description": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://web.dev/non-composited-animations)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
             "details": {
@@ -1715,7 +1715,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -1837,7 +1837,7 @@
           "csp-xss": {
             "id": "csp-xss",
             "title": "Ensure CSP is effective against XSS attacks",
-            "description": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use CSP to prevent XSS](https://web.dev/csp-xss/)",
+            "description": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use a CSP to prevent XSS](https://web.dev/csp-xss/)",
             "score": null,
             "scoreDisplayMode": "informative",
             "details": {
@@ -2433,7 +2433,7 @@
           "pwa-cross-browser": {
             "id": "pwa-cross-browser",
             "title": "Site works cross-browser",
-            "description": "To reach the most number of users, sites should work across every major browser. [Learn how to make sites work across browsers](https://web.dev/pwa-cross-browser/).",
+            "description": "To reach the most number of users, sites should work across every major browser. [Learn about cross-browser compatibility](https://web.dev/pwa-cross-browser/).",
             "score": null,
             "scoreDisplayMode": "manual"
           },
@@ -2447,7 +2447,7 @@
           "pwa-each-page-has-url": {
             "id": "pwa-each-page-has-url",
             "title": "Each page has a URL",
-            "description": "Ensure individual pages are deep linkable via URL and that URLs are unique for the purpose of shareability on social media. [Learn more about deep links](https://web.dev/pwa-each-page-has-url/).",
+            "description": "Ensure individual pages are deep linkable via URL and that URLs are unique for the purpose of shareability on social media. [Learn more about providing deep links](https://web.dev/pwa-each-page-has-url/).",
             "score": null,
             "scoreDisplayMode": "manual"
           },
@@ -2480,7 +2480,7 @@
           "aria-hidden-body": {
             "id": "aria-hidden-body",
             "title": "`[aria-hidden=\"true\"]` is not present on the document `<body>`",
-            "description": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how to make document body accessible](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body).",
+            "description": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how `aria-hidden` affects the document body](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2722,7 +2722,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2746,7 +2746,7 @@
           "input-image-alt": {
             "id": "input-image-alt",
             "title": "`<input type=\"image\">` elements have `[alt]` text",
-            "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn how to make image input elements accessible](https://dequeuniversity.com/rules/axe/4.4/input-image-alt).",
+            "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn about input image alt text](https://dequeuniversity.com/rules/axe/4.4/input-image-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2801,14 +2801,14 @@
           "meta-refresh": {
             "id": "meta-refresh",
             "title": "The document does not use `<meta http-equiv=\"refresh\">`",
-            "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh).",
+            "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about the refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "meta-viewport": {
             "id": "meta-viewport",
             "title": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.",
-            "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport).",
+            "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about the viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2827,14 +2827,14 @@
           "tabindex": {
             "id": "tabindex",
             "title": "No element has a `[tabindex]` value greater than 0",
-            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
+            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "td-headers-attr": {
             "id": "td-headers-attr",
             "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
-            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
+            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -3189,7 +3189,7 @@
           "efficient-animated-content": {
             "id": "efficient-animated-content",
             "title": "Use video formats for animated content",
-            "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient animation formats](https://web.dev/efficient-animated-content/)",
+            "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient video formats](https://web.dev/efficient-animated-content/)",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 0,
@@ -3284,14 +3284,14 @@
           "doctype": {
             "id": "doctype",
             "title": "Page has the HTML doctype",
-            "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about doctype declaration](https://web.dev/doctype/).",
+            "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about the doctype declaration](https://web.dev/doctype/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
           "charset": {
             "id": "charset",
             "title": "Properly defines charset",
-            "description": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about character encoding declaration](https://web.dev/charset/).",
+            "description": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about declaring the character encoding](https://web.dev/charset/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
@@ -3450,7 +3450,7 @@
           "js-libraries": {
             "id": "js-libraries",
             "title": "Detected JavaScript libraries",
-            "description": "All front-end JavaScript libraries detected on the page. [Learn more about JavaScript library detection diagnostic audit](https://web.dev/js-libraries/).",
+            "description": "All front-end JavaScript libraries detected on the page. [Learn more about this JavaScript library detection diagnostic audit](https://web.dev/js-libraries/).",
             "score": null,
             "scoreDisplayMode": "informative",
             "details": {
@@ -3502,7 +3502,7 @@
           "notification-on-start": {
             "id": "notification-on-start",
             "title": "Avoids requesting the notification permission on page load",
-            "description": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about notification permission](https://web.dev/notification-on-start/).",
+            "description": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about responsibly getting permission for notifications](https://web.dev/notification-on-start/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -3514,7 +3514,7 @@
           "password-inputs-can-be-pasted-into": {
             "id": "password-inputs-can-be-pasted-into",
             "title": "Allows users to paste into password fields",
-            "description": "Preventing password pasting undermines good security policy. [Learn more about pasting into password fields](https://web.dev/password-inputs-can-be-pasted-into/).",
+            "description": "Preventing password pasting undermines good security policy. [Learn more about user-friendly password fields](https://web.dev/password-inputs-can-be-pasted-into/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -3526,7 +3526,7 @@
           "uses-passive-event-listeners": {
             "id": "uses-passive-event-listeners",
             "title": "Uses passive listeners to improve scrolling performance",
-            "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about passive listeners](https://web.dev/uses-passive-event-listeners/).",
+            "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about adopting passive event listeners](https://web.dev/uses-passive-event-listeners/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -3538,7 +3538,7 @@
           "meta-description": {
             "id": "meta-description",
             "title": "Document has a meta description",
-            "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about meta description](https://web.dev/meta-description/).",
+            "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://web.dev/meta-description/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
@@ -3677,7 +3677,7 @@
           "plugins": {
             "id": "plugins",
             "title": "Document avoids plugins",
-            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about plugins](https://web.dev/plugins/).",
+            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://web.dev/plugins/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -3689,7 +3689,7 @@
           "canonical": {
             "id": "canonical",
             "title": "Document has a valid `rel=canonical`",
-            "description": "Canonical links suggest which URL to show in search results. [Learn more about Canonical links](https://web.dev/canonical/).",
+            "description": "Canonical links suggest which URL to show in search results. [Learn more about canonical links](https://web.dev/canonical/).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -7588,7 +7588,7 @@
           "total-blocking-time": {
             "id": "total-blocking-time",
             "title": "Total Blocking Time",
-            "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/).",
+            "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 30.806999999999924,
@@ -7598,7 +7598,7 @@
           "cumulative-layout-shift": {
             "id": "cumulative-layout-shift",
             "title": "Cumulative Layout Shift",
-            "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about Cumulative Layout Shift metric](https://web.dev/cls/).",
+            "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/cls/).",
             "score": 0.97,
             "scoreDisplayMode": "numeric",
             "numericValue": 0.064697265625,
@@ -7617,7 +7617,7 @@
           "experimental-interaction-to-next-paint": {
             "id": "experimental-interaction-to-next-paint",
             "title": "Interaction to Next Paint",
-            "description": "Interaction to Next Paint measures page responsiveness, how long it takes the page to visibly respond to user input. [Learn more](https://web.dev/inp/).",
+            "description": "Interaction to Next Paint measures page responsiveness, how long it takes the page to visibly respond to user input. [Learn more about the Interaction to Next Paint metric](https://web.dev/inp/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 60,
@@ -7627,7 +7627,7 @@
           "errors-in-console": {
             "id": "errors-in-console",
             "title": "No browser errors logged to the console",
-            "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about errors in console](https://web.dev/errors-in-console/)",
+            "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://web.dev/errors-in-console/)",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -7715,7 +7715,7 @@
           "image-size-responsive": {
             "id": "image-size-responsive",
             "title": "Serves images with low resolution",
-            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn more about responsive images](https://web.dev/serve-responsive-images/).",
+            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn how to provide responsive images](https://web.dev/serve-responsive-images/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -8173,7 +8173,7 @@
           "network-rtt": {
             "id": "network-rtt",
             "title": "Network Round Trip Times",
-            "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about Network Round Trip Times](https://hpbn.co/primer-on-latency-and-bandwidth/).",
+            "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about the Round Trip Time](https://hpbn.co/primer-on-latency-and-bandwidth/).",
             "score": null,
             "scoreDisplayMode": "informative",
             "numericValue": 59.011,
@@ -8213,7 +8213,7 @@
           "network-server-latency": {
             "id": "network-server-latency",
             "title": "Server Backend Latencies",
-            "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server latencies](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
+            "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server response time](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
             "score": null,
             "scoreDisplayMode": "informative",
             "numericValue": 539.765,
@@ -8621,7 +8621,7 @@
           "non-composited-animations": {
             "id": "non-composited-animations",
             "title": "Avoid non-composited animations",
-            "description": "Animations which are not composited can be janky and increase CLS. [Learn more about non-composited animations](https://web.dev/non-composited-animations)",
+            "description": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://web.dev/non-composited-animations)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
             "details": {
@@ -8633,7 +8633,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -9060,7 +9060,7 @@
           "efficient-animated-content": {
             "id": "efficient-animated-content",
             "title": "Use video formats for animated content",
-            "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient animation formats](https://web.dev/efficient-animated-content/)",
+            "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient video formats](https://web.dev/efficient-animated-content/)",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 0,
@@ -9135,7 +9135,7 @@
           "uses-passive-event-listeners": {
             "id": "uses-passive-event-listeners",
             "title": "Uses passive listeners to improve scrolling performance",
-            "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about passive listeners](https://web.dev/uses-passive-event-listeners/).",
+            "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about adopting passive event listeners](https://web.dev/uses-passive-event-listeners/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -9147,7 +9147,7 @@
           "work-during-interaction": {
             "id": "work-during-interaction",
             "title": "Minimizes work during key interaction",
-            "description": "This is the thread-blocking work occurring during the Interaction to Next Paint measurement. [Learn more about Interaction to Next Paint metric](https://web.dev/inp/).",
+            "description": "This is the thread-blocking work occurring during the Interaction to Next Paint measurement. [Learn more about the Interaction to Next Paint metric](https://web.dev/inp/).",
             "score": null,
             "scoreDisplayMode": "error",
             "errorMessage": "This version of Chrome is too old to support 'detailed EventTiming trace events'. Use a newer version to see full results."
@@ -10651,7 +10651,7 @@
           "viewport": {
             "id": "viewport",
             "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
-            "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about viewport meta tag](https://web.dev/viewport/).",
+            "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about using the viewport meta tag](https://web.dev/viewport/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "warnings": []
@@ -10671,7 +10671,7 @@
           "image-size-responsive": {
             "id": "image-size-responsive",
             "title": "Serves images with low resolution",
-            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn more about responsive images](https://web.dev/serve-responsive-images/).",
+            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn how to provide responsive images](https://web.dev/serve-responsive-images/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -10782,7 +10782,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11188,7 +11188,7 @@
           "aria-hidden-body": {
             "id": "aria-hidden-body",
             "title": "`[aria-hidden=\"true\"]` is not present on the document `<body>`",
-            "description": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how to make document body accessible](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body).",
+            "description": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how `aria-hidden` affects the document body](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11702,7 +11702,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11806,7 +11806,7 @@
           "input-image-alt": {
             "id": "input-image-alt",
             "title": "`<input type=\"image\">` elements have `[alt]` text",
-            "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn how to make image input elements accessible](https://dequeuniversity.com/rules/axe/4.4/input-image-alt).",
+            "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn about input image alt text](https://dequeuniversity.com/rules/axe/4.4/input-image-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11861,14 +11861,14 @@
           "meta-refresh": {
             "id": "meta-refresh",
             "title": "The document does not use `<meta http-equiv=\"refresh\">`",
-            "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh).",
+            "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about the refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "meta-viewport": {
             "id": "meta-viewport",
             "title": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.",
-            "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport).",
+            "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about the viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11887,14 +11887,14 @@
           "tabindex": {
             "id": "tabindex",
             "title": "No element has a `[tabindex]` value greater than 0",
-            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
+            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "td-headers-attr": {
             "id": "td-headers-attr",
             "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
-            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
+            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11992,7 +11992,7 @@
           "uses-responsive-images-snapshot": {
             "id": "uses-responsive-images-snapshot",
             "title": "Images were larger than their displayed size",
-            "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://web.dev/uses-responsive-images/).",
+            "description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn how to size images](https://web.dev/uses-responsive-images/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -12047,7 +12047,7 @@
           "doctype": {
             "id": "doctype",
             "title": "Page has the HTML doctype",
-            "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about doctype declaration](https://web.dev/doctype/).",
+            "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about the doctype declaration](https://web.dev/doctype/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
@@ -12170,7 +12170,7 @@
           "js-libraries": {
             "id": "js-libraries",
             "title": "Detected JavaScript libraries",
-            "description": "All front-end JavaScript libraries detected on the page. [Learn more about JavaScript library detection diagnostic audit](https://web.dev/js-libraries/).",
+            "description": "All front-end JavaScript libraries detected on the page. [Learn more about this JavaScript library detection diagnostic audit](https://web.dev/js-libraries/).",
             "score": null,
             "scoreDisplayMode": "informative",
             "details": {
@@ -12222,7 +12222,7 @@
           "password-inputs-can-be-pasted-into": {
             "id": "password-inputs-can-be-pasted-into",
             "title": "Allows users to paste into password fields",
-            "description": "Preventing password pasting undermines good security policy. [Learn more about pasting into password fields](https://web.dev/password-inputs-can-be-pasted-into/).",
+            "description": "Preventing password pasting undermines good security policy. [Learn more about user-friendly password fields](https://web.dev/password-inputs-can-be-pasted-into/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -12234,7 +12234,7 @@
           "meta-description": {
             "id": "meta-description",
             "title": "Document has a meta description",
-            "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about meta description](https://web.dev/meta-description/).",
+            "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://web.dev/meta-description/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
@@ -12399,7 +12399,7 @@
           "plugins": {
             "id": "plugins",
             "title": "Document avoids plugins",
-            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about plugins](https://web.dev/plugins/).",
+            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://web.dev/plugins/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -14304,7 +14304,7 @@
           "viewport": {
             "id": "viewport",
             "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
-            "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about viewport meta tag](https://web.dev/viewport/).",
+            "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more about using the viewport meta tag](https://web.dev/viewport/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "warnings": []
@@ -14312,7 +14312,7 @@
           "first-contentful-paint": {
             "id": "first-contentful-paint",
             "title": "First Contentful Paint",
-            "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about First Contentful Paint metric](https://web.dev/first-contentful-paint/).",
+            "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://web.dev/first-contentful-paint/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 828.6635000000001,
@@ -14322,7 +14322,7 @@
           "largest-contentful-paint": {
             "id": "largest-contentful-paint",
             "title": "Largest Contentful Paint",
-            "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about Largest Contentful Paint metric](https://web.dev/lighthouse-largest-contentful-paint/)",
+            "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://web.dev/lighthouse-largest-contentful-paint/)",
             "score": 0.97,
             "scoreDisplayMode": "numeric",
             "numericValue": 1961.8806557556154,
@@ -14332,7 +14332,7 @@
           "first-meaningful-paint": {
             "id": "first-meaningful-paint",
             "title": "First Meaningful Paint",
-            "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about First Meaningful Paint metric](https://web.dev/first-meaningful-paint/).",
+            "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more about the First Meaningful Paint metric](https://web.dev/first-meaningful-paint/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 828.6635000000001,
@@ -14342,7 +14342,7 @@
           "speed-index": {
             "id": "speed-index",
             "title": "Speed Index",
-            "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about Speed Index metric](https://web.dev/speed-index/).",
+            "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://web.dev/speed-index/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 828.6635000000001,
@@ -14428,7 +14428,7 @@
           "total-blocking-time": {
             "id": "total-blocking-time",
             "title": "Total Blocking Time",
-            "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/).",
+            "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://web.dev/lighthouse-total-blocking-time/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 21,
@@ -14438,7 +14438,7 @@
           "max-potential-fid": {
             "id": "max-potential-fid",
             "title": "Max Potential First Input Delay",
-            "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about Maximum Potential First Input Delay metric](https://web.dev/lighthouse-max-potential-fid/).",
+            "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://web.dev/lighthouse-max-potential-fid/).",
             "score": 0.97,
             "scoreDisplayMode": "numeric",
             "numericValue": 92,
@@ -14448,7 +14448,7 @@
           "cumulative-layout-shift": {
             "id": "cumulative-layout-shift",
             "title": "Cumulative Layout Shift",
-            "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about Cumulative Layout Shift metric](https://web.dev/cls/).",
+            "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport. [Learn more about the Cumulative Layout Shift metric](https://web.dev/cls/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 0,
@@ -14467,7 +14467,7 @@
           "errors-in-console": {
             "id": "errors-in-console",
             "title": "No browser errors logged to the console",
-            "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about errors in console](https://web.dev/errors-in-console/)",
+            "description": "Errors logged to the console indicate unresolved problems. They can come from network request failures and other browser concerns. [Learn more about this errors in console diagnostic audit](https://web.dev/errors-in-console/)",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -14479,7 +14479,7 @@
           "server-response-time": {
             "id": "server-response-time",
             "title": "Initial server response time was short",
-            "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about Time to First Byte metric](https://web.dev/time-to-first-byte/).",
+            "description": "Keep the server response time for the main document short because all other requests depend on it. [Learn more about the Time to First Byte metric](https://web.dev/time-to-first-byte/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "numericValue": 115.003,
@@ -14511,7 +14511,7 @@
           "interactive": {
             "id": "interactive",
             "title": "Time to Interactive",
-            "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about Time to Interactive metric](https://web.dev/interactive/).",
+            "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://web.dev/interactive/).",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 911.4059182891847,
@@ -14703,7 +14703,7 @@
           "maskable-icon": {
             "id": "maskable-icon",
             "title": "Manifest doesn't have a maskable icon",
-            "description": "A maskable icon ensures that the image fills the entire shape without being letterboxed when installing the app on a device. [Learn more about maskable icons](https://web.dev/maskable-icon-audit/).",
+            "description": "A maskable icon ensures that the image fills the entire shape without being letterboxed when installing the app on a device. [Learn about maskable manifest icons](https://web.dev/maskable-icon-audit/).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "explanation": "No manifest was fetched"
@@ -14730,7 +14730,7 @@
           "image-size-responsive": {
             "id": "image-size-responsive",
             "title": "Serves images with appropriate resolution",
-            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn more about responsive images](https://web.dev/serve-responsive-images/).",
+            "description": "Image natural dimensions should be proportional to the display size and the pixel ratio to maximize image clarity. [Learn how to provide responsive images](https://web.dev/serve-responsive-images/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -15312,7 +15312,7 @@
           "network-rtt": {
             "id": "network-rtt",
             "title": "Network Round Trip Times",
-            "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about Network Round Trip Times](https://hpbn.co/primer-on-latency-and-bandwidth/).",
+            "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more about the Round Trip Time](https://hpbn.co/primer-on-latency-and-bandwidth/).",
             "score": null,
             "scoreDisplayMode": "informative",
             "numericValue": 0.0271,
@@ -15356,7 +15356,7 @@
           "network-server-latency": {
             "id": "network-server-latency",
             "title": "Server Backend Latencies",
-            "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server latencies](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
+            "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more about server response time](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
             "score": null,
             "scoreDisplayMode": "informative",
             "numericValue": 5.1761,
@@ -15667,7 +15667,7 @@
           "largest-contentful-paint-element": {
             "id": "largest-contentful-paint-element",
             "title": "Largest Contentful Paint element",
-            "description": "This is the largest contentful element painted within the viewport. [Learn more about Largest Contentful Paint element](https://web.dev/lighthouse-largest-contentful-paint/)",
+            "description": "This is the largest contentful element painted within the viewport. [Learn more about the Largest Contentful Paint element](https://web.dev/lighthouse-largest-contentful-paint/)",
             "score": null,
             "scoreDisplayMode": "informative",
             "displayValue": "1 element found",
@@ -15798,7 +15798,7 @@
           "non-composited-animations": {
             "id": "non-composited-animations",
             "title": "Avoid non-composited animations",
-            "description": "Animations which are not composited can be janky and increase CLS. [Learn more about non-composited animations](https://web.dev/non-composited-animations)",
+            "description": "Animations which are not composited can be janky and increase CLS. [Learn how to avoid non-composited animations](https://web.dev/non-composited-animations)",
             "score": null,
             "scoreDisplayMode": "notApplicable",
             "details": {
@@ -15810,7 +15810,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -15951,7 +15951,7 @@
           "csp-xss": {
             "id": "csp-xss",
             "title": "Ensure CSP is effective against XSS attacks",
-            "description": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use CSP to prevent XSS](https://web.dev/csp-xss/)",
+            "description": "A strong Content Security Policy (CSP) significantly reduces the risk of cross-site scripting (XSS) attacks. [Learn how to use a CSP to prevent XSS](https://web.dev/csp-xss/)",
             "score": null,
             "scoreDisplayMode": "informative",
             "details": {
@@ -16526,7 +16526,7 @@
           "pwa-cross-browser": {
             "id": "pwa-cross-browser",
             "title": "Site works cross-browser",
-            "description": "To reach the most number of users, sites should work across every major browser. [Learn how to make sites work across browsers](https://web.dev/pwa-cross-browser/).",
+            "description": "To reach the most number of users, sites should work across every major browser. [Learn about cross-browser compatibility](https://web.dev/pwa-cross-browser/).",
             "score": null,
             "scoreDisplayMode": "manual"
           },
@@ -16540,7 +16540,7 @@
           "pwa-each-page-has-url": {
             "id": "pwa-each-page-has-url",
             "title": "Each page has a URL",
-            "description": "Ensure individual pages are deep linkable via URL and that URLs are unique for the purpose of shareability on social media. [Learn more about deep links](https://web.dev/pwa-each-page-has-url/).",
+            "description": "Ensure individual pages are deep linkable via URL and that URLs are unique for the purpose of shareability on social media. [Learn more about providing deep links](https://web.dev/pwa-each-page-has-url/).",
             "score": null,
             "scoreDisplayMode": "manual"
           },
@@ -16573,7 +16573,7 @@
           "aria-hidden-body": {
             "id": "aria-hidden-body",
             "title": "`[aria-hidden=\"true\"]` is not present on the document `<body>`",
-            "description": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how to make document body accessible](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body).",
+            "description": "Assistive technologies, like screen readers, work inconsistently when `aria-hidden=\"true\"` is set on the document `<body>`. [Learn how `aria-hidden` affects the document body](https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16815,7 +16815,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16881,7 +16881,7 @@
           "input-image-alt": {
             "id": "input-image-alt",
             "title": "`<input type=\"image\">` elements have `[alt]` text",
-            "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn how to make image input elements accessible](https://dequeuniversity.com/rules/axe/4.4/input-image-alt).",
+            "description": "When an image is being used as an `<input>` button, providing alternative text can help screen reader users understand the purpose of the button. [Learn about input image alt text](https://dequeuniversity.com/rules/axe/4.4/input-image-alt).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16936,14 +16936,14 @@
           "meta-refresh": {
             "id": "meta-refresh",
             "title": "The document does not use `<meta http-equiv=\"refresh\">`",
-            "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh).",
+            "description": "Users do not expect a page to refresh automatically, and doing so will move focus back to the top of the page. This may create a frustrating or confusing experience. [Learn more about the refresh meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-refresh).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "meta-viewport": {
             "id": "meta-viewport",
             "title": "`[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.",
-            "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport).",
+            "description": "Disabling zooming is problematic for users with low vision who rely on screen magnification to properly see the contents of a web page. [Learn more about the viewport meta tag](https://dequeuniversity.com/rules/axe/4.4/meta-viewport).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16962,14 +16962,14 @@
           "tabindex": {
             "id": "tabindex",
             "title": "No element has a `[tabindex]` value greater than 0",
-            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
+            "description": "A value greater than 0 implies an explicit navigation ordering. Although technically valid, this often creates frustrating experiences for users who rely on assistive technologies. [Learn more about the `tabindex` attribute](https://dequeuniversity.com/rules/axe/4.4/tabindex).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "td-headers-attr": {
             "id": "td-headers-attr",
             "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
-            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
+            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -17394,7 +17394,7 @@
           "efficient-animated-content": {
             "id": "efficient-animated-content",
             "title": "Use video formats for animated content",
-            "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient animation formats](https://web.dev/efficient-animated-content/)",
+            "description": "Large GIFs are inefficient for delivering animated content. Consider using MPEG4/WebM videos for animations and PNG/WebP for static images instead of GIF to save network bytes. [Learn more about efficient video formats](https://web.dev/efficient-animated-content/)",
             "score": 1,
             "scoreDisplayMode": "numeric",
             "numericValue": 0,
@@ -17489,14 +17489,14 @@
           "doctype": {
             "id": "doctype",
             "title": "Page has the HTML doctype",
-            "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about doctype declaration](https://web.dev/doctype/).",
+            "description": "Specifying a doctype prevents the browser from switching to quirks-mode. [Learn more about the doctype declaration](https://web.dev/doctype/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
           "charset": {
             "id": "charset",
             "title": "Properly defines charset",
-            "description": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about character encoding declaration](https://web.dev/charset/).",
+            "description": "A character encoding declaration is required. It can be done with a `<meta>` tag in the first 1024 bytes of the HTML or in the Content-Type HTTP response header. [Learn more about declaring the character encoding](https://web.dev/charset/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
@@ -17655,7 +17655,7 @@
           "js-libraries": {
             "id": "js-libraries",
             "title": "Detected JavaScript libraries",
-            "description": "All front-end JavaScript libraries detected on the page. [Learn more about JavaScript library detection diagnostic audit](https://web.dev/js-libraries/).",
+            "description": "All front-end JavaScript libraries detected on the page. [Learn more about this JavaScript library detection diagnostic audit](https://web.dev/js-libraries/).",
             "score": null,
             "scoreDisplayMode": "informative",
             "details": {
@@ -17707,7 +17707,7 @@
           "notification-on-start": {
             "id": "notification-on-start",
             "title": "Avoids requesting the notification permission on page load",
-            "description": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about notification permission](https://web.dev/notification-on-start/).",
+            "description": "Users are mistrustful of or confused by sites that request to send notifications without context. Consider tying the request to user gestures instead. [Learn more about responsibly getting permission for notifications](https://web.dev/notification-on-start/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -17719,7 +17719,7 @@
           "password-inputs-can-be-pasted-into": {
             "id": "password-inputs-can-be-pasted-into",
             "title": "Allows users to paste into password fields",
-            "description": "Preventing password pasting undermines good security policy. [Learn more about pasting into password fields](https://web.dev/password-inputs-can-be-pasted-into/).",
+            "description": "Preventing password pasting undermines good security policy. [Learn more about user-friendly password fields](https://web.dev/password-inputs-can-be-pasted-into/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -17731,7 +17731,7 @@
           "uses-passive-event-listeners": {
             "id": "uses-passive-event-listeners",
             "title": "Uses passive listeners to improve scrolling performance",
-            "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about passive listeners](https://web.dev/uses-passive-event-listeners/).",
+            "description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more about adopting passive event listeners](https://web.dev/uses-passive-event-listeners/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -17743,7 +17743,7 @@
           "meta-description": {
             "id": "meta-description",
             "title": "Document has a meta description",
-            "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about meta description](https://web.dev/meta-description/).",
+            "description": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more about the meta description](https://web.dev/meta-description/).",
             "score": 1,
             "scoreDisplayMode": "binary"
           },
@@ -17939,7 +17939,7 @@
           "plugins": {
             "id": "plugins",
             "title": "Document avoids plugins",
-            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about plugins](https://web.dev/plugins/).",
+            "description": "Search engines can't index plugin content, and many devices restrict plugins or don't support them. [Learn more about avoiding plugins](https://web.dev/plugins/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -17951,7 +17951,7 @@
           "canonical": {
             "id": "canonical",
             "title": "Document has a valid `rel=canonical`",
-            "description": "Canonical links suggest which URL to show in search results. [Learn more about Canonical links](https://web.dev/canonical/).",
+            "description": "Canonical links suggest which URL to show in search results. [Learn more about canonical links](https://web.dev/canonical/).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
