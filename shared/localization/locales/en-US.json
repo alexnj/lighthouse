@@ -222,7 +222,7 @@
     "message": "Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children."
   },
   "lighthouse-core/audits/accessibility/aria-required-parent.js | description": {
-    "message": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and their required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent)."
+    "message": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent)."
   },
   "lighthouse-core/audits/accessibility/aria-required-parent.js | failureTitle": {
     "message": "`[role]`s are not contained by their required parent element"
@@ -258,7 +258,7 @@
     "message": "ARIA `tooltip` elements have accessible names"
   },
   "lighthouse-core/audits/accessibility/aria-treeitem-name.js | description": {
-    "message": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name)."
+    "message": "When a `treeitem` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about labeling `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name)."
   },
   "lighthouse-core/audits/accessibility/aria-treeitem-name.js | failureTitle": {
     "message": "ARIA `treeitem` elements do not have accessible names."
@@ -297,7 +297,7 @@
     "message": "Buttons have an accessible name"
   },
   "lighthouse-core/audits/accessibility/bypass.js | description": {
-    "message": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass navigation mechanisms](https://dequeuniversity.com/rules/axe/4.4/bypass)."
+    "message": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass blocks](https://dequeuniversity.com/rules/axe/4.4/bypass)."
   },
   "lighthouse-core/audits/accessibility/bypass.js | failureTitle": {
     "message": "The page does not contain a heading, skip link, or landmark region"
@@ -342,7 +342,7 @@
     "message": "Document has a `<title>` element"
   },
   "lighthouse-core/audits/accessibility/duplicate-id-active.js | description": {
-    "message": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active)."
+    "message": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn how to fix duplicate `id`s](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active)."
   },
   "lighthouse-core/audits/accessibility/duplicate-id-active.js | failureTitle": {
     "message": "`[id]` attributes on active, focusable elements are not unique"
@@ -351,7 +351,7 @@
     "message": "`[id]` attributes on active, focusable elements are unique"
   },
   "lighthouse-core/audits/accessibility/duplicate-id-aria.js | description": {
-    "message": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more about ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria)."
+    "message": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn how to fix duplicate ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria)."
   },
   "lighthouse-core/audits/accessibility/duplicate-id-aria.js | failureTitle": {
     "message": "ARIA IDs are not unique"
@@ -387,7 +387,7 @@
     "message": "Heading elements appear in a sequentially-descending order"
   },
   "lighthouse-core/audits/accessibility/html-has-lang.js | description": {
-    "message": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang)."
+    "message": "If a page doesn't specify a `lang` attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang)."
   },
   "lighthouse-core/audits/accessibility/html-has-lang.js | failureTitle": {
     "message": "`<html>` element does not have a `[lang]` attribute"
@@ -396,7 +396,7 @@
     "message": "`<html>` element has a `[lang]` attribute"
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | description": {
-    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
+    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid)."
   },
   "lighthouse-core/audits/accessibility/html-lang-valid.js | failureTitle": {
     "message": "`<html>` element does not have a valid value for its `[lang]` attribute."
@@ -405,7 +405,7 @@
     "message": "`<html>` element has a valid value for its `[lang]` attribute"
   },
   "lighthouse-core/audits/accessibility/image-alt.js | description": {
-    "message": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt)."
+    "message": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt)."
   },
   "lighthouse-core/audits/accessibility/image-alt.js | failureTitle": {
     "message": "Image elements do not have `[alt]` attributes"
@@ -495,7 +495,7 @@
     "message": "No element has a `[tabindex]` value greater than 0"
   },
   "lighthouse-core/audits/accessibility/td-headers-attr.js | description": {
-    "message": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr)."
+    "message": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the `headers` attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr)."
   },
   "lighthouse-core/audits/accessibility/td-headers-attr.js | failureTitle": {
     "message": "Cells in a `<table>` element that use the `[headers]` attribute refer to an element `id` not found within the same table."
@@ -513,7 +513,7 @@
     "message": "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` have data cells they describe."
   },
   "lighthouse-core/audits/accessibility/valid-lang.js | description": {
-    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang)."
+    "message": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang)."
   },
   "lighthouse-core/audits/accessibility/valid-lang.js | failureTitle": {
     "message": "`[lang]` attributes do not have a valid value"
@@ -825,7 +825,7 @@
     "message": "Avoids an excessive DOM size"
   },
   "lighthouse-core/audits/dobetterweb/geolocation-on-start.js | description": {
-    "message": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about geolocation permission](https://web.dev/geolocation-on-start/)."
+    "message": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about the geolocation permission](https://web.dev/geolocation-on-start/)."
   },
   "lighthouse-core/audits/dobetterweb/geolocation-on-start.js | failureTitle": {
     "message": "Requests the geolocation permission on page load"
@@ -1584,7 +1584,7 @@
     "message": "Timing budget"
   },
   "lighthouse-core/audits/unsized-images.js | description": {
-    "message": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)"
+    "message": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)"
   },
   "lighthouse-core/audits/unsized-images.js | failureTitle": {
     "message": "Image elements do not have explicit `width` and `height`"

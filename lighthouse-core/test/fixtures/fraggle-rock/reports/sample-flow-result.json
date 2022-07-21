@@ -1715,7 +1715,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2544,7 +2544,7 @@
           "aria-required-parent": {
             "id": "aria-required-parent",
             "title": "`[role]`s are contained by their required parent element",
-            "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and their required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent).",
+            "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2577,7 +2577,7 @@
           "aria-treeitem-name": {
             "id": "aria-treeitem-name",
             "title": "ARIA `treeitem` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
+            "description": "When a `treeitem` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about labeling `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2620,7 +2620,7 @@
           "bypass": {
             "id": "bypass",
             "title": "The page contains a heading, skip link, or landmark region",
-            "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass navigation mechanisms](https://dequeuniversity.com/rules/axe/4.4/bypass).",
+            "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass blocks](https://dequeuniversity.com/rules/axe/4.4/bypass).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2670,14 +2670,14 @@
           "duplicate-id-active": {
             "id": "duplicate-id-active",
             "title": "`[id]` attributes on active, focusable elements are unique",
-            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
+            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn how to fix duplicate `id`s](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "duplicate-id-aria": {
             "id": "duplicate-id-aria",
             "title": "ARIA IDs are unique",
-            "description": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more about ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria).",
+            "description": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn how to fix duplicate ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2710,7 +2710,7 @@
           "html-has-lang": {
             "id": "html-has-lang",
             "title": "`<html>` element has a `[lang]` attribute",
-            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
+            "description": "If a page doesn't specify a `lang` attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2722,7 +2722,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2734,7 +2734,7 @@
           "image-alt": {
             "id": "image-alt",
             "title": "Image elements have `[alt]` attributes",
-            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
+            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -2834,7 +2834,7 @@
           "td-headers-attr": {
             "id": "td-headers-attr",
             "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
-            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
+            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the `headers` attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -2848,7 +2848,7 @@
           "valid-lang": {
             "id": "valid-lang",
             "title": "`[lang]` attributes have a valid value",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -3374,7 +3374,7 @@
           "geolocation-on-start": {
             "id": "geolocation-on-start",
             "title": "Avoids requesting the geolocation permission on page load",
-            "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about geolocation permission](https://web.dev/geolocation-on-start/).",
+            "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about the geolocation permission](https://web.dev/geolocation-on-start/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -8633,7 +8633,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -10782,7 +10782,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11252,7 +11252,7 @@
           "aria-required-parent": {
             "id": "aria-required-parent",
             "title": "`[role]`s are contained by their required parent element",
-            "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and their required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent).",
+            "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11285,7 +11285,7 @@
           "aria-treeitem-name": {
             "id": "aria-treeitem-name",
             "title": "ARIA `treeitem` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
+            "description": "When a `treeitem` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about labeling `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11328,7 +11328,7 @@
           "bypass": {
             "id": "bypass",
             "title": "The page contains a heading, skip link, or landmark region",
-            "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass navigation mechanisms](https://dequeuniversity.com/rules/axe/4.4/bypass).",
+            "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass blocks](https://dequeuniversity.com/rules/axe/4.4/bypass).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11650,14 +11650,14 @@
           "duplicate-id-active": {
             "id": "duplicate-id-active",
             "title": "`[id]` attributes on active, focusable elements are unique",
-            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
+            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn how to fix duplicate `id`s](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "duplicate-id-aria": {
             "id": "duplicate-id-aria",
             "title": "ARIA IDs are unique",
-            "description": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more about ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria).",
+            "description": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn how to fix duplicate ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11690,7 +11690,7 @@
           "html-has-lang": {
             "id": "html-has-lang",
             "title": "`<html>` element has a `[lang]` attribute",
-            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
+            "description": "If a page doesn't specify a `lang` attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11702,7 +11702,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11714,7 +11714,7 @@
           "image-alt": {
             "id": "image-alt",
             "title": "Image elements do not have `[alt]` attributes",
-            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
+            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -11894,7 +11894,7 @@
           "td-headers-attr": {
             "id": "td-headers-attr",
             "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
-            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
+            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the `headers` attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -11908,7 +11908,7 @@
           "valid-lang": {
             "id": "valid-lang",
             "title": "`[lang]` attributes have a valid value",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -15810,7 +15810,7 @@
           "unsized-images": {
             "id": "unsized-images",
             "title": "Image elements do not have explicit `width` and `height`",
-            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn more about setting image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
+            "description": "Set an explicit width and height on image elements to reduce layout shifts and improve CLS. [Learn how to set image dimensions](https://web.dev/optimize-cls/#images-without-dimensions)",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16637,7 +16637,7 @@
           "aria-required-parent": {
             "id": "aria-required-parent",
             "title": "`[role]`s are contained by their required parent element",
-            "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and their required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent).",
+            "description": "Some ARIA child roles must be contained by specific parent roles to properly perform their intended accessibility functions. [Learn more about ARIA roles and required parent element](https://dequeuniversity.com/rules/axe/4.4/aria-required-parent).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16670,7 +16670,7 @@
           "aria-treeitem-name": {
             "id": "aria-treeitem-name",
             "title": "ARIA `treeitem` elements have accessible names",
-            "description": "When an element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about naming `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
+            "description": "When a `treeitem` element doesn't have an accessible name, screen readers announce it with a generic name, making it unusable for users who rely on screen readers. [Learn more about labeling `treeitem` elements](https://dequeuniversity.com/rules/axe/4.4/aria-treeitem-name).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16713,7 +16713,7 @@
           "bypass": {
             "id": "bypass",
             "title": "The page contains a heading, skip link, or landmark region",
-            "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass navigation mechanisms](https://dequeuniversity.com/rules/axe/4.4/bypass).",
+            "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more about bypass blocks](https://dequeuniversity.com/rules/axe/4.4/bypass).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16763,14 +16763,14 @@
           "duplicate-id-active": {
             "id": "duplicate-id-active",
             "title": "`[id]` attributes on active, focusable elements are unique",
-            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn more about `id` attribute](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
+            "description": "All focusable elements must have a unique `id` to ensure that they're visible to assistive technologies. [Learn how to fix duplicate `id`s](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
           "duplicate-id-aria": {
             "id": "duplicate-id-aria",
             "title": "ARIA IDs are unique",
-            "description": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn more about ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria).",
+            "description": "The value of an ARIA ID must be unique to prevent other instances from being overlooked by assistive technologies. [Learn how to fix duplicate ARIA IDs](https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16803,7 +16803,7 @@
           "html-has-lang": {
             "id": "html-has-lang",
             "title": "`<html>` element has a `[lang]` attribute",
-            "description": "If a page doesn't specify a lang attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
+            "description": "If a page doesn't specify a `lang` attribute, a screen reader assumes that the page is in the default language that the user chose when setting up the screen reader. If the page isn't actually in the default language, then the screen reader might not announce the page's text correctly. [Learn more about the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-has-lang).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16815,7 +16815,7 @@
           "html-lang-valid": {
             "id": "html-lang-valid",
             "title": "`<html>` element has a valid value for its `[lang]` attribute",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn more about `lang` attributes](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) helps screen readers announce text properly. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/html-lang-valid).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16827,7 +16827,7 @@
           "image-alt": {
             "id": "image-alt",
             "title": "Image elements do not have `[alt]` attributes",
-            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
+            "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more about the `alt` attribute](https://dequeuniversity.com/rules/axe/4.4/image-alt).",
             "score": 0,
             "scoreDisplayMode": "binary",
             "details": {
@@ -16969,7 +16969,7 @@
           "td-headers-attr": {
             "id": "td-headers-attr",
             "title": "Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.",
-            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the headers attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
+            "description": "Screen readers have features to make navigating tables easier. Ensuring `<td>` cells using the `[headers]` attribute only refer to other cells in the same table may improve the experience for screen reader users. [Learn more about the `headers` attribute](https://dequeuniversity.com/rules/axe/4.4/td-headers-attr).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -16983,7 +16983,7 @@
           "valid-lang": {
             "id": "valid-lang",
             "title": "`[lang]` attributes have a valid value",
-            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn more about `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
+            "description": "Specifying a valid [BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question) on elements helps ensure that text is pronounced correctly by a screen reader. [Learn how to use the `lang` attribute](https://dequeuniversity.com/rules/axe/4.4/valid-lang).",
             "score": null,
             "scoreDisplayMode": "notApplicable"
           },
@@ -17579,7 +17579,7 @@
           "geolocation-on-start": {
             "id": "geolocation-on-start",
             "title": "Avoids requesting the geolocation permission on page load",
-            "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about geolocation permission](https://web.dev/geolocation-on-start/).",
+            "description": "Users are mistrustful of or confused by sites that request their location without context. Consider tying the request to a user action instead. [Learn more about the geolocation permission](https://web.dev/geolocation-on-start/).",
             "score": 1,
             "scoreDisplayMode": "binary",
             "details": {
