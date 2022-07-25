@@ -36,6 +36,12 @@ class CumulativeLayoutShift {
         continue;
       }
 
+      // For all-frames CLS calculation, we rely on `weighted_score_delta`, which
+      // was added in Chrome 90: https://crbug.com/1173139
+      if (event.args.data.weighted_score_delta === undefined) {
+        throw new Error('CLS missing weighted_score_delta');
+      }
+
       if (event.args.data.had_recent_input) {
         // `had_recent_input` events aren't used unless currently ignoring.
         if (!ignoreHadRecentInput) continue;
