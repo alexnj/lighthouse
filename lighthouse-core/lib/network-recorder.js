@@ -5,13 +5,20 @@
  */
 'use strict';
 
-const log = require('lighthouse-logger');
-const NetworkRequest = require('./network-request.js');
-const EventEmitter = require('events').EventEmitter;
+import log from 'lighthouse-logger';
+import {NetworkRequest} from './network-request.js';
+import {EventEmitter} from 'events';
 
-/** @typedef {'requeststarted'|'requestfinished'} NetworkRecorderEvent */
+/**
+ * @typedef {{
+ *   requeststarted: [NetworkRequest],
+ *   requestfinished: [NetworkRequest],
+ * }} NetworkRecorderEventMap
+ */
+/** @typedef {LH.Protocol.StrictEventEmitterClass<NetworkRecorderEventMap>} RequestEmitter */
+const RequestEventEmitter = /** @type {RequestEmitter} */ (EventEmitter);
 
-class NetworkRecorder extends EventEmitter {
+class NetworkRecorder extends RequestEventEmitter {
   /**
    * Creates an instance of NetworkRecorder.
    */
@@ -33,22 +40,6 @@ class NetworkRecorder extends EventEmitter {
    */
   getRawRecords() {
     return Array.from(this._records);
-  }
-
-  /**
-   * @param {NetworkRecorderEvent} event
-   * @param {*} listener
-   */
-  on(event, listener) {
-    return super.on(event, listener);
-  }
-
-  /**
-   * @param {NetworkRecorderEvent} event
-   * @param {*} listener
-   */
-  once(event, listener) {
-    return super.once(event, listener);
   }
 
   /**
@@ -334,4 +325,4 @@ class NetworkRecorder extends EventEmitter {
   }
 }
 
-module.exports = NetworkRecorder;
+export {NetworkRecorder};

@@ -7,12 +7,13 @@
 import {strict as assert} from 'assert';
 import fs from 'fs';
 
-import assetSaver from '../../lib/asset-saver.js';
-import Metrics from '../../lib/traces/pwmetrics-events.js';
-import LHError from '../../lib/lh-error.js';
-import Audit from '../../audits/audit.js';
-import {getModuleDirectory} from '../../../esm-utils.mjs';
-import {readJson} from '../../../root.js';
+import * as assetSaver from '../../lib/asset-saver.js';
+import {Metrics} from '../../lib/traces/pwmetrics-events.js';
+import {LighthouseError} from '../../lib/lh-error.js';
+import {Audit} from '../../audits/audit.js';
+import {LH_ROOT} from '../../../root.js';
+import {getModuleDirectory} from '../../../esm-utils.js';
+import {readJson} from '../test-utils.js';
 
 const traceEvents = readJson('../fixtures/traces/progressive-app.json', import.meta);
 const dbwTrace = readJson('../results/artifacts/defaultPass.trace.json', import.meta);
@@ -31,7 +32,10 @@ function assertTraceEventsEqual(traceEventsA, traceEventsB) {
 }
 describe('asset-saver helper', () => {
   describe('saves files', function() {
-    beforeAll(() => {
+    const tmpDir = `${LH_ROOT}/.tmp/asset-saver-test`;
+
+    before(() => {
+      fs.mkdirSync(tmpDir, {recursive: true});
       const artifacts = {
         devtoolsLogs: {
           [Audit.DEFAULT_PASS]: [{message: 'first'}, {message: 'second'}],
@@ -43,11 +47,11 @@ describe('asset-saver helper', () => {
         },
       };
 
-      return assetSaver.saveAssets(artifacts, dbwResults.audits, process.cwd() + '/the_file');
+      return assetSaver.saveAssets(artifacts, dbwResults.audits, `${tmpDir}/the_file`);
     });
 
     it('trace file saved to disk with trace events and extra fakeEvents', () => {
-      const traceFilename = 'the_file-0.trace.json';
+      const traceFilename = tmpDir + '/the_file-0.trace.json';
       const traceFileContents = fs.readFileSync(traceFilename, 'utf8');
       const traceEventsOnDisk = JSON.parse(traceFileContents).traceEvents;
       const traceEventsWithoutExtrasOnDisk = traceEventsOnDisk.slice(0, traceEvents.length);
@@ -58,7 +62,7 @@ describe('asset-saver helper', () => {
     });
 
     it('devtools log file saved to disk with data', () => {
-      const filename = 'the_file-0.devtoolslog.json';
+      const filename = tmpDir + '/the_file-0.devtoolslog.json';
       const fileContents = fs.readFileSync(filename, 'utf8');
       assert.ok(fileContents.includes('"message": "first"'));
       fs.unlinkSync(filename);
@@ -84,7 +88,11 @@ describe('asset-saver helper', () => {
   });
 
   describe('saveTrace', () => {
-    const traceFilename = 'test-trace-0.json';
+    const traceFilename = `${LH_ROOT}/.tmp/test-trace-0.json`;
+
+    before(() => {
+      fs.mkdirSync(`${LH_ROOT}/.tmp`, {recursive: true});
+    });
 
     afterEach(() => {
       fs.unlinkSync(traceFilename);
@@ -283,10 +291,11 @@ describe('asset-saver helper', () => {
         /^Error: Connection refused by server.*test[\\/]lib[\\/]asset-saver-test\.js/s);
     });
 
-    it('round trips artifacts with an LHError member', async () => {
-      // Use an LHError that has an ICU replacement.
+    it('round trips artifacts with an LighthouseError member', async () => {
+      // Use an LighthouseError that has an ICU replacement.
       const protocolMethod = 'Page.getFastness';
-      const lhError = new LHError(LHError.errors.PROTOCOL_TIMEOUT, {protocolMethod});
+      const lhError = new LighthouseError(
+        LighthouseError.errors.PROTOCOL_TIMEOUT, {protocolMethod});
 
       const artifacts = {
         traces: {},
@@ -298,11 +307,11 @@ describe('asset-saver helper', () => {
       const roundTripArtifacts = await assetSaver.loadArtifacts(outputPath);
       expect(roundTripArtifacts).toStrictEqual(artifacts);
 
-      expect(roundTripArtifacts.ScriptElements).toBeInstanceOf(LHError);
+      expect(roundTripArtifacts.ScriptElements).toBeInstanceOf(LighthouseError);
       expect(roundTripArtifacts.ScriptElements.code).toEqual('PROTOCOL_TIMEOUT');
       expect(roundTripArtifacts.ScriptElements.protocolMethod).toEqual(protocolMethod);
       expect(roundTripArtifacts.ScriptElements.stack).toMatch(
-          /^LHError: PROTOCOL_TIMEOUT.*test[\\/]lib[\\/]asset-saver-test\.js/s);
+          /^LighthouseError: PROTOCOL_TIMEOUT.*test[\\/]lib[\\/]asset-saver-test\.js/s);
       expect(roundTripArtifacts.ScriptElements.friendlyMessage)
         .toBeDisplayString(/\(Method: Page\.getFastness\)/);
     });

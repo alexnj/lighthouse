@@ -4,15 +4,13 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {jest} from '@jest/globals';
-
 import InspectorIssues from '../../../gather/gatherers/inspector-issues.js';
-import NetworkRequest from '../../../lib/network-request.js';
+import {NetworkRequest} from '../../../lib/network-request.js';
 import {createMockContext} from '../../fraggle-rock/gather/mock-driver.js';
-import {flushAllTimersAndMicrotasks} from '../../test-utils.js';
-import networkRecordsToDevtoolsLog from '../../network-records-to-devtools-log.js';
+import {flushAllTimersAndMicrotasks, timers} from '../../test-utils.js';
+import {networkRecordsToDevtoolsLog} from '../../network-records-to-devtools-log.js';
 
-jest.useFakeTimers();
+timers.useFakeTimers();
 
 /**
  * @param {Partial<LH.Artifacts.NetworkRequest>=} partial
@@ -131,17 +129,15 @@ function mockCSP(details) {
 }
 
 /**
- * @param {string} text
+ * @param {LH.Crdp.Audits.DeprecationIssueType} type
  * @return {LH.Crdp.Audits.InspectorIssue}
  */
-function mockDeprecation(text) {
+function mockDeprecation(type) {
   return {
     code: 'DeprecationIssue',
     details: {
       deprecationIssueDetails: {
-        message: text,
-        deprecationType: 'test',
-        type: 'Untranslated',
+        type,
         sourceCodeLocation: {
           url: 'https://www.example.com',
           lineNumber: 10,
@@ -186,7 +182,7 @@ describe('_getArtifact', () => {
       mockBlockedByResponse({request: {requestId: '3'}}),
       mockHeavyAd(),
       mockCSP(),
-      mockDeprecation('some warning'),
+      mockDeprecation('AuthorizationCoveredByWildcard'),
     ];
     const networkRecords = [
       mockRequest({requestId: '1'}),
@@ -231,14 +227,12 @@ describe('_getArtifact', () => {
         contentSecurityPolicyViolationType: 'kInlineViolation',
       }],
       deprecationIssue: [{
-        message: 'some warning',
-        deprecationType: 'test',
+        type: 'AuthorizationCoveredByWildcard',
         sourceCodeLocation: {
           url: 'https://www.example.com',
           columnNumber: 10,
           lineNumber: 10,
         },
-        type: 'Untranslated',
       }],
       attributionReportingIssue: [],
       clientHintIssue: [],

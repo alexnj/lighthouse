@@ -17,7 +17,7 @@ import {execFile} from 'child_process';
 
 import log from 'lighthouse-logger';
 
-import assetSaver from '../../../../lighthouse-core/lib/asset-saver.js';
+import * as assetSaver from '../../../../lighthouse-core/lib/asset-saver.js';
 import {LocalConsole} from '../lib/local-console.js';
 import {ChildProcessError} from '../lib/child-process-error.js';
 import {LH_ROOT} from '../../../../root.js';
@@ -42,29 +42,15 @@ async function runLighthouse(url, configJson, testRunnerOptions = {}) {
 }
 
 /**
- * @param {LH.Config.Json=} configJson
- * @return {LH.Config.Json|undefined}
- */
-function convertToFraggleRockConfig(configJson) {
-  if (!configJson) return configJson;
-  if (!configJson.passes) return configJson;
-
-  return {
-    ...configJson,
-    navigations: configJson.passes.map(pass => ({...pass, id: pass.passName})),
-  };
-}
-
-/**
  * Internal runner.
  * @param {string} url
  * @param {string} tmpPath
  * @param {LH.Config.Json=} configJson
- * @param {{isDebug?: boolean, useFraggleRock?: boolean}=} options
+ * @param {{isDebug?: boolean, useLegacyNavigation?: boolean}=} options
  * @return {Promise<{lhr: LH.Result, artifacts: LH.Artifacts, log: string}>}
  */
 async function internalRun(url, tmpPath, configJson, options) {
-  const {isDebug = false, useFraggleRock = false} = options || {};
+  const {isDebug = false, useLegacyNavigation = false} = options || {};
   const localConsole = new LocalConsole();
 
   const outputPath = `${tmpPath}/smokehouse.report.json`;
@@ -81,9 +67,7 @@ async function internalRun(url, tmpPath, configJson, options) {
     '--quiet',
   ];
 
-  if (useFraggleRock) {
-    configJson = convertToFraggleRockConfig(configJson);
-  } else {
+  if (useLegacyNavigation) {
     args.push('--legacy-navigation');
   }
 

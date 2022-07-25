@@ -6,10 +6,10 @@
 
 import log from 'lighthouse-logger';
 
-import BaseAudit from '../../../audits/audit.js';
+import {Audit as BaseAudit} from '../../../audits/audit.js';
 import BaseGatherer from '../../../fraggle-rock/gather/base-gatherer.js';
 import {defaultSettings, defaultNavigationConfig} from '../../../config/constants.js';
-import filters from '../../../fraggle-rock/config/filters.js';
+import * as filters from '../../../fraggle-rock/config/filters.js';
 import {initializeConfig} from '../../../fraggle-rock/config/config.js';
 
 describe('Fraggle Rock Config Filtering', () => {
@@ -521,6 +521,34 @@ describe('Fraggle Rock Config Filtering', () => {
           {implementation: TimespanAudit},
           {implementation: NavigationAudit},
           {implementation: ManualAudit},
+        ],
+      });
+    });
+
+    it('should keep all audits if there are no categories', () => {
+      config = {
+        ...config,
+        audits: [
+          ...audits,
+          {implementation: NavigationOnlyAudit, options: {}},
+        ],
+        categories: {},
+      };
+
+      const filtered = filters.filterConfigByExplicitFilters(config, {
+        onlyAudits: null,
+        onlyCategories: null,
+        skipAudits: null,
+      });
+      expect(filtered).toMatchObject({
+        navigations: [{id: 'firstPass'}],
+        artifacts: [{id: 'Snapshot'}, {id: 'Timespan'}],
+        audits: [
+          {implementation: SnapshotAudit},
+          {implementation: TimespanAudit},
+          {implementation: NavigationAudit},
+          {implementation: ManualAudit},
+          {implementation: NavigationOnlyAudit},
         ],
       });
     });

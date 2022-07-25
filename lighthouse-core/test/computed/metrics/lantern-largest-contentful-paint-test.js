@@ -6,9 +6,8 @@
 
 import {strict as assert} from 'assert';
 
-import {readJson} from '../../../../root.js';
 import LanternLargestContentfulPaint from '../../../computed/metrics/lantern-largest-contentful-paint.js'; // eslint-disable-line max-len
-import {getURLArtifactFromDevtoolsLog} from '../../test-utils.js';
+import {getURLArtifactFromDevtoolsLog, readJson} from '../../test-utils.js';
 
 const trace = readJson('../../fixtures/traces/lcp-m78.json', import.meta);
 const devtoolsLog = readJson('../../fixtures/traces/lcp-m78.devtools.log.json', import.meta);
@@ -29,7 +28,6 @@ describe('Metrics: Lantern LCP', () => {
       optimistic: Math.round(result.optimisticEstimate.timeInMs),
       pessimistic: Math.round(result.pessimisticEstimate.timeInMs),
     }).toMatchInlineSnapshot(
-      {},
       `
       Object {
         "optimistic": 2289,

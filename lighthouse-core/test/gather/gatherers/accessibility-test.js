@@ -11,8 +11,8 @@ import puppeteer from 'puppeteer';
 
 import AccessibilityGather from '../../../gather/gatherers/accessibility.js';
 import {LH_ROOT} from '../../../../root.js';
-import axeLib from '../../../../lighthouse-core/lib/axe.js';
-import pageFunctions from '../../../../lighthouse-core/lib/page-functions.js';
+import {axeSource} from '../../../../lighthouse-core/lib/axe.js';
+import {pageFunctions} from '../../../../lighthouse-core/lib/page-functions.js';
 
 describe('Accessibility gatherer', () => {
   let accessibilityGather;
@@ -40,18 +40,18 @@ describe('Accessibility gatherer', () => {
 describe('a11y audits + aXe', () => {
   let browser;
 
-  beforeAll(async () => {
+  before(async () => {
     browser = await puppeteer.launch();
   });
 
-  afterAll(async () => {
+  after(async () => {
     await browser.close();
   });
 
   it('only runs the axe rules we have audits defined for', async () => {
     const page = await browser.newPage();
     page.setContent(`<!doctype html><meta charset="utf8"><title>hi</title>valid.`);
-    await page.evaluate(axeLib.source);
+    await page.evaluate(axeSource);
     await page.evaluate(pageFunctions.getNodeDetailsString);
     await page.evaluate(AccessibilityGather.pageFns.runA11yChecks.toString());
     await page.evaluate(AccessibilityGather.pageFns.createAxeRuleResultArtifact.toString());

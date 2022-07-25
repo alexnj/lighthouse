@@ -5,7 +5,7 @@
  */
 
 import ScriptTreemapData_ from '../../audits/script-treemap-data.js';
-import networkRecordsToDevtoolsLog from '../network-records-to-devtools-log.js';
+import {networkRecordsToDevtoolsLog} from '../network-records-to-devtools-log.js';
 import {
   createScript,
   loadSourceMapAndUsageFixture,
@@ -31,7 +31,7 @@ describe('ScriptTreemapData audit', () => {
   describe('squoosh fixture', () => {
     /** @type {LH.Audit.Details.TreemapData} */
     let treemapData;
-    beforeAll(async () => {
+    before(async () => {
       const context = {computedCache: new Map()};
       const {map, content, usage} = loadSourceMapAndUsageFixture('squoosh');
       expect(map.sourceRoot).not.toBeTruthy();
@@ -92,7 +92,7 @@ describe('ScriptTreemapData audit', () => {
   describe('coursehero fixture', () => {
     /** @type {LH.Audit.Details.TreemapData} */
     let treemapData;
-    beforeAll(async () => {
+    before(async () => {
       const context = {computedCache: new Map()};
       const {map, content} = loadSourceMapFixture('coursehero-bundle-1');
       expect(map.sourceRoot).toBeTruthy();

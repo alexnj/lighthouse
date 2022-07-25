@@ -14,7 +14,7 @@ import URL from '../../../lighthouse-core/lib/url-shim.js';
 import {DOM} from '../../renderer/dom.js';
 import {DetailsRenderer} from '../../renderer/details-renderer.js';
 import {PerformanceCategoryRenderer} from '../../renderer/performance-category-renderer.js';
-import {readJson} from '../../../root.js';
+import {readJson} from '../../../lighthouse-core/test/test-utils.js';
 
 const sampleResultsOrig = readJson('../../../lighthouse-core/test/results/sample_v2.json', import.meta);
 
@@ -23,7 +23,7 @@ describe('PerfCategoryRenderer', () => {
   let renderer;
   let sampleResults;
 
-  beforeAll(() => {
+  before(() => {
     Util.i18n = new I18n('en', {...Util.UIStrings});
 
     const {document} = new jsdom.JSDOM().window;
@@ -36,7 +36,7 @@ describe('PerfCategoryRenderer', () => {
     category = sampleResults.categories.performance;
   });
 
-  afterAll(() => {
+  after(() => {
     Util.i18n = undefined;
   });
 
@@ -390,7 +390,7 @@ Array [
     let getDescriptionsAfterCheckedToggle;
 
     describe('works if there is a performance category', () => {
-      beforeAll(() => {
+      before(() => {
         container = renderer.render(category, sampleResults.categoryGroups);
         const metricsAuditGroup = container.querySelector(metricsSelector);
         toggle = metricsAuditGroup.querySelector(toggleSelector);

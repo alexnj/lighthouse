@@ -4,8 +4,10 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-import {jest} from '@jest/globals';
+import jestMock from 'jest-mock';
+import * as td from 'testdouble';
 
+import {Runner} from '../../runner.js';
 import {createMockPage, mockRunnerModule} from './gather/mock-driver.js';
 // import UserFlow from '../../fraggle-rock/user-flow.js';
 
@@ -17,18 +19,18 @@ let UserFlow;
 /** @type {typeof import('../../fraggle-rock/user-flow.js')['auditGatherSteps']} */
 let auditGatherSteps;
 
-beforeAll(async () => {
+before(async () => {
   ({UserFlow, auditGatherSteps} = await import('../../fraggle-rock/user-flow.js'));
 });
 
-const snapshotModule = {snapshotGather: jest.fn()};
-jest.mock('../../fraggle-rock/gather/snapshot-runner.js', () => snapshotModule);
-const navigationModule = {navigationGather: jest.fn()};
-jest.mock('../../fraggle-rock/gather/navigation-runner.js', () => navigationModule);
-const timespanModule = {startTimespanGather: jest.fn()};
-jest.mock('../../fraggle-rock/gather/timespan-runner.js', () => timespanModule);
+const snapshotModule = {snapshotGather: jestMock.fn()};
+await td.replaceEsm('../../fraggle-rock/gather/snapshot-runner.js', snapshotModule);
+const navigationModule = {navigationGather: jestMock.fn()};
+await td.replaceEsm('../../fraggle-rock/gather/navigation-runner.js', navigationModule);
+const timespanModule = {startTimespanGather: jestMock.fn()};
+await td.replaceEsm('../../fraggle-rock/gather/timespan-runner.js', timespanModule);
 
-const mockRunner = mockRunnerModule();
+const mockRunner = await mockRunnerModule();
 
 describe('UserFlow', () => {
   let mockPage = createMockPage();
@@ -72,7 +74,7 @@ describe('UserFlow', () => {
         computedCache: new Map(),
       },
     };
-    const timespan = {endTimespanGather: jest.fn().mockResolvedValue(timespanGatherResult)};
+    const timespan = {endTimespanGather: jestMock.fn().mockResolvedValue(timespanGatherResult)};
     timespanModule.startTimespanGather.mockReset();
     timespanModule.startTimespanGather.mockResolvedValue(timespan);
   });
@@ -161,6 +163,58 @@ describe('UserFlow', () => {
       // Check that we didn't mutate the original objects.
       expect(configContext).toEqual({settingsOverrides: {maxWaitForLoad: 1000}});
       expect(configContextExplicit).toEqual({skipAboutBlank: false});
+    });
+  });
+
+  describe('.startNavigation()', () => {
+    it('should only run navigation setup', async () => {
+      let setupDone = false;
+      let teardownDone = false;
+      navigationModule.navigationGather.mockImplementation(async cb => {
+        setupDone = true;
+        // @ts-expect-error
+        await cb();
+        teardownDone = true;
+      });
+      const flow = new UserFlow(mockPage.asPage());
+      await flow.startNavigation();
+      expect(setupDone).toBeTruthy();
+      expect(teardownDone).toBeFalsy();
+    });
+
+    it('should throw errors from the setup phase', async () => {
+      navigationModule.navigationGather.mockRejectedValue(new Error('Setup Error'));
+      const flow = new UserFlow(mockPage.asPage());
+      const startPromise = flow.startNavigation();
+      await expect(startPromise).rejects.toThrowError('Setup Error');
+    });
+  });
+
+  describe('.endNavigation()', () => {
+    it('should throw if a timespan is active', async () => {
+      const flow = new UserFlow(mockPage.asPage());
+      await flow.startTimespan();
+      await expect(flow.startNavigation()).rejects.toThrowError('Timespan already in progress');
+    });
+
+    it('should throw if a navigation is not active', async () => {
+      const flow = new UserFlow(mockPage.asPage());
+      await expect(flow.endNavigation()).rejects.toThrowError('No navigation in progress');
+    });
+
+    it('should throw errors from the teardown phase', async () => {
+      navigationModule.navigationGather.mockImplementation(async cb => {
+        // @ts-expect-error
+        await cb();
+        throw new Error('Teardown Error');
+      });
+      const flow = new UserFlow(mockPage.asPage());
+
+      // Should not throw the error here.
+      await flow.startNavigation();
+
+      const teardownPromise = flow.endNavigation();
+      await expect(teardownPromise).rejects.toThrowError('Teardown Error');
     });
   });
 
@@ -260,10 +314,8 @@ describe('UserFlow', () => {
 
   describe('auditGatherSteps', () => {
     it('should audit gather steps', async () => {
-      const runnerActual = /** @type {typeof import('../../runner.js')} */ (
-        jest.requireActual('../../runner.js'));
-      mockRunner.getGathererList.mockImplementation(runnerActual.getGathererList);
-      mockRunner.getAuditList.mockImplementation(runnerActual.getAuditList);
+      mockRunner.getGathererList.mockImplementation(Runner.getGathererList);
+      mockRunner.getAuditList.mockImplementation(Runner.getAuditList);
       mockRunner.audit.mockImplementation(artifacts => ({
         lhr: {
           finalUrl: artifacts.URL.finalUrl,
@@ -337,6 +389,10 @@ describe('UserFlow', () => {
 
       const flowResult = await auditGatherSteps(gatherSteps, {config: flowConfig});
 
+      // @ts-expect-error toMatchObject is giving a loud annoying error...
+      // Not sure why.
+      //     Index signature for type 'string' is missing
+      //     in type '(Artifacts | { config: { settings: { skipAudits: string[]; }; }; })[]'
       expect(mockRunner.audit.mock.calls).toMatchObject([
         [
           gatherSteps[0].artifacts,

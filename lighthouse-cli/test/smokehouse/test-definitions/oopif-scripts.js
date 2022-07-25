@@ -27,11 +27,11 @@ const config = {
     // to complete.
     maxWaitForLoad: 180000,
   },
-  passes: [
+  navigations: [
     // CI machines are pretty weak which lead to many more long tasks than normal.
     // Reduce our requirement for CPU quiet.
     {
-      passName: 'defaultPass',
+      id: 'default',
       cpuQuietThresholdMs: 500,
     },
   ],
@@ -49,6 +49,9 @@ const expectations = {
       'network-requests': {
         details: {
           items: {
+            // Multiple session attach handling fixed in M105
+            // https://chromiumdash.appspot.com/commit/f42337f1d623ec913397610ccf01b5526e9e919d
+            _minChromiumVersion: '105',
             _includes: [
               {url: 'http://localhost:10200/oopif-scripts.html'},
               {url: 'http://localhost:10200/oopif-simple-page.html'},
@@ -63,13 +66,15 @@ const expectations = {
               {url: 'http://localhost:10503/simple-script.js', resourceType: 'Fetch'},
               {url: 'http://localhost:10200/simple-worker.js'},
               {url: 'http://localhost:10503/simple-worker.js'},
-              // For some reason, we only see these when running in DevTools!
-              {_runner: 'devtools', url: 'http://localhost:10200/simple-worker.mjs'},
-              {_runner: 'devtools', url: 'http://localhost:10503/simple-worker.mjs'},
-              {_runner: 'devtools', url: 'http://localhost:10200/simple-script.js?esm', resourceType: 'Script'},
-              {_runner: 'devtools', url: 'http://localhost:10503/simple-script.js?esm', resourceType: 'Script'},
-              {_runner: 'devtools', url: 'http://localhost:10200/simple-script.js?importScripts', resourceType: 'Other'},
-              {_runner: 'devtools', url: 'http://localhost:10503/simple-script.js?importScripts', resourceType: 'Other'},
+              // These requests are emitted in workers so Lighthouse doesn't capture them.
+              // For some reason, legacy navigations in DevTools still pick them up.
+              // https://github.com/GoogleChrome/lighthouse/issues/14211
+              {_legacyOnly: true, _runner: 'devtools', url: 'http://localhost:10200/simple-worker.mjs'},
+              {_legacyOnly: true, _runner: 'devtools', url: 'http://localhost:10503/simple-worker.mjs'},
+              {_legacyOnly: true, _runner: 'devtools', url: 'http://localhost:10200/simple-script.js?esm', resourceType: 'Script'},
+              {_legacyOnly: true, _runner: 'devtools', url: 'http://localhost:10503/simple-script.js?esm', resourceType: 'Script'},
+              {_legacyOnly: true, _runner: 'devtools', url: 'http://localhost:10200/simple-script.js?importScripts', resourceType: 'Other'},
+              {_legacyOnly: true, _runner: 'devtools', url: 'http://localhost:10503/simple-script.js?importScripts', resourceType: 'Other'},
             ],
             // Ensure the above is exhaustive (except for favicon, which won't be fetched in devtools/LR).
             _excludes: [

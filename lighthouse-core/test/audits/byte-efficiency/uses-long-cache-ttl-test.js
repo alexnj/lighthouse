@@ -7,8 +7,8 @@
 import {strict as assert} from 'assert';
 
 import CacheHeadersAudit from '../../../audits/byte-efficiency/uses-long-cache-ttl.js';
-import NetworkRequest from '../../../lib/network-request.js';
-import networkRecordsToDevtoolsLog from '../../network-records-to-devtools-log.js';
+import {NetworkRequest} from '../../../lib/network-request.js';
+import {networkRecordsToDevtoolsLog} from '../../network-records-to-devtools-log.js';
 
 const options = CacheHeadersAudit.defaultOptions;
 
@@ -31,13 +31,13 @@ function networkRecord(options = {}) {
 describe('Cache headers audit', () => {
   // Stub Date.now so the tests are not sensitive to timing.
   let dateNowFn;
-  beforeAll(() => {
+  before(() => {
     dateNowFn = Date.now;
     const now = Date.now();
     Date.now = () => now;
   });
 
-  afterAll(() => {
+  after(() => {
     Date.now = dateNowFn;
   });
 
