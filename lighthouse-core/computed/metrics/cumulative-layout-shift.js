@@ -53,7 +53,7 @@ class CumulativeLayoutShift {
       layoutShiftEvents.push({
         ts: event.ts,
         isMainFrame: event.args.data.is_main_frame,
-        weightedScore: event.args.data.weighted_score_delta || 0,
+        weightedScore: event.args.data.weighted_score_delta,
       });
     }
 
