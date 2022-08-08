@@ -24,6 +24,7 @@ import log from 'lighthouse-logger';
 import {runSmokehouse, getShardedDefinitions} from '../smokehouse.js';
 import {updateTestDefnFormat} from './back-compat-util.js';
 import {LH_ROOT} from '../../../../root.js';
+import {exclusions} from '../../../../core/config/runner-exclusions.js';
 
 const coreTestDefnsPath =
   path.join(LH_ROOT, 'cli/test/smokehouse/core-tests.js');
@@ -193,8 +194,17 @@ async function begin() {
   const requestedTestIds = argv._;
   const {default: rawTestDefns} = await import(url.pathToFileURL(testDefnPath).href);
   const allTestDefns = updateTestDefnFormat(rawTestDefns);
+  const excludedTests = new Set(/** @type {Array<string>} */([
+    ...exclusions['*'] || [],
+    ...exclusions[/** @type {keyof typeof exclusions} */ (argv.runner)] || [],
+  ]));
+
+  const filteredTestDefns = !excludedTests.size ? allTestDefns :
+    allTestDefns.filter(test => !excludedTests.has(test.id));
+
   const invertMatch = argv.invertMatch;
-  const requestedTestDefns = getDefinitionsToRun(allTestDefns, requestedTestIds, {invertMatch});
+  const requestedTestDefns = getDefinitionsToRun(filteredTestDefns,
+    requestedTestIds, {invertMatch});
   const testDefns = getShardedDefinitions(requestedTestDefns, argv.shard);
 
   let smokehouseResult;
