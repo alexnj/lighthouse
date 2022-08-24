@@ -17,14 +17,12 @@ const exclusions = {
     // only ever see/run the final URL.
     'redirects-client-paint-server', 'redirects-multiple-server',
     'redirects-single-server', 'redirects-single-client',
+    'redirects-history-push-state', 'redirects-scripts',
     // Disabled because these tests use settings that cannot be fully configured in
     // DevTools (e.g. throttling method "provided").
     'metrics-tricky-tti', 'metrics-tricky-tti-late-fcp', 'screenshot',
     // Disabled because of differences that need further investigation
     'byte-efficiency', 'byte-gzip', 'perf-preload',
-    // Disabled for unknown reasons
-    'redirects-history-push-state',
-    'redirects-scripts',
   ],
 };
 
