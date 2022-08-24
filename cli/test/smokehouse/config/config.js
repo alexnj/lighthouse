@@ -12,7 +12,7 @@ const exclusions = {
   'devtools': [
     // Disabled because normal Chrome usage makes DevTools not function on
     // these poorly constructed pages
-    'errors-expired-ssl', 'errors-infinite-loop', 'dbw', // (dialog prompt)
+    'errors-expired-ssl', 'errors-infinite-loop', 'dbw' /* dialog prompt */,
     // Disabled because Chrome will follow the redirect first, and Lighthouse will
     // only ever see/run the final URL.
     'redirects-client-paint-server', 'redirects-multiple-server',
@@ -22,7 +22,7 @@ const exclusions = {
     'metrics-tricky-tti', 'metrics-tricky-tti-late-fcp', 'screenshot',
     // Disabled because of differences that need further investigation
     'byte-efficiency', 'byte-gzip', 'perf-preload',
-    // Disabled for unknown reasons (TODO: find reasons)
+    // Disabled for unknown reasons
     'redirects-history-push-state',
     'redirects-scripts',
   ],
