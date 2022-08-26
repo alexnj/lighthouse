@@ -10,7 +10,7 @@
  */
 const exclusions = {
   'bundle': [],
-  'cli': ['a11y'],
+  'cli': [],
   'devtools': [
     // Disabled because normal Chrome usage makes DevTools not function on
     // these poorly constructed pages
