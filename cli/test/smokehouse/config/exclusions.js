@@ -6,10 +6,11 @@
 
 /**
  * List of smoke tests excluded per runner. eg: 'cli': ['a11y', 'dbw']
- * @type {Record<'cli'|'bundle'|'devtools', Array<string>>}
+ * @type {Record<string, Array<string>>}
  */
 const exclusions = {
-  'cli': [],
+  'bundle': [],
+  'cli': ['a11y'],
   'devtools': [
     // Disabled because normal Chrome usage makes DevTools not function on
     // these poorly constructed pages
@@ -27,6 +28,4 @@ const exclusions = {
   ],
 };
 
-export {
-  exclusions,
-};
+export default exclusions;
