@@ -6,7 +6,7 @@
 
 /**
  * List of smoke tests excluded per runner. eg: 'cli': ['a11y', 'dbw']
- * @type {Record<string, Array<string>>}
+ * @type {Record<'cli'|'bundle'|'devtools', Array<string>>}
  */
 const exclusions = {
   'cli': [],
