@@ -43,14 +43,13 @@ const runnerPaths = {
  * Determine batches of smoketests to run, based on the `requestedIds`.
  * @param {Array<Smokehouse.TestDfn>} allTestDefns
  * @param {Array<string>} requestedIds
- * @param {{invertMatch: boolean}} options
  * @return {Array<Smokehouse.TestDfn>}
  */
-function getDefinitionsToRun(allTestDefns, requestedIds, {invertMatch}) {
+function getDefinitionsToRun(allTestDefns, requestedIds) {
   let smokes = [];
   const usage = `    ${log.dim}yarn smoke ${allTestDefns.map(t => t.id).join(' ')}${log.reset}\n`;
 
-  if (requestedIds.length === 0 && !invertMatch) {
+  if (requestedIds.length === 0) {
     smokes = [...allTestDefns];
     console.log('Running ALL smoketests. Equivalent to:');
     console.log(usage);
@@ -58,9 +57,7 @@ function getDefinitionsToRun(allTestDefns, requestedIds, {invertMatch}) {
     smokes = allTestDefns.filter(test => {
       // Include all tests that *include* requested id.
       // e.g. a requested 'pwa' will match 'pwa-airhorner', 'pwa-caltrain', etc
-      let isRequested = requestedIds.some(requestedId => test.id.includes(requestedId));
-      if (invertMatch) isRequested = !isRequested;
-      return isRequested;
+      return requestedIds.some(requestedId => test.id.includes(requestedId));
     });
     console.log(`Running ONLY smoketests for: ${smokes.map(t => t.id).join(' ')}\n`);
   }
@@ -126,7 +123,6 @@ async function begin() {
     .help('help')
     .usage('node $0 [<options>] <test-ids>')
     .example('node $0 -j=1 pwa seo', 'run pwa and seo tests serially')
-    .example('node $0 --invert-match byte', 'run all smoke tests but `byte`')
     .option('_', {
       array: true,
       type: 'string',
@@ -160,11 +156,6 @@ async function begin() {
         type: 'string',
         describe: 'The path to a set of test definitions to run. Defaults to core smoke tests.',
       },
-      'invert-match': {
-        type: 'boolean',
-        default: false,
-        describe: 'Run all available tests except the ones provided',
-      },
       'shard': {
         type: 'string',
         // eslint-disable-next-line max-len
@@ -197,9 +188,7 @@ async function begin() {
   const allTestDefns = updateTestDefnFormat(rawTestDefns);
   const excludedTests = new Set(exclusions[argv.runner] || []);
   const filteredTestDefns = allTestDefns.filter(test => !excludedTests.has(test.id));
-  const invertMatch = argv.invertMatch;
-  const requestedTestDefns = getDefinitionsToRun(filteredTestDefns,
-    requestedTestIds, {invertMatch});
+  const requestedTestDefns = getDefinitionsToRun(filteredTestDefns, requestedTestIds);
   const testDefns = getShardedDefinitions(requestedTestDefns, argv.shard);
 
   let smokehouseResult;
