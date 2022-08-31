@@ -43,9 +43,10 @@ const runnerPaths = {
  * Determine batches of smoketests to run, based on the `requestedIds`.
  * @param {Array<Smokehouse.TestDfn>} allTestDefns
  * @param {Array<string>} requestedIds
+ * @param {Set<string>} excludedTests
  * @return {Array<Smokehouse.TestDfn>}
  */
-function getDefinitionsToRun(allTestDefns, requestedIds) {
+function getDefinitionsToRun(allTestDefns, requestedIds, excludedTests) {
   let smokes = [];
   const usage = `    ${log.dim}yarn smoke ${allTestDefns.map(t => t.id).join(' ')}${log.reset}\n`;
 
@@ -67,6 +68,7 @@ function getDefinitionsToRun(allTestDefns, requestedIds) {
   });
   if (unmatchedIds.length) {
     console.log(log.redify(`Smoketests not found for: ${unmatchedIds.join(' ')}`));
+    console.log(`Check test exclusions (${[...excludedTests].join(' ')})\n`);
     console.log(usage);
   }
 
@@ -193,7 +195,8 @@ async function begin() {
   const excludedTests = new Set(exclusions[argv.runner] || []);
   const filteredTestDefns = argv.ignoreExclusions ?
     allTestDefns : allTestDefns.filter(test => !excludedTests.has(test.id));
-  const requestedTestDefns = getDefinitionsToRun(filteredTestDefns, requestedTestIds);
+  const requestedTestDefns = getDefinitionsToRun(filteredTestDefns,
+      requestedTestIds, excludedTests);
   const testDefns = getShardedDefinitions(requestedTestDefns, argv.shard);
 
   let smokehouseResult;
