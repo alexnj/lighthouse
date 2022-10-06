@@ -6,6 +6,8 @@
 
 import {Audit} from './audit.js';
 import * as i18n from '../lib/i18n/i18n.js';
+import {Util} from '../util.cjs';
+import UrlUtils from '../lib/url-utils.js';
 import thirdPartyWeb from '../lib/third-party-web.js';
 import {NetworkRecords} from '../computed/network-records.js';
 import {MainThreadTasks} from '../computed/main-thread-tasks.js';
@@ -55,6 +57,9 @@ const PASS_THRESHOLD_IN_MS = 250;
  * @property {Map<ThirdPartyEntity, string[]>} urls Map of URLs under each entity.
  */
 
+/** A lookup cache for 3p entities that third-party-web couldn't recognize. */
+const madeUpEntityCache = /** @type Record<string, ThirdPartyEntity> */ ({});
+
 /**
  * Don't bother showing resources smaller than 4KiB since they're likely to be pixels, which isn't
  * too actionable.
@@ -78,6 +83,27 @@ class ThirdPartySummary extends Audit {
     };
   }
 
+  /**
+   *
+   * @param {string} url
+   * @return ThirdPartyEntity | undefined
+   */
+  static makeUpAnEntity(url) {
+    if (!UrlUtils.isValid(url)) return undefined;
+    const rootDomain = Util.getRootDomain(url);
+    if (!rootDomain) return undefined;
+    if (rootDomain in madeUpEntityCache) return madeUpEntityCache[rootDomain];
+
+    return /** @type ThirdPartyEntity */ (madeUpEntityCache[rootDomain] = {
+      name: rootDomain,
+      company: rootDomain,
+      categories: [],
+      domains: [rootDomain],
+      averageExecutionTime: 0,
+      totalExecutionTime: 0,
+      totalOccurrences: 0,
+    });
+  }
   /**
    *
    * @param {Array<LH.Artifacts.NetworkRequest>} networkRecords
@@ -118,7 +144,7 @@ class ThirdPartySummary extends Audit {
     /** @type {Map<ThirdPartyEntity, string[]>} */
     const urls = new Map();
     for (const [url, urlSummary] of byURL.entries()) {
-      const entity = thirdPartyWeb.getEntity(url);
+      const entity = thirdPartyWeb.getEntity(url) || ThirdPartySummary.makeUpAnEntity(url);
       if (!entity) {
         byURL.delete(url);
         continue;
@@ -197,7 +223,8 @@ class ThirdPartySummary extends Audit {
     const trace = artifacts.traces[Audit.DEFAULT_PASS];
     const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
     const networkRecords = await NetworkRecords.request(devtoolsLog, context);
-    const mainEntity = thirdPartyWeb.getEntity(artifacts.URL.finalDisplayedUrl);
+    const mainEntity = thirdPartyWeb.getEntity(artifacts.URL.finalDisplayedUrl) ||
+      this.makeUpAnEntity(artifacts.URL.finalDisplayedUrl);
     const tasks = await MainThreadTasks.request(trace, context);
     const multiplier = settings.throttlingMethod === 'simulate' ?
       settings.throttling.cpuSlowdownMultiplier : 1;
