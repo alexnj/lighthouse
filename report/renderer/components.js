@@ -379,32 +379,31 @@ function createMetricComponent(dom) {
  */
 function createOpportunityComponent(dom) {
   const el0 = dom.createFragment();
-  const el1 = dom.createElement("div", "lh-audit lh-audit--load-opportunity");
-  const el2 = dom.createElement("details", "lh-expandable-details");
-  const el3 = dom.createElement("summary");
-  const el4 = dom.createElement("div", "lh-audit__header");
-  const el5 = dom.createElement("div", "lh-load-opportunity__cols");
-  const el6 = dom.createElement("div", "lh-load-opportunity__col lh-load-opportunity__col--one");
-  const el7 = dom.createElement("span", "lh-audit__score-icon");
-  const el8 = dom.createElement("div", "lh-audit__title");
-  el6.append(" ",el7," ",el8," ");
-  const el9 = dom.createElement("div", "lh-load-opportunity__col lh-load-opportunity__col--two");
-  const el10 = dom.createElement("div", "lh-load-opportunity__sparkline");
-  const el11 = dom.createElement("div", "lh-sparkline");
-  const el12 = dom.createElement("div", "lh-sparkline__bar");
-  el11.append(el12);
-  el10.append(" ",el11," ");
-  const el13 = dom.createElement("div", "lh-audit__display-text");
-  const el14 = dom.createElement("div", "lh-chevron-container");
-  el9.append(" ",el10," ",el13," ",el14," ");
-  el5.append(" ",el6," ",el9," ");
-  el4.append(" ",el5," ");
-  el3.append(" ",el4," ");
-  const el15 = dom.createElement("div", "lh-audit__description");
-  const el16 = dom.createElement("div", "lh-audit__stackpacks");
-  el2.append(" ",el3," ",el15," ",el16," ");
-  el1.append(" ",el2," ");
+  const el1 = dom.createElement("tr", "lh-audit lh-audit--load-opportunity");
+  const el2 = dom.createElement("td");
+  const el3 = dom.createElement("span", "lh-audit__score-icon");
+  const el4 = dom.createElement("div", "lh-audit__title");
+  el2.append(" ",el3," ",el4," ");
+  const el5 = dom.createElement("td", "lh-load-opportunity__sparkline");
+  const el6 = dom.createElement("div", "lh-sparkline");
+  const el7 = dom.createElement("div", "lh-sparkline__bar");
+  el6.append(el7);
+  el5.append(" ",el6," ");
+  const el8 = dom.createElement("td");
+  const el9 = dom.createElement("div", "lh-audit__display-text");
+  const el10 = dom.createElement("div", "lh-chevron-container");
+  el8.append(" ",el9," ",el10," ");
+  el1.append(" ",el2," ",el5," ",el8," ");
   el0.append(el1);
+  const el11 = dom.createElement("tr", "lh-expandable-details ");
+  const el12 = dom.createElement("td");
+  el12.setAttribute('colspan', '3');
+  const el13 = dom.createElement("span", "lh-audit__description");
+  const el14 = dom.createElement("span", "details");
+  const el15 = dom.createElement("span", "lh-audit__stackpacks");
+  el12.append(" ",el13," ",el14," ",el15," ");
+  el11.append(" ",el12," ");
+  el0.append(el11);
   return el0;
 }
 
@@ -413,9 +412,9 @@ function createOpportunityComponent(dom) {
  */
 function createOpportunityHeaderComponent(dom) {
   const el0 = dom.createFragment();
-  const el1 = dom.createElement("div", "lh-load-opportunity__header lh-load-opportunity__cols");
-  const el2 = dom.createElement("div", "lh-load-opportunity__col lh-load-opportunity__col--one");
-  const el3 = dom.createElement("div", "lh-load-opportunity__col lh-load-opportunity__col--two");
+  const el1 = dom.createElement("tr", "lh-load-opportunity__header lh-load-opportunity__cols");
+  const el2 = dom.createElement("th", "lh-load-opportunity__col lh-load-opportunity__col--one");
+  const el3 = dom.createElement("th", "lh-load-opportunity__col lh-load-opportunity__col--two");
   el1.append(" ",el2," ",el3," ");
   el0.append(el1);
   return el0;

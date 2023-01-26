@@ -61,7 +61,7 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
    */
   _renderOpportunity(audit, scale) {
     const oppTmpl = this.dom.createComponent('opportunity');
-    const element = this.populateAuditValues(audit, oppTmpl);
+    const element = this.experimentalPopulateAuditValues(audit, oppTmpl);
     element.id = audit.result.id;
 
     if (!audit.result.details || audit.result.scoreDisplayMode === 'error') {
@@ -83,7 +83,7 @@ export class PerformanceCategoryRenderer extends CategoryRenderer {
     // Set [title] tooltips
     if (audit.result.displayValue) {
       const displayValue = audit.result.displayValue;
-      this.dom.find('div.lh-load-opportunity__sparkline', element).title = displayValue;
+      this.dom.find('.lh-load-opportunity__sparkline', element).title = displayValue;
       displayEl.title = displayValue;
     }
 

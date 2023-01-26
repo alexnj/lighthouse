@@ -219,6 +219,7 @@ export class ReportUIFeatures {
   }
 
   _setupThirdPartyFilter() {
+    return;
     // Some audits should not display the third party filter option.
     const thirdPartyFilterAuditExclusions = [
       // These audits deal explicitly with third party resources.

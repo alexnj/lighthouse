@@ -107,37 +107,34 @@ limitations under the License.
 
 <!-- Lighthouse perf opportunity -->
 <template id="opportunity">
-  <div class="lh-audit lh-audit--load-opportunity">
-    <details class="lh-expandable-details">
-        <summary>
-          <div class="lh-audit__header">
-            <div class="lh-load-opportunity__cols">
-              <div class="lh-load-opportunity__col lh-load-opportunity__col--one">
-                <span class="lh-audit__score-icon"></span>
-                <div class="lh-audit__title"></div>
-              </div>
-              <div class="lh-load-opportunity__col lh-load-opportunity__col--two">
-                <div class="lh-load-opportunity__sparkline">
-                  <div class="lh-sparkline"><div class="lh-sparkline__bar"></div></div>
-                </div>
-                <div class="lh-audit__display-text"></div>
-                <div class="lh-chevron-container"></div>
-              </div>
-            </div>
-          </div>
-        </summary>
-      <div class="lh-audit__description"></div>
-      <div class="lh-audit__stackpacks"></div>
-    </details>
-  </div>
+  <tr class="lh-audit lh-audit--load-opportunity">
+    <td class="">
+      <span class="lh-audit__score-icon"></span>
+      <div class="lh-audit__title"></div>
+    </td>
+    <td class="lh-load-opportunity__sparkline">
+      <div class="lh-sparkline"><div class="lh-sparkline__bar"></div></div>
+    </td>
+    <td class="">
+      <div class="lh-audit__display-text"></div>
+      <div class="lh-chevron-container"></div>
+    </td>
+  </tr>
+  <tr class="lh-expandable-details ">
+    <td colspan="3">
+      <span class="lh-audit__description"></span>
+      <span class="details"></span>
+      <span class="lh-audit__stackpacks"></span>
+    </td>
+  </tr>
 </template>
 
 <!-- Lighthouse perf opportunity header -->
 <template id="opportunityHeader">
-  <div class="lh-load-opportunity__header lh-load-opportunity__cols">
-    <div class="lh-load-opportunity__col lh-load-opportunity__col--one"></div>
-    <div class="lh-load-opportunity__col lh-load-opportunity__col--two"></div>
-  </div>
+  <tr class="lh-load-opportunity__header lh-load-opportunity__cols">
+    <th class="lh-load-opportunity__col lh-load-opportunity__col--one"></th>
+    <th class="lh-load-opportunity__col lh-load-opportunity__col--two"></th>
+  </tr>
 </template>
 
 <!-- Lighthouse score container -->

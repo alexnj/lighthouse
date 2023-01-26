@@ -56,6 +56,88 @@ export class CategoryRenderer {
     return this.populateAuditValues(audit, component);
   }
 
+  experimentalPopulateAuditValues(audit, component) {
+    const strings = Globals.strings;
+    console.log('component', component);
+    const auditEl = this.dom.find('.lh-audit', component);
+    console.log('audit', component);
+    component.id = audit.result.id;
+    const scoreDisplayMode = audit.result.scoreDisplayMode;
+
+    if (audit.result.displayValue) {
+      this.dom.find('.lh-audit__display-text', component).textContent = audit.result.displayValue;
+    }
+
+    const titleEl = this.dom.find('.lh-audit__title', component);
+    titleEl.append(this.dom.convertMarkdownCodeSnippets(audit.result.title));
+    const descEl = this.dom.find('.lh-audit__description', component);
+    descEl.append(this.dom.convertMarkdownLinkSnippets(audit.result.description));
+
+    for (const relevantMetric of audit.relevantMetrics || []) {
+      const adornEl = this.dom.createChildOf(descEl, 'span', 'lh-audit__adorn');
+      adornEl.title = `Relevant to ${relevantMetric.result.title}`;
+      adornEl.textContent = relevantMetric.acronym || relevantMetric.id;
+    }
+
+    if (audit.stackPacks) {
+      audit.stackPacks.forEach(pack => {
+        const packElmImg = this.dom.createElement('img', 'lh-audit__stackpack__img');
+        packElmImg.src = pack.iconDataURL;
+        packElmImg.alt = pack.title;
+
+        const snippets = this.dom.convertMarkdownLinkSnippets(pack.description);
+        const packElm = this.dom.createElement('div', 'lh-audit__stackpack');
+        packElm.append(packElmImg, snippets);
+
+        this.dom.find('.lh-audit__stackpacks', component)
+          .append(packElm);
+      });
+    }
+
+    const header = this.dom.find('.details', component);
+    if (audit.result.details) {
+      const elem = this.detailsRenderer.render(audit.result.details);
+      if (elem) {
+        elem.classList.add('lh-details');
+        header.append(elem);
+      }
+    }
+
+    // Add chevron SVG to the end of the summary
+    this.dom.find('.lh-chevron-container', component).append(this._createChevron());
+    // this._setRatingClass(component, audit.result.score, scoreDisplayMode);
+
+    if (audit.result.scoreDisplayMode === 'error') {
+      component.classList.add(`lh-audit--error`);
+      const textEl = this.dom.find('.lh-audit__display-text', component);
+      textEl.textContent = strings.errorLabel;
+      textEl.classList.add('lh-tooltip-boundary');
+      const tooltip = this.dom.createChildOf(textEl, 'div', 'lh-tooltip lh-tooltip--error');
+      tooltip.textContent = audit.result.errorMessage || strings.errorMissingAuditInfo;
+    } else if (audit.result.explanation) {
+      const explEl = this.dom.createChildOf(titleEl, 'div', 'lh-audit-explanation');
+      explEl.textContent = audit.result.explanation;
+    }
+    const warnings = audit.result.warnings;
+    if (!warnings || warnings.length === 0) return component;
+
+    // Add list of warnings or singular warning
+    const summaryEl = this.dom.find('.summary', header);
+    const warningsEl = this.dom.createChildOf(summaryEl, 'div', 'lh-warnings');
+    this.dom.createChildOf(warningsEl, 'span').textContent = strings.warningHeader;
+    if (warnings.length === 1) {
+      warningsEl.append(this.dom.createTextNode(warnings.join('')));
+    } else {
+      const warningsUl = this.dom.createChildOf(warningsEl, 'ul');
+      for (const warning of warnings) {
+        const item = this.dom.createChildOf(warningsUl, 'li');
+        item.textContent = warning;
+      }
+    }
+    return component;
+  }
+
+
   /**
    * Populate an DOM tree with audit details. Used by renderAudit and renderOpportunity
    * @param {LH.ReportResult.AuditRef} audit
