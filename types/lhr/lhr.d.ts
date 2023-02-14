@@ -58,6 +58,11 @@ interface Result {
   stackPacks?: Result.StackPack[];
   /** All the origins encountered during this Lighthouse run, and information about what web property (aka "entity") they belong to. Won't be present for snapshot mode. */
   entities?: Result.Entities;
+  // TODO: The functionality that's rooted from here is better fitted as an LH StackPack.
+  // However, StackPacks API isn't there yet, and will need to be extended to support such features.
+  // This is meant to be a proof-of-concept of the value-add if we were to do so.
+  /** All the WordPress plugins detected during the run. */
+  wpPlugins?: Result.WPPlugins;
   /** Screenshot taken of the full page, with node rects referencing audit results. If there was an error with collection, this is null. If disabled via the disableFullPageScreenshot setting, this is undefined. */
   fullPageScreenshot?: Result.FullPageScreenshot | null;
 }
@@ -174,6 +179,23 @@ declare module Result {
     isUnrecognized?: boolean;
     /** List of origin strings that belong to this entity found in network records. */
     origins: Array<string>;
+  }
+
+  /**
+   * WordPress Plugin classification for the run, for resolving URLs/items to plugins in report.
+   */
+  interface WPPlugins extends Array<LhrWPPlugin> {}
+
+  /**
+   * A WordPress plugin.
+   */
+  interface LhrWPPlugin {
+    /** Name of the plugin. */
+    name: string;
+    /** Type of the plugin. */
+    type?: string;
+    /** URLs by the plugin. */
+    urls: Array<string>;
   }
 
   /**

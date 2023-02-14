@@ -932,6 +932,18 @@ declare module Artifacts {
     isUnrecognized?: boolean;
   }
 
+  interface WPPlugin {
+    name: string;
+    displayName?: string;
+    type?: string;
+    url?: string;
+  }
+
+  interface WPPluginClassification {
+    urlsByPlugin: Map<WPPlugin, Set<string>>;
+    pluginByUrl: Map<string, WPPlugin>;
+  }
+
   interface EntityClassification {
     urlsByEntity: Map<Entity, Set<string>>;
     entityByUrl: Map<string, Entity>;
@@ -940,6 +952,7 @@ declare module Artifacts {
     // Convenience methods.
     isFirstParty: (url: string) => boolean;
   }
+
 }
 
 export interface Trace {

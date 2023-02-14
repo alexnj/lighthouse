@@ -24,6 +24,7 @@ import {LighthouseError} from './lib/lh-error.js';
 import {lighthouseVersion} from '../root.js';
 import {getModuleDirectory} from '../esm-utils.js';
 import {EntityClassification} from './computed/entity-classification.js';
+import {WPPluginClassification} from './computed/wordpress-plugins.js';
 import UrlUtils from './lib/url-utils.js';
 
 const moduleDir = getModuleDirectory(import.meta);
@@ -113,6 +114,7 @@ class Runner {
         categoryGroups: resolvedConfig.groups || undefined,
         stackPacks: stackPacks.getStackPacks(artifacts.Stacks),
         entities: await Runner.getEntityClassification(artifacts, {computedCache}),
+        wpPlugins: await Runner.getWPPluginClassification(artifacts, {computedCache}),
         fullPageScreenshot: resolvedConfig.settings.disableFullPageScreenshot ?
           undefined : artifacts.FullPageScreenshot,
         timing: this._getTiming(artifacts),
@@ -140,6 +142,30 @@ class Runner {
     } catch (err) {
       throw Runner.createRunnerError(err, settings);
     }
+  }
+
+  /**
+   * @param {LH.Artifacts} artifacts
+   * @param {LH.Artifacts.ComputedContext} context
+   */
+  static async getWPPluginClassification(artifacts, context) {
+    const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
+    if (!devtoolsLog) return;
+    const classifiedPlugins = await WPPluginClassification.request({devtoolsLog}, context);
+
+    /** @type {LH.Result.WPPlugins} */
+    const plugins = [];
+    for (const [plugin, pluginUrls] of classifiedPlugins.urlsByPlugin) {
+      /** @type {LH.Result.LhrWPPlugin} */
+      const shortPlugin = {
+        name: plugin.name,
+        type: plugin.type,
+        urls: [...pluginUrls],
+      };
+      plugins.push(shortPlugin);
+    }
+
+    return plugins;
   }
 
   /**
