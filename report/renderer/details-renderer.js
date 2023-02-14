@@ -35,11 +35,15 @@ const URL_PREFIXES = ['http://', 'https://', 'data:'];
 export class DetailsRenderer {
   /**
    * @param {DOM} dom
-   * @param {{fullPageScreenshot?: LH.Result.FullPageScreenshot}} [options]
+   * @param {{
+   *  fullPageScreenshot?: LH.Result.FullPageScreenshot,
+   *  wpClassification?: LH.Result.WPClassification,
+   * }} [options]
    */
   constructor(dom, options = {}) {
     this._dom = dom;
     this._fullPageScreenshot = options.fullPageScreenshot;
+    this._wpClassification = options.wpClassification;
   }
 
   /**
@@ -153,6 +157,16 @@ export class DetailsRenderer {
     a.rel = 'noopener';
     a.target = '_blank';
     a.textContent = details.text;
+    console.log(this._wpClassification);
+    const matchingWpPlugin = this._wpClassification?.find(
+      ({urls}) => urls.includes(details.url));
+    console.log(details.url, matchingWpPlugin);
+    if (matchingWpPlugin) {
+      const wpSpan = this._dom.createElement('span');
+      wpSpan.classList.add('lh-audit__adorn', 'lh-audit__adorn-wp');
+      wpSpan.textContent = matchingWpPlugin.name;
+      a.append(wpSpan);
+    }
     a.classList.add('lh-link');
     return a;
   }

@@ -114,7 +114,7 @@ class Runner {
         categoryGroups: resolvedConfig.groups || undefined,
         stackPacks: stackPacks.getStackPacks(artifacts.Stacks),
         entities: await Runner.getEntityClassification(artifacts, {computedCache}),
-        wpPlugins: await Runner.getWPPluginClassification(artifacts, {computedCache}),
+        wpClassification: await Runner.getWPPluginClassification(artifacts, {computedCache}),
         fullPageScreenshot: resolvedConfig.settings.disableFullPageScreenshot ?
           undefined : artifacts.FullPageScreenshot,
         timing: this._getTiming(artifacts),
@@ -153,7 +153,7 @@ class Runner {
     if (!devtoolsLog) return;
     const classifiedPlugins = await WPPluginClassification.request({devtoolsLog}, context);
 
-    /** @type {LH.Result.WPPlugins} */
+    /** @type {LH.Result.WPClassification} */
     const plugins = [];
     for (const [plugin, pluginUrls] of classifiedPlugins.urlsByPlugin) {
       /** @type {LH.Result.LhrWPPlugin} */
